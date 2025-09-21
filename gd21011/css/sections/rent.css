@@ -1,0 +1,221 @@
+/* 
+  Rent Section - Estilos específicos para alquiler
+*/
+
+.rent-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: var(--space-md);
+}
+
+.rent-form {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    backdrop-filter: blur(10px);
+}
+
+.rent-steps {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--space-2xl);
+    position: relative;
+}
+
+.rent-steps::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.1);
+    z-index: 1;
+}
+
+.rent-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    flex: 1;
+}
+
+.rent-step__number {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-full);
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--space-xs);
+    font-weight: var(--font-weight-semibold);
+    transition: all var(--transition-fast);
+}
+
+.rent-step.active .rent-step__number {
+    background: var(--color-accent-primary);
+}
+
+.rent-step.completed .rent-step__number {
+    background: #22c55e;
+}
+
+.rent-step__title {
+    font-size: var(--font-size-sm);
+    text-align: center;
+    color: var(--color-text-secondary);
+}
+
+.rent-step.active .rent-step__title {
+    color: var(--color-text-primary);
+}
+
+.rent-section {
+    display: none;
+}
+
+.rent-section.active {
+    display: block;
+}
+
+.movie-selection {
+    margin-bottom: var(--space-lg);
+}
+
+.selected-movie {
+    display: flex;
+    gap: var(--space-md);
+    padding: var(--space-md);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-lg);
+}
+
+.selected-movie__poster {
+    width: 80px;
+    height: 120px;
+    background: var(--color-accent-primary);
+    border-radius: var(--radius-sm);
+    flex-shrink: 0;
+}
+
+.selected-movie__info {
+    flex: 1;
+}
+
+.selected-movie__title {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--space-xs);
+}
+
+.selected-movie__details {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+}
+
+.rental-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--space-md);
+    margin-bottom: var(--space-lg);
+}
+
+.rental-option {
+    padding: var(--space-md);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-md);
+    text-align: center;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.rental-option:hover,
+.rental-option.selected {
+    border-color: var(--color-accent-primary);
+    background: rgba(198, 119, 194, 0.1);
+}
+
+.rental-option__period {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--space-xs);
+}
+
+.rental-option__price {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-accent-primary);
+    margin-bottom: var(--space-xs);
+}
+
+.rental-option__description {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-md);
+}
+
+.payment-methods {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: var(--space-sm);
+    margin-bottom: var(--space-lg);
+}
+
+.payment-method {
+    aspect-ratio: 2/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.payment-method:hover,
+.payment-method.selected {
+    border-color: var(--color-accent-primary);
+}
+
+.form-actions {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: flex-end;
+    margin-top: var(--space-xl);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .rent-steps {
+        flex-direction: column;
+        gap: var(--space-md);
+    }
+
+    .rent-steps::before {
+        display: none;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .selected-movie {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .selected-movie__poster {
+        align-self: center;
+    }
+}

@@ -1,0 +1,152 @@
+/* 
+  Layout - Estructura global y contenedores
+*/
+
+/* === Global Layout === */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* === Header === */
+header {
+    flex-shrink: 0;
+    padding: var(--space-md);
+    margin-top: var(--space-sm);
+}
+
+/* === Main Content === */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* === Footer === */
+footer {
+    flex-shrink: 0;
+    padding: var(--space-md);
+    margin-top: auto;
+}
+
+/* === Container Utilities === */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-md);
+}
+
+.container-sm {
+    max-width: 640px;
+}
+
+.container-md {
+    max-width: 768px;
+}
+
+.container-lg {
+    max-width: 1024px;
+}
+
+.container-xl {
+    max-width: 1280px;
+}
+
+/* === Section Layouts === */
+.section {
+    padding: var(--space-xl) 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-height: calc(100vh - 140px);
+    /* Adjust based on header/footer height */
+    justify-content: center;
+}
+
+.section--full-height {
+    min-height: 100vh;
+}
+
+.section--no-padding {
+    padding: 0;
+}
+
+/* === Grid System === */
+.grid {
+    display: grid;
+    gap: var(--space-md);
+}
+
+.grid-cols-1 {
+    grid-template-columns: repeat(1, 1fr);
+}
+
+.grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-cols-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 768px) {
+
+    .grid-cols-2,
+    .grid-cols-3,
+    .grid-cols-4 {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* === Flex Utilities === */
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.gap-sm {
+    gap: var(--space-sm);
+}
+
+.gap-md {
+    gap: var(--space-md);
+}
+
+.gap-lg {
+    gap: var(--space-lg);
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+
+    header,
+    footer {
+        padding: var(--space-sm);
+    }
+
+    .section {
+        padding: var(--space-lg) var(--space-md);
+    }
+}

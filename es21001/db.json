@@ -1,0 +1,10 @@
+{
+  "categorias": [
+    { "id": 1, "nombre": "Teclados" },
+    { "id": 2, "nombre": "Mouse" }
+  ],
+  "productos": [
+    { "id": 1, "nombre": "Teclado Mecánico K65", "marca": "Corsair", "precio": 119.99, "stock": 8, "categoriaId": 1 },
+    { "id": 2, "nombre": "Mouse G305", "marca": "Logitech", "precio": 49.99, "stock": 20, "categoriaId": 2 }
+  ]
+}

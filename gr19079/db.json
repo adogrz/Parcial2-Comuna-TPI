@@ -1,0 +1,111 @@
+{
+  "artistas": [
+    {
+      "id": "1",
+      "nombre": "Sabrina Carpenter",
+      "pais": "Estados Unidos"
+    },
+    {
+      "id": "2",
+      "nombre": "Junior H",
+      "pais": "México"
+    },
+    {
+      "id": "3",
+      "nombre": "Soda Stereo",
+      "pais": "Argentina"
+    },
+    {
+      "id": "4",
+      "nombre": "Fuerza Regida",
+      "pais": "México"
+    },
+    {
+      "id": "9c23",
+      "nombre": "Vicente Fernandez",
+      "pais": "México"
+    }
+  ],
+  "generos": [
+    {
+      "id": "1",
+      "nombre": "Pop"
+    },
+    {
+      "id": "2",
+      "nombre": "Regional Mexicano"
+    },
+    {
+      "id": "3",
+      "nombre": "Rock"
+    },
+    {
+      "id": "e7f6",
+      "nombre": "Rancheras"
+    }
+  ],
+  "canciones": [
+    {
+      "id": "1",
+      "titulo": "Espresso",
+      "artistaId": 1,
+      "generoId": 1
+    },
+    {
+      "id": "3",
+      "titulo": "Fin de Semana",
+      "artistaId": 2,
+      "generoId": 2
+    },
+    {
+      "id": "5",
+      "titulo": "De Música Ligera",
+      "artistaId": 3,
+      "generoId": 3
+    },
+    {
+      "id": "8",
+      "titulo": "Sabor Fresa",
+      "artistaId": 4,
+      "generoId": 2
+    },
+    {
+      "id": "cf9a",
+      "titulo": "Penca de maguey",
+      "artistaId": "9c23",
+      "generoId": "e7f6"
+    },
+    {
+      "id": "9574",
+      "titulo": "zamba",
+      "artistaId": "3",
+      "generoId": "2"
+    }
+  ],
+  "contactos": [
+    {
+      "id": "5dc9",
+      "nombre": "Daddy Yankee",
+      "email": "kev12@gmail.com",
+      "asunto": "Sugerencia",
+      "mensaje": ":)",
+      "fecha": "2025-09-22T05:30:19.781Z"
+    },
+    {
+      "id": "921d",
+      "nombre": "Lopez",
+      "email": "lopez@gmail.com",
+      "asunto": "Sugerencia",
+      "mensaje": "añadan electrónica",
+      "fecha": "2025-09-22T06:38:21.184Z"
+    },
+    {
+      "id": "824c",
+      "nombre": "Carlos",
+      "email": "carlos@gmail.com",
+      "asunto": "Sugerencia",
+      "mensaje": "Pongan sandunga de la chuca",
+      "fecha": "2025-09-22T17:35:25.849Z"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PC Store — Carrito</title>
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/styles/styles.css">
+  <link rel="stylesheet" href="css/styles/carrito.css">
+
+  <!-- Nav dinámico -->
+  <script src="js/nav.js" defer></script>
+</head>
+<body>
+  <!-- Nav -->
+  <div id="nav-placeholder"></div>
+
+  <!-- Encabezado (mismo look que catálogo) -->
+  <header class="hero">
+    <div class="hero-inner">
+      <h1 class="hero-title">Tu carrito</h1>
+      <p class="hero-sub">Revisa tus productos antes de finalizar la compra.</p>
+    </div>
+  </header>
+
+  <!-- Contenido -->
+  <main class="wrap">
+    <section class="card table-card">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Producto</th>
+            <th class="price">Precio</th>
+            <th style="width:160px">Cantidad</th>
+            <th class="price">Subtotal</th>
+            <th>Acción</th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+        <tfoot>
+          <tr>
+            <td colspan="3" class="total-label">Total</td>
+            <td id="total" class="price-total">0.00</td>
+            <td></td>
+          </tr>
+        </tfoot>
+      </table>
+    </section>
+
+    <div class="actions">
+      <button id="vaciar" class="btn ghost">Vaciar carrito</button>
+      <a href="catalogo.html" class="btn">Seguir comprando</a>
+    </div>
+  </main>
+
+  <!-- Lógica -->
+  <script src="js/carrito.js" defer></script>
+</body>
+</html>

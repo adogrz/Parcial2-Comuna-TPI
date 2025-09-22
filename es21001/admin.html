@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PC Store — Admin</title>
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/styles/styles.css">
+  <link rel="stylesheet" href="css/styles/admin.css">
+
+  <!-- Nav dinámico -->
+  <script src="js/nav.js" defer></script>
+</head>
+<body>
+  <!-- Nav -->
+  <div id="nav-placeholder"></div>
+
+  <!-- Encabezado -->
+  <header class="hero">
+    <div class="hero-inner">
+      <h1 class="hero-title">Panel de administración</h1>
+      <p class="hero-sub">Gestiona categorías y productos.</p>
+    </div>
+  </header>
+
+  <!-- Contenido -->
+  <main class="wrap admin-grid">
+    <!-- Categorías -->
+    <section class="card">
+      <div class="card-head">
+        <h2>Categorías</h2>
+      </div>
+
+      <form id="fCat" class="form-grid p-3">
+        <div class="field">
+          <label>Nombre de categoría</label>
+          <input name="nombre" placeholder="Ej. Monitores" required>
+        </div>
+        <div class="actions">
+          <button class="btn" type="submit">Crear categoría</button>
+        </div>
+      </form>
+
+      <div class="list p-3">
+        <ul id="listCats" class="items"></ul>
+      </div>
+    </section>
+
+    <!-- Productos -->
+    <section class="card">
+      <div class="card-head">
+        <h2>Productos</h2>
+      </div>
+
+      <form id="fProd" class="form-grid p-3">
+        <div class="field">
+          <label>Nombre</label>
+          <input name="nombre" placeholder="Ej. Monitor 24&quot; IPS" required>
+        </div>
+
+        <div class="field">
+          <label>Marca</label>
+          <input name="marca" placeholder="Ej. LG" required>
+        </div>
+
+        <div class="field">
+          <label>Precio</label>
+          <input name="precio" type="number" step="0.01" placeholder="149.99" required>
+        </div>
+
+        <div class="field">
+          <label>Stock</label>
+          <input name="stock" type="number" step="1" min="0" placeholder="5" required>
+        </div>
+
+        <div class="field">
+          <label>Categoría</label>
+          <select name="categoriaId" id="selCat"></select>
+        </div>
+
+        <div class="field">
+          <label>Imagen (URL)</label>
+          <input name="imagenUrl" id="imagenUrl" type="url" placeholder="https://.../foto.jpg">
+        </div>
+
+        <div class="preview">
+          <img id="imgPreview" alt="Vista previa">
+        </div>
+
+        <div class="actions span-2">
+          <button class="btn" type="submit">Crear producto</button>
+        </div>
+      </form>
+
+      <div class="list p-3">
+        <ul id="listProds" class="items"></ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- Lógica -->
+  <script src="js/admin.js" defer></script>
+</body>
+</html>

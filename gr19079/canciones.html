@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>🎵 Canciones — CRUD</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="css/estilos.css">
+  <script defer src="js/app.js"></script>
+</head>
+<body data-page="canciones">
+  <header class="topbar">
+    <h1>🎵 Canciones</h1>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="artistas.html">Artistas</a>
+      <a href="canciones.html">Canciones</a>
+      <a href="generos.html">Géneros</a>
+      <a href="contactos.html">Contacto</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h2>Gestión de Canciones</h2>
+
+    <form id="formCancion" class="form">
+      <input type="hidden" id="songId">
+      <input id="songTitulo" placeholder="Título (p.ej., Sabor Fresa)" required>
+      <select id="songArtista" required>
+        <option value="">— Selecciona Artista —</option>
+      </select>
+      <select id="songGenero" required>
+        <option value="">— Selecciona Género —</option>
+      </select>
+      <div class="inline">
+        <button type="submit">Guardar</button>
+        <button type="button" id="songReset" class="secondary">Limpiar</button>
+      </div>
+      <div id="msgSong" class="msg"></div>
+    </form>
+
+    <table class="table">
+      <thead>
+        <tr><th>ID</th><th>Título</th><th>Artista</th><th>Género</th><th>Acciones</th></tr>
+      </thead>
+      <tbody id="tbCanciones"></tbody>
+    </table>
+  </main>
+
+  <footer class="footer">
+    <p>API: <code>http://localhost:3000/canciones</code></p>
+  </footer>
+</body>
+</html>

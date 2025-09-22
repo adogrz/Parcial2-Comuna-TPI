@@ -1,0 +1,58 @@
+/* ===== Hero (encabezado de página) ===== */
+.hero{
+  padding:32px 16px 20px;
+  color:#e6f3ff;
+  background:linear-gradient(180deg,#0f172a,#1f2937);
+  margin-bottom:0; /* sin solapamiento */
+}
+.hero-inner{
+  max-width:1100px; margin:0 auto;
+  display:flex; flex-wrap:wrap; gap:10px;
+  align-items:center; justify-content:space-between;
+}
+.hero-title{ margin:0; font-size:28px; font-weight:800; letter-spacing:.3px }
+.hero-sub{ margin:0; color:#c8ddff }
+
+/* ===== Tabla de catálogo ===== */
+.table-card{ overflow:auto; }
+.table{
+  width:100%;
+  border-collapse:collapse;
+  background:#fff;
+  border:1px solid #e5e7eb;
+  border-radius:14px;
+  overflow:hidden;
+  box-shadow:0 10px 25px rgba(2,6,23,.08);
+}
+.table th, .table td{
+  padding:10px 12px;
+  border-bottom:1px solid #eef2f7;
+  text-align:left;
+  font-size:14px;
+}
+.table thead th{
+  background:#f7fafc;
+  color:#374151;
+  font-weight:700;
+}
+.table tbody tr:hover{ background:#fbfdff }
+.table img{
+  width:64px; height:64px; object-fit:cover; border-radius:8px; display:block; margin:auto;
+}
+.table .price{ white-space:nowrap }
+
+/* Botón de acción dentro de la tabla */
+.table button{
+  padding:8px 10px;
+  border-radius:10px;
+  border:1px solid #dbe3ea;
+  background:#fff;
+  cursor:pointer;
+  font-weight:600;
+}
+.table button:hover{ border-color:#bcd2e3 }
+
+/* Responsive: oculta la columna ID en móviles */
+@media (max-width:720px){
+  .table th:nth-child(2), .table td:nth-child(2){ display:none; }
+}

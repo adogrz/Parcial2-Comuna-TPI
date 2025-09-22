@@ -1,0 +1,71 @@
+{
+  "categorias": [
+    {
+      "id": "091e",
+      "nombre": "Teclado"
+    },
+    {
+      "id": "2a7c",
+      "nombre": "Mouse"
+    },
+    {
+      "id": "04bf",
+      "nombre": "Almacenamiento"
+    },
+    {
+      "id": "4928",
+      "nombre": "Monitores"
+    }
+  ],
+  "productos": [
+    {
+      "id": "p0a2",
+      "nombre": "Mouse G305",
+      "marca": "Logitech",
+      "precio": 49.99,
+      "stock": 20,
+      "categoriaId": "2a7c"
+    },
+    {
+      "id": "p0a4",
+      "nombre": "SSD NVMe 1TB",
+      "marca": "Samsung",
+      "precio": 89.99,
+      "stock": 15,
+      "categoriaId": "04bf"
+    },
+    {
+      "id": "p0a5",
+      "nombre": "Auriculares Cloud II",
+      "marca": "HyperX",
+      "precio": 79.99,
+      "stock": 12,
+      "categoriaId": null
+    },
+    {
+      "id": "p0a7",
+      "nombre": "Teclado 60% RGB",
+      "marca": "Redragon",
+      "precio": 39.99,
+      "stock": 25,
+      "categoriaId": "091e"
+    },
+    {
+      "id": "p0b1",
+      "nombre": "HDD 2TB",
+      "marca": "Seagate",
+      "precio": 54.99,
+      "stock": 18,
+      "categoriaId": "04bf"
+    },
+    {
+      "id": "3972",
+      "nombre": "teclado mecanico",
+      "marca": "logitech",
+      "precio": 60,
+      "stock": 2,
+      "categoriaId": "091e",
+      "imagenUrl": "https://apizd.zonadigitalsv.com/storage/productos/DDzdhbYcmMHPNBaoQjcrVY27XeTEXZpBtULiytcb.png"
+    }
+  ]
+}

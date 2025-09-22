@@ -231,29 +231,6 @@
     opacity: 0.7;
 }
 
-/* Buscador */
-.catalog-search {
-    margin-bottom: var(--space-xl);
-    max-width: 400px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.search-input {
-    width: 100%;
-    padding: var(--space-sm) var(--space-md);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: var(--radius-lg);
-    background: rgba(255, 255, 255, 0.05);
-    color: var(--color-text-primary);
-    font-size: var(--font-size-base);
-    text-align: center;
-}
-
-.search-input::placeholder {
-    color: var(--color-text-secondary);
-}
-
 /* Estados de carga y error */
 .loading,
 .no-movies {
@@ -303,12 +280,7 @@
         gap: var(--space-md);
     }
 
-    .catalog-search {
-        order: 1;
-    }
-
     .catalog-actions {
-        order: 2;
         justify-content: center;
     }
 

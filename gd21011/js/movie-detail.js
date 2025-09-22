@@ -141,19 +141,81 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Event listener para el botón de editar
+// Función para eliminar película
+async function deleteMovie(id) {
+    try {
+        const response = await fetch(`${API_BASE_URL}/movies/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        return true;
+    } catch (error) {
+        console.error('Error al eliminar la película:', error);
+        throw error;
+    }
+}
+
+// Función para confirmar y ejecutar eliminación
+async function handleDeleteMovie() {
+    const movieId = getUrlParameter('id');
+    const movieTitle = document.getElementById('movie-title').textContent;
+    
+    if (confirm(`¿Estás seguro de que quieres eliminar "${movieTitle}"?\n\nEsta acción no se puede deshacer.`)) {
+        try {
+            // Mostrar estado de carga
+            const deleteBtn = document.getElementById('delete-btn');
+            const originalText = deleteBtn.innerHTML;
+            deleteBtn.innerHTML = '⏳ Eliminando...';
+            deleteBtn.disabled = true;
+            
+            await deleteMovie(movieId);
+            
+            // Mostrar mensaje de éxito y redirigir
+            alert('Película eliminada correctamente');
+            window.location.href = 'catalog.html';
+            
+        } catch (error) {
+            // Restaurar botón y mostrar error
+            const deleteBtn = document.getElementById('delete-btn');
+            deleteBtn.innerHTML = '🗑️ Eliminar';
+            deleteBtn.disabled = false;
+            
+            alert('Error al eliminar la película. Por favor, inténtalo de nuevo.');
+            console.error('Error:', error);
+        }
+    }
+}
+
+// Función para navegar a página de edición
+function handleEditMovie() {
+    const movieId = getUrlParameter('id');
+    if (movieId) {
+        window.location.href = `edit-movie.html?id=${movieId}`;
+    }
+}
+
+// Event listeners actualizados
 document.addEventListener('DOMContentLoaded', () => {
+    // Event listener para el botón de editar
     const editBtn = document.getElementById('edit-btn');
     if (editBtn) {
-        editBtn.addEventListener('click', () => {
-            // Por el momento solo mostramos una alerta
-            alert('Funcionalidad de edición próximamente disponible');
-        });
+        editBtn.addEventListener('click', handleEditMovie);
     }
-});
-
-// Event listener para el botón de alquiler
-document.addEventListener('DOMContentLoaded', () => {
+    
+    // Event listener para el botón de eliminar
+    const deleteBtn = document.getElementById('delete-btn');
+    if (deleteBtn) {
+        deleteBtn.addEventListener('click', handleDeleteMovie);
+    }
+    
+    // Event listener para el botón de alquiler
     const rentBtn = document.getElementById('rent-btn');
     if (rentBtn) {
         rentBtn.addEventListener('click', () => {

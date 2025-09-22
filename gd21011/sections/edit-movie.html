@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Película - Peliculas a 2 coras</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/sections/add-movie.css">
+</head>
+
+<body>
+    <header>
+        <!-- La navegación se cargará aquí dinámicamente -->
+    </header>
+
+    <main>
+        <div class="add-movie-container">
+            <!-- Loading state -->
+            <div class="loading-state" id="loading-state">
+                <p>Cargando información de la película...</p>
+            </div>
+
+            <!-- Header -->
+            <div class="add-movie-header" id="edit-header" style="display: none;">
+                <button class="btn-back" onclick="history.back()">
+                    ← Volver a Detalle
+                </button>
+                <h1>Editar Película</h1>
+                <p>Modifica la información de la película</p>
+            </div>
+
+            <!-- Formulario -->
+            <form class="add-movie-form" id="edit-movie-form" style="display: none;">
+                <div class="form-grid">
+                    <!-- Información básica -->
+                    <div class="form-section">
+                        <h3 class="section-title">Información Básica</h3>
+
+                        <div class="form-group">
+                            <label for="title" class="form-label">Título de la película *</label>
+                            <input type="text" id="title" name="title" class="form-input" required>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="director" class="form-label">Director *</label>
+                                <input type="text" id="director" name="director" class="form-input" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="release_year" class="form-label">Año de estreno *</label>
+                                <input type="number" id="release_year" name="release_year" class="form-input" min="1900"
+                                    max="2030" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="genres" class="form-label">Géneros *</label>
+                            <input type="text" id="genres" name="genres" class="form-input" required
+                                placeholder="Drama, Acción, Thriller (separados por comas)">
+                            <small class="form-help">Separa los géneros con comas</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="synopsis" class="form-label">Sinopsis *</label>
+                            <textarea id="synopsis" name="synopsis" class="form-textarea" required rows="4"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Información de alquiler -->
+                    <div class="form-section">
+                        <h3 class="section-title">Información de Alquiler</h3>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="rental_price" class="form-label">Precio de alquiler *</label>
+                                <div class="input-with-prefix">
+                                    <span class="input-prefix">$</span>
+                                    <input type="number" id="rental_price" name="rental_price" class="form-input"
+                                        step="0.01" min="0" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="stock" class="form-label">Stock disponible *</label>
+                                <input type="number" id="stock" name="stock" class="form-input" min="0" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="poster_url" class="form-label">URL del poster</label>
+                            <input type="url" id="poster_url" name="poster_url" class="form-input">
+                            <small class="form-help">URL de la imagen del poster (opcional)</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Botones de acción -->
+                <div class="form-actions">
+                    <button type="button" class="btn-cancel" onclick="history.back()">
+                        Cancelar
+                    </button>
+                    <button type="submit" class="btn-submit" id="submit-btn">
+                        <span class="btn-text">Guardar Cambios</span>
+                        <span class="btn-loading" style="display: none;">Guardando...</span>
+                    </button>
+                </div>
+            </form>
+
+            <!-- Mensaje de resultado -->
+            <div class="form-result" id="form-result" style="display: none;">
+                <div class="result-success" id="result-success" style="display: none;">
+                    <h3>¡Película actualizada exitosamente!</h3>
+                    <p>Los cambios han sido guardados correctamente.</p>
+                    <div class="result-actions">
+                        <a href="#" class="btn-primary" id="back-to-detail">Ver Película</a>
+                        <a href="catalog.html" class="btn-secondary">Ver Catálogo</a>
+                    </div>
+                </div>
+
+                <div class="result-error" id="result-error" style="display: none;">
+                    <h3>Error al actualizar la película</h3>
+                    <p id="error-message">Ha ocurrido un error. Intenta de nuevo.</p>
+                    <button type="button" class="btn-secondary" onclick="hideResult()">Intentar de nuevo</button>
+                </div>
+            </div>
+
+            <!-- Error state -->
+            <div class="error-state" id="error-state" style="display: none;">
+                <h2>Error al cargar la película</h2>
+                <p>No se pudo encontrar la información de esta película.</p>
+                <button class="btn-secondary" onclick="history.back()">
+                    Volver
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <footer></footer>
+    <script src="../js/nav-loader.js"></script>
+    <script src="../js/app.js"></script>
+    <script src="../js/edit-movie.js"></script>
+</body>
+
+</html>

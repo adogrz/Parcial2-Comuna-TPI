@@ -1,11 +1,52 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <script src="js/head.js"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PC Store — Catálogo</title>
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/styles/styles.css">
+  <link rel="stylesheet" href="css/styles/catalogo.css">
+
+  <!-- Nav dinámico -->
+  <script src="js/nav.js" defer></script>
 </head>
 <body>
-  <h1>Catalogo</h1>
+  <!-- Nav -->
   <div id="nav-placeholder"></div>
-  <script src="js/nav.js"></script>
+
+  <!-- Encabezado -->
+  <header class="hero">
+    <div class="hero-inner">
+      <h1 class="hero-title">Catálogo</h1>
+      <p class="hero-sub">Explora nuestros productos y añádelos al carrito.</p>
+      <a class="btn" href="carrito.html">Ver carrito</a>
+    </div>
+  </header>
+
+  <!-- Contenido -->
+  <main class="wrap">
+    <section class="card table-card">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Imagen</th>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Marca</th>
+            <th class="price">Precio</th>
+            <th>Stock</th>
+            <th>Acción</th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <!-- Lógica -->
+  <script src="js/catalogo.js" defer></script>
 </body>
 </html>
+

@@ -1,14 +1,23 @@
-// head.js
-document.addEventListener("DOMContentLoaded", function () {
-  fetch("head.html")
-    .then(response => response.text())
-    .then(data => {
-      const head = document.head;
-      const temp = document.createElement("div");
-      temp.innerHTML = data;
+document.addEventListener('DOMContentLoaded', () => {
+  if (document.querySelector('link[data-app-style]')) return;
 
-      // Inserta cada hijo del fragmento en el <head>
-      Array.from(temp.children).forEach(el => head.appendChild(el));
-    });
+  const candidates = [
+    'css/styles/styles.css', // tu ubicación actual
+    'css/styles.css',
+    '/css/styles/styles.css',
+    '/css/styles.css'
+  ];
+
+  (function tryNext(i){
+    if (i >= candidates.length) return console.error('No se pudo cargar styles.css');
+    const href = candidates[i] + '?v=' + Date.now();
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = href;
+    link.setAttribute('data-app-style','styles');
+    link.onload = () => console.log('CSS cargado:', href);
+    link.onerror = () => { link.remove(); tryNext(i+1); };
+    document.head.appendChild(link);
+  })(0);
 });
 

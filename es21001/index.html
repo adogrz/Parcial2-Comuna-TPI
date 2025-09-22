@@ -1,12 +1,88 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <script src="js/head.js"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PC Store — Inicio</title>
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/styles/styles.css">
+  <link rel="stylesheet" href="css/styles/home.css">
+
+  <!-- Nav dinámico -->
+  <script src="js/nav.js" defer></script>
 </head>
 <body>
-  <h1>PC Store - Inicio</h1>
+  <!-- Nav -->
   <div id="nav-placeholder"></div>
-  <p>Accesorios y hardware para pc</p>
-  <script src="js/nav.js"></script>
+
+  <!-- HERO principal -->
+  <header class="hero hero-home">
+    <div class="hero-inner">
+      <!-- Logo (pon tu archivo en assets/img/logo.png o .jpg) -->
+      <img class="brand-logo" src="assets/img/logo.png" alt="PC Store" />
+
+      <div class="hero-copy">
+        <h1>¡Bienvenido a <span>PC Store</span>!</h1>
+        <p>Tu mejor opción en hardware y accesorios para PC.</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sección: GIF / carrusel horizontal (elige una de las dos opciones) -->
+  <main class="wrap">
+    <section class="card p-3">
+      <h2 class="mb-0">Lo más buscado</h2>
+      <p class="muted">Monitores • Teclados • Mouse • SSD • Audio • Laptops</p>
+	      <h2 class="mb-0">LA GPU DE NVIDIA DESCIFRA CONTRASEÑAS EN TIEMPO RÉCORD</h2>
+    <p class="muted">16 nov 2022</p>
+
+    <p>
+      Se descubre que la GPU GeForce 4090 de Nvidia es capaz de probar 200 mil millones de combinaciones
+      de contraseñas de ocho caracteres en solo 48 minutos en la modalidad de fuerza bruta, batiendo los
+      récords de descifrado de contraseñas.
+    </p>
+
+    <!-- GIF horizontal (pon tu archivo en assets/video/rtx4090.gif) -->
+    <div class="strip" style="margin-top:10px;">
+      <img src="assets/video/rtx4090.gif" alt="Animación de productos/RTX 4090" class="strip-img" />
+    </div>
+
+    <!-- Audio (pon tu archivo en assets/audio/rtx4090.mp3) -->
+    <div style="margin-top:12px;">
+      <audio controls src="assets/audio/rtx4090.mp3" style="width:100%"></audio>
+    </div>
+
+    <hr class="mt-3" style="border:none;border-top:1px solid #e5e7eb;">
+
+    <h3 class="mt-3">GPU GeForce 4090 de Nvidia</h3>
+
+    <p>
+      La nueva tarjeta gráfica RTX 4090 de NVIDIA, que salió apenas a la venta el pasado 12 de Octubre,
+      con 24 GB de memoria G6X, es lo suficientemente potente como para batir los récords de descifrado
+      de contraseñas, según mostró el experto en ciberseguridad Sam Croley, poniéndolo a prueba con una
+      herramienta de código abierto denominada HassCat V.6.2.6., que sirve para descifrar credenciales.
+    </p>
+
+    <p>
+      Croley, expresó a través de su Twit su asombro ante los resultados de una comparativa, donde la
+      tarjeta alcanzó una mejora de más de 2 veces con respecto a la tarjeta predecesora, la 3090,
+      en casi todos los algoritmos, alcanzando velocidades récord de 300GH/seg. y 200kh/seg.
+    </p>
+
+    <p>
+      “Si juntas ocho de ellas en un equipo de descifrado de contraseñas, por unos increíbles 13.000 dólares,
+      podrás descifrar una contraseña de ocho caracteres en tan solo 48 minutos” expresó Corley.
+    </p>
+
+    <p>
+      Lo que lleva a suponer que esto puede hacer que la GPU sea una inversión valiosa para los actores de amenazas,
+      que ahora pueden potenciar sus sistemas de intrusión a través de canales legítimos.
+    </p>
+    </section>
+  </main>
 </body>
 </html>
+
+
+

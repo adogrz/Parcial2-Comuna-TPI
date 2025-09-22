@@ -1,0 +1,50 @@
+/* ===== HERO de inicio ===== */
+.hero-home{
+  padding:32px 16px 28px;
+  color:#e6f3ff;
+  background:linear-gradient(180deg,#0f172a,#1f2937);
+  margin-bottom:0;
+}
+.hero-home .hero-inner{
+  max-width:1100px; margin:0 auto;
+  display:flex; align-items:center; gap:20px; flex-wrap:wrap;
+}
+.brand-logo{
+  width:120px; height:auto; object-fit:contain;
+  filter: drop-shadow(0 6px 16px rgba(0,0,0,.25));
+}
+.hero-copy h1{
+  margin:0 0 6px;
+  font-size:34px; font-weight:800; letter-spacing:.3px;
+}
+.hero-copy h1 span{ color:#38bdf8; }
+.hero-copy p{ margin:0 0 12px; color:#c8ddff; font-size:16px }
+.hero-actions{ display:flex; gap:10px; }
+
+/* ===== Sección GIF / carrusel ===== */
+.strip{
+  margin-top:10px; border-radius:14px; overflow:hidden;
+  border:1px solid #e5e7eb; background:#fff; box-shadow:var(--shadow);
+}
+.strip-img{ width:100%; height:auto; display:block }
+
+/* Carrusel CSS (opción B alternativa al GIF) */
+.marquee{
+  margin-top:10px; border-radius:14px; overflow:hidden;
+  border:1px solid #e5e7eb; background:#fff; box-shadow:var(--shadow);
+}
+.marquee .track{
+  display:flex; gap:0;
+  width:max-content;
+  animation: slide 25s linear infinite;
+}
+.marquee img{
+  width:300px; height:200px; object-fit:cover; display:block;
+}
+@keyframes slide{
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* Utilidades */
+.muted{ color:var(--muted); }

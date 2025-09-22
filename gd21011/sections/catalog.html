@@ -14,18 +14,34 @@
         <!-- La navegación se cargará aquí dinámicamente -->
     </header>
 
-    <main class="section">
-        <h1>Catálogo</h1>
-        <p>Explora nuestra amplia colección de películas disponibles para alquilar.</p>
+    <main>
+        <div class="catalog-header">
+            <h1>Catálogo</h1>
+            <p>Explora nuestra amplia colección de películas disponibles para alquilar.</p>
+        </div>
 
-        <!-- Aquí puedes agregar el contenido específico del catálogo -->
+        <!-- Contenido del catálogo -->
         <div class="catalog-container">
-            <p>Próximamente: Lista de películas disponibles</p>
+            <!-- Header con buscador y botón agregar -->
+            <div class="catalog-controls">
+                <!-- Botón para agregar película -->
+                <div class="catalog-actions">
+                    <a href="add-movie.html" class="btn-add-movie">
+                        ➕ Agregar Película
+                    </a>
+                </div>
+            </div>
+
+            <!-- Grid de películas -->
+            <div class="movies-grid" id="movies-grid">
+                <!-- Las películas se cargarán aquí dinámicamente -->
+            </div>
         </div>
     </main>
 
     <footer></footer>
     <script src="../js/nav-loader.js"></script>
+    <script src="../js/app.js"></script>
 </body>
 
 </html>

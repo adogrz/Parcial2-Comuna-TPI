@@ -3,87 +3,89 @@
   Centraliza todos los valores de diseño
 */
 
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Noto+Sans+Symbols+2&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
 :root {
-    /* === Color Scheme === */
-    color-scheme: light dark;
+  /* === Color Scheme === */
+  color-scheme: light dark;
 
-    /* === Color Palette === */
-    --color-bg-primary: oklch(14.5% 0 0);
-    --color-text-primary: #ffffff;
-    --color-text-secondary: rgba(255, 255, 255, 0.8);
+  /* === Color Palette === */
+  --color-bg-primary: oklch(14.5% 0 0);
+  --color-text-primary: #ffffff;
+  --color-text-secondary: rgba(255, 255, 255, 0.8);
+  /* === Accent Colors === */
+  --color-accent-primary: rgba(198, 119, 194, 0.5);
+  --color-accent-secondary: rgba(198, 119, 194, 0.7);
+  --color-accent-hover: rgba(255, 255, 255, 0.2);
+  --color-accent-gradient: radial-gradient(ellipse 80% 80% at 50% -20%,
+      rgba(198, 119, 194, 0.3),
+      transparent);
 
-    /* === Accent Colors === */
-    --color-accent-primary: rgba(198, 119, 194, 0.5);
-    --color-accent-hover: rgba(255, 255, 255, 0.2);
-    --color-accent-gradient: radial-gradient(ellipse 80% 80% at 50% -20%,
-            rgba(198, 119, 194, 0.3),
-            transparent);
+  /* === Typography === */
+  --font-family-primary: 'Geist', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  --font-family-headings: var(--font-family-primary);
 
-    /* === Typography === */
-    --font-family-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-        Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    --font-family-headings: var(--font-family-primary);
+  /* Font Sizes - Fluid Typography */
+  --font-size-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+  --font-size-sm: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
+  --font-size-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --font-size-lg: clamp(1.125rem, 1rem + 0.625vw, 1.375rem);
+  --font-size-xl: clamp(1.375rem, 1.2rem + 0.875vw, 1.75rem);
+  --font-size-2xl: clamp(1.75rem, 1.5rem + 1.25vw, 2.25rem);
+  --font-size-3xl: clamp(2.25rem, 2rem + 1.25vw, 3rem);
 
-    /* Font Sizes - Fluid Typography */
-    --font-size-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
-    --font-size-sm: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
-    --font-size-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
-    --font-size-lg: clamp(1.125rem, 1rem + 0.625vw, 1.375rem);
-    --font-size-xl: clamp(1.375rem, 1.2rem + 0.875vw, 1.75rem);
-    --font-size-2xl: clamp(1.75rem, 1.5rem + 1.25vw, 2.25rem);
-    --font-size-3xl: clamp(2.25rem, 2rem + 1.25vw, 3rem);
+  /* Font Weights */
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
 
-    /* Font Weights */
-    --font-weight-light: 300;
-    --font-weight-normal: 400;
-    --font-weight-medium: 500;
-    --font-weight-semibold: 600;
-    --font-weight-bold: 700;
+  /* Line Heights */
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.6;
 
-    /* Line Heights */
-    --line-height-tight: 1.2;
-    --line-height-normal: 1.5;
-    --line-height-relaxed: 1.6;
+  /* === Spacing Scale === */
+  --space-xs: clamp(0.25rem, 0.2rem + 0.25vw, 0.375rem);
+  --space-sm: clamp(0.5rem, 0.45rem + 0.25vw, 0.625rem);
+  --space-md: clamp(1rem, 0.9rem + 0.5vw, 1.25rem);
+  --space-lg: clamp(1.5rem, 1.3rem + 1vw, 2rem);
+  --space-xl: clamp(2rem, 1.7rem + 1.5vw, 3rem);
+  --space-2xl: clamp(3rem, 2.5rem + 2.5vw, 4.5rem);
 
-    /* === Spacing Scale === */
-    --space-xs: clamp(0.25rem, 0.2rem + 0.25vw, 0.375rem);
-    --space-sm: clamp(0.5rem, 0.45rem + 0.25vw, 0.625rem);
-    --space-md: clamp(1rem, 0.9rem + 0.5vw, 1.25rem);
-    --space-lg: clamp(1.5rem, 1.3rem + 1vw, 2rem);
-    --space-xl: clamp(2rem, 1.7rem + 1.5vw, 3rem);
-    --space-2xl: clamp(3rem, 2.5rem + 2.5vw, 4.5rem);
+  /* === Border Radius === */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 9999px;
 
-    /* === Border Radius === */
-    --radius-sm: 4px;
-    --radius-md: 8px;
-    --radius-lg: 12px;
-    --radius-xl: 16px;
-    --radius-full: 9999px;
+  /* === Shadows === */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 
-    /* === Shadows === */
-    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  /* === Transitions === */
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+  --transition-slow: 500ms ease;
 
-    /* === Transitions === */
-    --transition-fast: 150ms ease;
-    --transition-normal: 250ms ease;
-    --transition-slow: 500ms ease;
+  /* === Z-Index Scale === */
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
+  --z-toast: 1080;
 
-    /* === Z-Index Scale === */
-    --z-dropdown: 1000;
-    --z-sticky: 1020;
-    --z-fixed: 1030;
-    --z-modal-backdrop: 1040;
-    --z-modal: 1050;
-    --z-popover: 1060;
-    --z-tooltip: 1070;
-    --z-toast: 1080;
-
-    /* === Breakpoints (for reference in media queries) === */
-    --breakpoint-sm: 640px;
-    --breakpoint-md: 768px;
-    --breakpoint-lg: 1024px;
-    --breakpoint-xl: 1280px;
-    --breakpoint-2xl: 1536px;
+  /* === Breakpoints (for reference in media queries) === */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
 }

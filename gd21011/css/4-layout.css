@@ -12,8 +12,7 @@ body {
 /* === Header === */
 header {
     flex-shrink: 0;
-    padding: var(--space-md);
-    margin-top: var(--space-sm);
+    /* Removido padding y margin ya que ahora está en components.css */
 }
 
 /* === Main Content === */
@@ -21,6 +20,13 @@ main {
     flex: 1;
     display: flex;
     flex-direction: column;
+    padding-top: 100px;
+    /* Espacio suficiente para el header fijo */
+}
+
+/* === Section === */
+.section {
+    padding: var(--space-xl) var(--space-md);
 }
 
 /* === Footer === */
@@ -148,5 +154,24 @@ footer {
 
     .section {
         padding: var(--space-lg) var(--space-md);
+    }
+}
+
+/* === Responsive Layout === */
+@media (max-width: 768px) {
+    main {
+        padding-top: 90px;
+        /* Menos espacio en móvil */
+    }
+}
+
+@media (max-width: 640px) {
+    main {
+        padding-top: 110px;
+        /* Más espacio para navegación vertical */
+    }
+
+    .section {
+        padding: var(--space-md) var(--space-sm);
     }
 }

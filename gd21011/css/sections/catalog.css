@@ -1,104 +1,237 @@
 /* 
-  Catalog Section - Estilos específicos para el catálogo
+  Catalog Section - Estilos minimalistas estilo Netflix/Amazon con 4 columnas máximo
 */
 
 .catalog-container {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
-    padding: var(--space-md);
+    padding: 0 var(--space-md) var(--space-2xl);
+}
+
+/* Controles del catálogo */
+.catalog-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-xl);
+    gap: var(--space-md);
+    flex-wrap: wrap;
+}
+
+.catalog-actions {
+    display: flex;
+    gap: var(--space-sm);
+}
+
+.btn-add-movie {
+    background: var(--color-accent-primary);
+    color: white;
+    border: none;
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    white-space: nowrap;
+}
+
+.btn-add-movie:hover {
+    background: var(--color-accent-secondary);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(198, 119, 194, 0.3);
 }
 
 .catalog-header {
     text-align: center;
-    margin-bottom: var(--space-2xl);
+    padding: 1rem;
 }
 
-.catalog-filters {
-    display: flex;
-    gap: var(--space-sm);
-    margin-bottom: var(--space-xl);
-    flex-wrap: wrap;
-    justify-content: center;
+.catalog-header h1 {
+    margin-bottom: var(--space-md);
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
 }
 
-.catalog-filter {
-    padding: var(--space-xs) var(--space-md);
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: var(--radius-full);
-    color: var(--color-text-primary);
-    cursor: pointer;
-    transition: all var(--transition-fast);
+.catalog-header p {
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-lg);
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-.catalog-filter:hover,
-.catalog-filter.active {
-    background: var(--color-accent-primary);
-    border-color: var(--color-accent-primary);
-}
-
+/* Grid de películas - exactamente 4 columnas máximo */
 .movies-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: var(--space-lg);
     margin-bottom: var(--space-2xl);
 }
 
+/* Tarjetas de películas minimalistas */
 .movie-card {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: var(--radius-lg);
+    position: relative;
+    border-radius: 8px;
     overflow: hidden;
-    transition: all var(--transition-normal);
+    transition: all 0.3s ease;
     cursor: pointer;
+    aspect-ratio: 2/3;
 }
 
 .movie-card:hover {
-    transform: translateY(-4px);
-    border-color: var(--color-accent-primary);
-    box-shadow: var(--shadow-lg);
+    z-index: 10;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(198, 119, 194, 0.3);
 }
 
 .movie-card__poster {
-    aspect-ratio: 2/3;
-    background: linear-gradient(135deg, var(--color-accent-primary), transparent);
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background: linear-gradient(135deg, var(--color-accent-primary), #333);
+}
+
+.movie-card__poster img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Placeholder para películas sin poster */
+.movie-card__placeholder {
+    width: 100%;
+    height: 100%;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: var(--font-size-3xl);
-    color: var(--color-text-secondary);
+    background: linear-gradient(135deg, var(--color-accent-primary), #333);
+    color: white;
+    text-align: center;
+    padding: var(--space-sm);
 }
 
-.movie-card__content {
-    padding: var(--space-md);
-}
-
-.movie-card__title {
-    font-size: var(--font-size-lg);
-    font-weight: var(--font-weight-semibold);
-    margin-bottom: var(--space-xs);
-}
-
-.movie-card__genre {
-    font-size: var(--font-size-sm);
-    color: var(--color-text-secondary);
+.movie-icon {
+    font-size: 3rem;
     margin-bottom: var(--space-sm);
 }
 
-.movie-card__year {
+.movie-title-fallback {
     font-size: var(--font-size-sm);
-    color: var(--color-text-secondary);
+    font-weight: var(--font-weight-semibold);
+    line-height: 1.2;
 }
 
-.movie-card__actions {
-    padding: var(--space-sm) var(--space-md);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+/* Overlay optimizado para mejor UX */
+.movie-card__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(0deg,
+            rgba(0, 0, 0, 0.95) 0%,
+            rgba(0, 0, 0, 0.7) 40%,
+            rgba(0, 0, 0, 0.3) 70%,
+            transparent 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
     display: flex;
-    gap: var(--space-sm);
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: var(--space-sm);
 }
 
-/* Search */
+.movie-card:hover .movie-card__overlay {
+    opacity: 1;
+}
+
+.movie-card__info {
+    color: white;
+    transform: translateY(10px);
+    transition: transform 0.3s ease;
+    text-align: left;
+}
+
+.movie-card:hover .movie-card__info {
+    transform: translateY(0);
+}
+
+/* Título y año en la misma línea */
+.movie-card__title-year {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--space-xs);
+    gap: var(--space-xs);
+}
+
+.movie-card__title {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-bold);
+    line-height: 1.2;
+    margin: 0;
+    flex: 1;
+    /* Truncar texto si es muy largo */
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    line-clamp: 2;
+}
+
+.movie-card__year {
+    font-size: var(--font-size-xs);
+    color: rgba(255, 255, 255, 0.9);
+    white-space: nowrap;
+    font-weight: var(--font-weight-medium);
+}
+
+/* Géneros en una sola línea */
+.movie-card__genre {
+    font-size: var(--font-size-xs);
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: var(--space-sm);
+    margin: 0 0 var(--space-sm) 0;
+    /* Truncar géneros si son muy largos */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.3;
+}
+
+.btn-rent {
+    background: var(--color-accent-primary);
+    color: white;
+    border: none;
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: 6px;
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: 100%;
+    margin-top: var(--space-xs);
+}
+
+.btn-rent:hover:not(.btn-disabled) {
+    background: var(--color-accent-secondary);
+    transform: translateY(-1px);
+}
+
+.btn-disabled {
+    background: rgba(255, 255, 255, 0.3);
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Buscador */
 .catalog-search {
     margin-bottom: var(--space-xl);
     max-width: 400px;
@@ -121,16 +254,100 @@
     color: var(--color-text-secondary);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+/* Estados de carga y error */
+.loading,
+.no-movies {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: var(--space-2xl);
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-lg);
+}
+
+.error-message {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: var(--space-2xl);
+    color: var(--color-text-secondary);
+}
+
+.error-message p {
+    margin-bottom: var(--space-md);
+    font-size: var(--font-size-lg);
+}
+
+/* Responsive - 4 columnas máximo, 2 en móvil */
+@media (max-width: 1200px) {
     .movies-grid {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--space-md);
+    }
+}
+
+@media (max-width: 768px) {
+    .catalog-header {
+        padding: var(--space-lg) var(--space-sm) var(--space-md);
+    }
+
+    .catalog-header h1 {
+        font-size: var(--font-size-2xl);
+    }
+
+    .catalog-header p {
+        font-size: var(--font-size-base);
+    }
+
+    .catalog-controls {
+        flex-direction: column;
+        align-items: stretch;
         gap: var(--space-md);
     }
 
-    .catalog-filters {
-        justify-content: flex-start;
-        overflow-x: auto;
-        padding-bottom: var(--space-xs);
+    .catalog-search {
+        order: 1;
+    }
+
+    .catalog-actions {
+        order: 2;
+        justify-content: center;
+    }
+
+    .movies-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-sm);
+    }
+
+    .catalog-container {
+        padding: 0 var(--space-sm) var(--space-xl);
+    }
+
+    .movie-card__overlay {
+        padding: var(--space-xs);
+    }
+
+    .movie-card__title {
+        font-size: var(--font-size-xs);
+    }
+
+    .movie-card__year {
+        font-size: var(--font-size-xs);
+    }
+
+    .movie-card__genre {
+        font-size: var(--font-size-xs);
+    }
+}
+
+@media (max-width: 480px) {
+    .catalog-header {
+        padding: var(--space-md) var(--space-sm);
+    }
+
+    .catalog-header h1 {
+        font-size: var(--font-size-xl);
+    }
+
+    .movies-grid {
+        gap: var(--space-xs);
     }
 }

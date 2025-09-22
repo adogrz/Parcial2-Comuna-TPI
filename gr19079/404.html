@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>404 — No encontrado</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="css/estilos.css">
+  <style>
+    .center { min-height: 70dvh; display:grid; place-items:center; text-align:center }
+    .big   { font-size: clamp(48px, 10vw, 120px); margin: 0; }
+  </style>
+</head>
+<body>
+  <div class="center">
+    <div>
+      <h1 class="big">404</h1>
+      <p>Ups, la página que buscas no existe.</p>
+      <p>Te llevamos al inicio en <span id="secs">10</span>…</p>
+      <p><a class="button" href="index.html">Ir ahora</a></p>
+    </div>
+  </div>
+
+  <script>
+    let s = 10, span = document.getElementById('secs');
+    const t = setInterval(()=>{
+      s--; span.textContent = s;
+      if(s<=0){ clearInterval(t); location.href = 'index.html'; }
+    }, 1000);
+  </script>
+</body>
+</html>

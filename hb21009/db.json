@@ -1,0 +1,13 @@
+{
+  "productos": [
+    { "id": 1, "nombre": "Detergente líquido", "precio": 3.50, "categoria": "Limpieza general" },
+    { "id": 2, "nombre": "Jabón en polvo", "precio": 4.20, "categoria": "Ropa" },
+    { "id": 3, "nombre": "Cloro", "precio": 2.00, "categoria": "Desinfectante" }
+  ],
+  "categorias": [
+    { "id": 1, "nombre": "Limpieza general" },
+    { "id": 2, "nombre": "Ropa" },
+    { "id": 3, "nombre": "Desinfectante" }
+  ],
+  "carrito": []
+}

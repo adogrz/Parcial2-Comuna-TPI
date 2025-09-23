@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rentar - Peliculas a 2 coras</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/sections/rent.css">
+</head>
+
+<body class="rent-page">
+    <header>
+        <!-- La navegación se cargará aquí dinámicamente -->
+    </header>
+
+    <main class="section">
+        <div class="rent-header">
+            <h1>Rentar una Película</h1>
+            <p>Selecciona una película, un cliente y las fechas para registrar un nuevo alquiler.</p>
+        </div>
+
+        <div class="rent-container">
+            <div id="loading-message">Cargando datos del formulario...</div>
+            
+            <form id="rent-form" style="display: none;">
+                <div class="form-group">
+                    <label for="movie-select">Película Disponible</label>
+                    <select id="movie-select" name="movie-select" required></select>
+                </div>
+
+                <div class="form-group">
+                    <label for="client-select">Cliente</label>
+                    <select id="client-select" name="client-select" required></select>
+                </div>
+
+                <div class="form-group">
+                    <label for="rental-date">Fecha de Alquiler</label>
+                    <input type="date" id="rental-date" name="rental-date" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="return-date">Fecha de Devolución</label>
+                    <input type="date" id="return-date" name="return-date" required>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary">Rentar Película</button>
+                </div>
+            </form>
+
+            <div id="form-result" class="form-result" style="display: none;"></div>
+        </div>
+    </main>
+
+    <footer></footer>
+    <script src="../js/nav-loader.js"></script>
+    <script src="../js/rent.js"></script>
+</body>
+
+</html>

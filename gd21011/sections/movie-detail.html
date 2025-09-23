@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle de Película - Peliculas a 2 coras</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/sections/movie-detail.css">
+</head>
+
+<body>
+    <header>
+        <!-- La navegación se cargará aquí dinámicamente -->
+    </header>
+
+    <main>
+        <div class="movie-detail-container">
+            <!-- Loading state -->
+            <div class="loading-state" id="loading-state">
+                <p>Cargando película...</p>
+            </div>
+
+            <!-- Movie detail content -->
+            <div class="movie-detail" id="movie-detail" style="display: none;">
+                <!-- Back button -->
+                <div class="movie-detail__header">
+                    <button class="btn-back" onclick="history.back()">
+                        ← Volver al Catálogo
+                    </button>
+                </div>
+
+                <!-- Main content -->
+                <div class="movie-detail__content">
+                    <!-- Poster -->
+                    <div class="movie-detail__poster">
+                        <img id="movie-poster" alt="Poster de la película" />
+                        <div class="movie-detail__poster-placeholder" id="poster-placeholder" style="display: none;">
+                            <span class="movie-icon">🎬</span>
+                        </div>
+                    </div>
+
+                    <!-- Information -->
+                    <div class="movie-detail__info">
+                        <h1 class="movie-detail__title" id="movie-title"></h1>
+
+                        <div class="movie-detail__meta">
+                            <span class="movie-detail__year" id="movie-year"></span>
+                            <span class="movie-detail__director" id="movie-director"></span>
+                        </div>
+
+                        <div class="movie-detail__genres" id="movie-genres"></div>
+
+                        <div class="movie-detail__synopsis">
+                            <h3>Sinopsis</h3>
+                            <p id="movie-synopsis"></p>
+                        </div>
+
+                        <div class="movie-detail__rental-info">
+                            <div class="rental-price">
+                                <span class="label">Precio de alquiler:</span>
+                                <span class="price" id="movie-price">$0.00</span>
+                            </div>
+                            <div class="rental-stock">
+                                <span class="label">Stock disponible:</span>
+                                <span class="stock" id="movie-stock">0</span>
+                            </div>
+                        </div>
+
+                        <!-- Action buttons -->
+                        <div class="movie-detail__actions">
+                            <button class="btn-rent-main" id="rent-btn">
+                                <span id="rent-btn-text">Alquilar Película</span>
+                            </button>
+                            <div class="admin-actions">
+                                <button class="btn-edit" id="edit-btn">
+                                    ✏️ Editar
+                                </button>
+                                <button class="btn-delete" id="delete-btn">
+                                    🗑️ Eliminar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Error state -->
+            <div class="error-state" id="error-state" style="display: none;">
+                <h2>Error al cargar la película</h2>
+                <p>No se pudo encontrar la información de esta película.</p>
+                <button class="btn-secondary" onclick="history.back()">
+                    Volver al Catálogo
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <footer></footer>
+    <script src="../js/nav-loader.js"></script>
+    <script src="../js/app.js"></script>
+    <script src="../js/movie-detail.js"></script>
+</body>
+
+</html>

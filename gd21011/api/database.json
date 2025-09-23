@@ -1,0 +1,207 @@
+{
+  "movies": [
+    {
+      "id": "1",
+      "title": "Oppenheimer",
+      "director": "Christopher Nolan",
+      "genres": [
+        "Drama",
+        "Historia",
+        "Biográfica"
+      ],
+      "release_year": 2023,
+      "synopsis": "Una biografía del físico J. Robert Oppenheimer y su papel en el desarrollo de la bomba atómica durante la Segunda Guerra Mundial.",
+      "poster_url": "https://www.hollywoodreporter.com/wp-content/uploads/2022/07/Oppenheimer-Movie-Poster-Universal-Publicity-EMBED-2022-.jpg?w=1000",
+      "stock": 6,
+      "rental_price": 5.49
+    },
+    {
+      "id": "89sd",
+      "title": "SuperBad",
+      "director": "Greg Mottola",
+      "genres": [
+        "Comedia",
+        "Juvenil"
+      ],
+      "release_year": 2007,
+      "synopsis": "Dos amigos inseparables en su último año de secundaria intentan disfrutar al máximo antes de ir a la universidad, enfrentándose a situaciones cómicas y embarazosas.",
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BNjk0MzdlZGEtNTRkOC00ZDRiLWJkYjAtMzUzYTRiNzk1YTViXkEyXkFqcGc@._V1_.jpg",
+      "stock": 5,
+      "rental_price": 3.99
+    },
+    {
+      "id": "2",
+      "title": "El Viaje de Chihiro",
+      "director": "Hayao Miyazaki",
+      "genres": [
+        "Animación",
+        "Fantasía",
+        "Aventura"
+      ],
+      "release_year": 2001,
+      "synopsis": "Una joven llamada Chihiro se encuentra en un mundo mágico y debe encontrar la manera de salvar a sus padres y regresar a casa.",
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BM2E2YzcwMTQtNWRlMC00ZGZlLWJhZTEtMDU4ZGIzMWI0NzJmXkEyXkFqcGc@._V1_.jpg",
+      "stock": 0,
+      "rental_price": 3.99
+    },
+    {
+      "id": "3",
+      "title": "Bastardos sin gloria",
+      "director": "Quentin Tarantino",
+      "genre": [
+        "Guerra",
+        "Drama",
+        "Aventura"
+      ],
+      "release_year": 2009,
+      "synopsis": "En la Francia ocupada por los nazis durante la Segunda Guerra Mundial, un grupo de soldados judíos estadounidenses conocidos como los 'Bastardos' llevan a cabo una misión para asesinar a altos oficiales nazis.",
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BMmIzYzZhM2QtZTY5Zi00MGNhLTg3YjgtNzkxOWEyNGE4NzFlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+      "stock": 5,
+      "rental_price": 4.49
+    },
+    {
+      "id": "4",
+      "title": "El joven manos de tijera",
+      "director": "Tim Burton",
+      "genres": [
+        "Fantasía",
+        "Romance",
+        "Drama"
+      ],
+      "release_year": 1990,
+      "synopsis": "Un joven creado por un inventor, que tiene tijeras en lugar de manos, es llevado a vivir a un suburbio donde enfrenta la incomprensión y el rechazo de la sociedad.",
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BOTkzMjliNjgtNGE0MC00MTM4LWI3ZWQtZTI4OWEwNDQ5MTI1XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+      "stock": 4,
+      "rental_price": 3.49
+    },
+    {
+      "id": "5",
+      "title": "La La Land",
+      "director": "Damien Chazelle",
+      "genres": [
+        "Musical",
+        "Romance",
+        "Drama"
+      ],
+      "release_year": 2016,
+      "synopsis": "Una aspirante a actriz y un pianista de jazz luchan por mantener su relación mientras persiguen sus sueños en Los Ángeles.",
+      "poster_url": "https://m.media-amazon.com/images/I/71-u32-oOaL._UF894,1000_QL80_.jpg",
+      "stock": 6,
+      "rental_price": 4.99
+    },
+    {
+      "id": "6",
+      "title": "Parasite",
+      "director": "Bong Joon-ho",
+      "genres": [
+        "Thriller",
+        "Drama",
+        "Comedia negra"
+      ],
+      "release_year": 2019,
+      "synopsis": "Una familia pobre se infiltra en la vida de una familia rica, lo que desencadena una serie de eventos inesperados y peligrosos.",
+      "poster_url": "https://assets.mubicdn.net/images/notebook/post_images/29833/images-w1400.jpg?1579571205",
+      "stock": 2,
+      "rental_price": 5.49
+    },
+    {
+      "id": "7",
+      "title": "Proyecto X",
+      "director": "Nima Nourizadeh",
+      "genres": [
+        "Comedia",
+        "Juvenil"
+      ],
+      "release_year": 2012,
+      "synopsis": "Tres amigos deciden organizar una fiesta épica para ganar popularidad, pero las cosas se salen de control rápidamente.",
+      "poster_url": "https://m.media-amazon.com/images/I/61b1O0XJibL._UF894,1000_QL80_.jpg",
+      "stock": 8,
+      "rental_price": 3.99
+    },
+    {
+      "id": "b5df",
+      "title": "El Padrino",
+      "director": "Francis Ford Coppola",
+      "release_year": 1972,
+      "genres": [
+        "Drama",
+        "Mafia"
+      ],
+      "synopsis": "Una adaptación ganadora del Premio de la Academia, de la novela de Mario Puzo acerca de la familia Corleone.",
+      "rental_price": 4,
+      "stock": 4,
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BZmNiNzM4MTctODI5YS00MzczLWE2MzktNzY4YmNjYjA5YmY1XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+    }
+  ],
+  "clients": [
+    {
+      "id": "1",
+      "name": "Juan Pérez",
+      "email": "juan.perez@example.com",
+      "phone": "7654-3210"
+    },
+    {
+      "id": "2",
+      "name": "María Vera",
+      "email": "maria.vera@example.com",
+      "phone": "6543-2109"
+    },
+    {
+      "id": "0e2f",
+      "name": "Pedro Garcia",
+      "email": "pedro@test.com",
+      "phone": "58635241"
+    }
+  ],
+  "rentals": [
+    {
+      "id": "1",
+      "movieId": "1",
+      "clientId": "2",
+      "rental_date": "2025-09-21",
+      "return_date": "2025-09-28"
+    },
+    {
+      "id": "2",
+      "movieId": "2",
+      "clientId": "1",
+      "rental_date": "2025-09-20",
+      "return_date": "2025-09-28"
+    },
+    {
+      "id": "80fc",
+      "movieId": "1",
+      "clientId": "1",
+      "rental_date": "2025-09-20",
+      "return_date": "2025-09-28"
+    },
+    {
+      "id": "bf35",
+      "movieId": "2",
+      "clientId": "1",
+      "rental_date": "2025-09-12",
+      "return_date": "2025-10-04"
+    },
+    {
+      "id": "86d7",
+      "movieId": "1",
+      "clientId": "0e2f",
+      "rental_date": "2025-09-23",
+      "return_date": "2025-10-11"
+    },
+    {
+      "id": "718c",
+      "movieId": "2",
+      "clientId": "2",
+      "rental_date": "2025-09-23",
+      "return_date": "2025-10-04"
+    },
+    {
+      "id": "6198",
+      "movieId": "2",
+      "clientId": "1",
+      "rental_date": "2025-09-23",
+      "return_date": "2025-09-27"
+    }
+  ]
+}

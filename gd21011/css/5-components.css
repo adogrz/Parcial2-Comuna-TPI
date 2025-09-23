@@ -1,0 +1,224 @@
+/* 
+  Components - Componentes reutilizables (navegación, botones, cards, etc.)
+*/
+
+/* === Navigation === */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: var(--space-md) var(--space-lg);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: var(--space-sm);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav li {
+    margin: 0;
+}
+
+nav a {
+    display: inline-block;
+    color: var(--color-text-primary);
+    text-decoration: none;
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-sm);
+    transition: background-color var(--transition-fast);
+    font-weight: var(--font-weight-medium);
+    white-space: nowrap;
+}
+
+nav a:hover {
+    background-color: var(--color-accent-hover);
+}
+
+nav a.active {
+    background-color: var(--color-accent-primary);
+    font-weight: var(--font-weight-semibold);
+}
+
+/* === Buttons === */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-xs);
+    padding: var(--space-sm) var(--space-md);
+    border: none;
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-medium);
+    text-decoration: none;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    user-select: none;
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btn--primary {
+    background-color: var(--color-accent-primary);
+    color: var(--color-text-primary);
+}
+
+.btn--primary:hover:not(:disabled) {
+    background-color: var(--color-accent-hover);
+    transform: translateY(-1px);
+}
+
+.btn--secondary {
+    background-color: transparent;
+    color: var(--color-text-primary);
+    border: 1px solid var(--color-accent-hover);
+}
+
+.btn--secondary:hover:not(:disabled) {
+    background-color: var(--color-accent-hover);
+}
+
+.btn--sm {
+    padding: var(--space-xs) var(--space-sm);
+    font-size: var(--font-size-sm);
+}
+
+.btn--lg {
+    padding: var(--space-md) var(--space-lg);
+    font-size: var(--font-size-lg);
+}
+
+/* === Cards === */
+.card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    backdrop-filter: blur(10px);
+    transition: all var(--transition-normal);
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: var(--shadow-lg);
+}
+
+.card__header {
+    margin-bottom: var(--space-md);
+}
+
+.card__title {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--space-sm);
+}
+
+.card__content {
+    margin-bottom: var(--space-md);
+}
+
+.card__footer {
+    margin-top: auto;
+    padding-top: var(--space-md);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* === Forms === */
+.form-group {
+    margin-bottom: var(--space-md);
+}
+
+.form-label {
+    display: block;
+    margin-bottom: var(--space-xs);
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+}
+
+.form-input,
+.form-textarea,
+.form-select {
+    width: 100%;
+    padding: var(--space-sm) var(--space-md);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-sm);
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--color-text-primary);
+    font-size: var(--font-size-base);
+    transition: border-color var(--transition-fast);
+}
+
+.form-input:focus,
+.form-textarea:focus,
+.form-select:focus {
+    outline: none;
+    border-color: var(--color-accent-primary);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+    color: var(--color-text-secondary);
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* === Loading States === */
+.loading {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.spinner {
+    width: 20px;
+    height: 20px;
+    border: 2px solid transparent;
+    border-top: 2px solid currentColor;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* === Responsive Navigation === */
+@media (max-width: 640px) {
+    header {
+        padding: var(--space-sm) var(--space-md);
+        min-height: 50px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-xs);
+    }
+
+    nav a {
+        padding: var(--space-xs) var(--space-sm);
+        font-size: var(--font-size-sm);
+    }
+}

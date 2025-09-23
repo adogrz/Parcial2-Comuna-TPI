@@ -1,0 +1,136 @@
+/* 
+  Base Styles - Tipografía y estilos fundamentales
+*/
+
+html {
+    font-size: 100%;
+    /* 16px base - importante para rem calculations */
+}
+
+body {
+    font-family: var(--font-family-primary);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-normal);
+    line-height: var(--line-height-normal);
+    color: var(--color-text-primary);
+    background-color: var(--color-bg-primary);
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Background gradient effect */
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: var(--color-accent-gradient);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* === Typography === */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-family-headings);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tight);
+    text-wrap: balance;
+    /* Better text wrapping for headings */
+    margin-bottom: var(--space-md);
+}
+
+h1 {
+    font-size: var(--font-size-3xl);
+}
+
+h2 {
+    font-size: var(--font-size-2xl);
+}
+
+h3 {
+    font-size: var(--font-size-xl);
+}
+
+h4 {
+    font-size: var(--font-size-lg);
+}
+
+h5 {
+    font-size: var(--font-size-base);
+}
+
+h6 {
+    font-size: var(--font-size-sm);
+}
+
+p {
+    margin-bottom: var(--space-md);
+    text-wrap: pretty;
+    /* Better text wrapping for paragraphs */
+    line-height: var(--line-height-relaxed);
+}
+
+/* Last child margin reset */
+:is(h1, h2, h3, h4, h5, h6, p):last-child {
+    margin-bottom: 0;
+}
+
+/* === Links === */
+a {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    transition: text-decoration-color var(--transition-fast);
+}
+
+a:hover,
+a:focus {
+    text-decoration-color: currentColor;
+}
+
+/* === Lists === */
+ul,
+ol {
+    padding-left: var(--space-lg);
+    margin-bottom: var(--space-md);
+}
+
+li {
+    margin-bottom: var(--space-xs);
+}
+
+/* === Focus States === */
+:focus {
+    outline: 2px solid var(--color-text-primary);
+    outline-offset: 2px;
+}
+
+/* === Selection === */
+::selection {
+    background-color: var(--color-accent-primary);
+    color: var(--color-text-primary);
+}
+
+/* === Scrollbar === */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-accent-primary);
+    border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-accent-hover);
+}

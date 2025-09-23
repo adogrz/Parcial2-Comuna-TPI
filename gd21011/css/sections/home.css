@@ -1,0 +1,59 @@
+/* 
+  Home Section - Estilos específicos para la página principal
+*/
+
+.home-hero {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.home-hero__title {
+    font-size: var(--font-size-3xl);
+    margin-bottom: var(--space-lg);
+    background: linear-gradient(45deg, #fff, rgba(198, 119, 194, 0.8));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.home-hero__description {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-secondary);
+    line-height: var(--line-height-relaxed);
+    margin-bottom: var(--space-xl);
+}
+
+.home-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-lg);
+    margin-top: var(--space-2xl);
+}
+
+.home-feature {
+    text-align: center;
+    padding: var(--space-lg);
+}
+
+.home-feature__icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto var(--space-md);
+    background: var(--color-accent-primary);
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-xl);
+}
+
+.home-feature__title {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--space-sm);
+}
+
+.home-feature__description {
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-sm);
+}

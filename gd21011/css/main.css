@@ -1,0 +1,14 @@
+/* 1. CSS Reset - Normaliza estilos del navegador */
+@import url('./1-reset.css');
+
+/* 2. Variables CSS - Design system tokens */
+@import url('./2-variables.css');
+
+/* 3. Estilos base - Tipografía y elementos básicos */
+@import url('./3-base.css');
+
+/* 4. Layout - Estructura global */
+@import url('./4-layout.css');
+
+/* 5. Componentes - Navegación, botones, cards, etc. */
+@import url('./5-components.css');

@@ -1,0 +1,362 @@
+/* 
+  Movie Detail Section - Estilos para la página de detalle de película
+*/
+
+.movie-detail-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--space-xl) var(--space-md);
+}
+
+/* Loading, Error States */
+.loading-state,
+.error-state {
+    text-align: center;
+    padding: var(--space-2xl);
+    color: var(--color-text-secondary);
+}
+
+.error-state h2 {
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-md);
+}
+
+/* Header with back button */
+.movie-detail__header {
+    margin-bottom: var(--space-xl);
+}
+
+.btn-back {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--color-text-primary);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-size: var(--font-size-sm);
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+}
+
+.btn-back:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: var(--color-accent-primary);
+}
+
+/* Main content layout */
+.movie-detail__content {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: var(--space-2xl);
+    align-items: start;
+}
+
+/* Poster */
+.movie-detail__poster {
+    position: relative;
+    aspect-ratio: 2/3;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.movie-detail__poster img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.movie-detail__poster-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--color-accent-primary), #333);
+    color: white;
+}
+
+.movie-detail__poster-placeholder .movie-icon {
+    font-size: 4rem;
+}
+
+/* Movie Information */
+.movie-detail__info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+}
+
+.movie-detail__title {
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-primary);
+    margin: 0;
+    line-height: var(--line-height-tight);
+}
+
+/* Meta information */
+.movie-detail__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    padding: var(--space-md) 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.movie-detail__year {
+    background: var(--color-accent-primary);
+    color: white;
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+}
+
+.movie-detail__director {
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-base);
+}
+
+.movie-detail__director::before {
+    content: "Dirigida por: ";
+    font-weight: var(--font-weight-medium);
+}
+
+/* Genres */
+.movie-detail__genres {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+}
+
+.genre-tag {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--color-text-secondary);
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-sm);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Synopsis */
+.movie-detail__synopsis h3 {
+    color: var(--color-text-primary);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--space-sm);
+}
+
+.movie-detail__synopsis p {
+    color: var(--color-text-secondary);
+    line-height: var(--line-height-relaxed);
+    font-size: var(--font-size-base);
+}
+
+/* Rental Information */
+.movie-detail__rental-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-md);
+    padding: var(--space-lg);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.rental-price,
+.rental-stock {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rental-price .label,
+.rental-stock .label {
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-sm);
+}
+
+.rental-price .price {
+    color: var(--color-accent-primary);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+}
+
+.rental-stock .stock {
+    color: var(--color-text-primary);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+}
+
+.rental-stock .stock.out-of-stock {
+    color: #ff6b6b;
+}
+
+/* Action Buttons */
+.movie-detail__actions {
+    display: flex;
+    gap: var(--space-md);
+    padding-top: var(--space-lg);
+    align-items: center;
+}
+
+.admin-actions {
+    display: flex;
+    gap: var(--space-sm);
+}
+
+.btn-rent-main {
+    flex: 1;
+    background: var(--color-accent-primary);
+    color: white;
+    border: none;
+    padding: var(--space-md) var(--space-lg);
+    border-radius: var(--radius-lg);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semibold);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-xs);
+}
+
+.btn-rent-main:hover:not(:disabled) {
+    background: var(--color-accent-secondary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(198, 119, 194, 0.3);
+}
+
+.btn-rent-main:disabled {
+    background: rgba(255, 255, 255, 0.3);
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.btn-edit {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--color-text-primary);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: var(--space-md) var(--space-lg);
+    border-radius: var(--radius-lg);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-medium);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.btn-edit:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: var(--color-accent-primary);
+}
+
+.btn-delete {
+    background: rgba(255, 107, 107, 0.1);
+    color: #ff6b6b;
+    border: 1px solid rgba(255, 107, 107, 0.3);
+    padding: var(--space-md) var(--space-lg);
+    border-radius: var(--radius-lg);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-medium);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.btn-delete:hover {
+    background: rgba(255, 107, 107, 0.2);
+    border-color: #ff6b6b;
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--color-text-primary);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-size: var(--font-size-base);
+    transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .movie-detail-container {
+        padding: var(--space-lg) var(--space-sm);
+    }
+
+    .movie-detail__content {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+        text-align: center;
+    }
+
+    .movie-detail__poster {
+        max-width: 250px;
+        margin: 0 auto;
+    }
+
+    .movie-detail__title {
+        font-size: var(--font-size-2xl);
+    }
+
+    .movie-detail__meta {
+        justify-content: center;
+    }
+
+    .movie-detail__genres {
+        justify-content: center;
+    }
+
+    .movie-detail__rental-info {
+        grid-template-columns: 1fr;
+        text-align: left;
+    }
+
+    .movie-detail__actions {
+        flex-direction: column;
+        gap: var(--space-md);
+    }
+
+    .admin-actions {
+        order: 2;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .btn-rent-main {
+        order: 1;
+    }
+}
+
+@media (max-width: 480px) {
+    .movie-detail__header {
+        margin-bottom: var(--space-lg);
+    }
+
+    .movie-detail__poster {
+        max-width: 200px;
+    }
+
+    .movie-detail__title {
+        font-size: var(--font-size-xl);
+    }
+
+    .btn-rent-main,
+    .btn-edit {
+        padding: var(--space-sm) var(--space-md);
+        font-size: var(--font-size-sm);
+    }
+}

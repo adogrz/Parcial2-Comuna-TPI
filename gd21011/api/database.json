@@ -12,7 +12,7 @@
       "release_year": 2023,
       "synopsis": "Una biografía del físico J. Robert Oppenheimer y su papel en el desarrollo de la bomba atómica durante la Segunda Guerra Mundial.",
       "poster_url": "https://www.hollywoodreporter.com/wp-content/uploads/2022/07/Oppenheimer-Movie-Poster-Universal-Publicity-EMBED-2022-.jpg?w=1000",
-      "stock": 7,
+      "stock": 6,
       "rental_price": 5.49
     },
     {
@@ -41,7 +41,7 @@
       "release_year": 2001,
       "synopsis": "Una joven llamada Chihiro se encuentra en un mundo mágico y debe encontrar la manera de salvar a sus padres y regresar a casa.",
       "poster_url": "https://m.media-amazon.com/images/M/MV5BM2E2YzcwMTQtNWRlMC00ZGZlLWJhZTEtMDU4ZGIzMWI0NzJmXkEyXkFqcGc@._V1_.jpg",
-      "stock": 3,
+      "stock": 0,
       "rental_price": 3.99
     },
     {
@@ -147,10 +147,10 @@
       "phone": "6543-2109"
     },
     {
-      "id": "3",
-      "name": "Carlos Gómez",
-      "email": "carlos.gomez@example.com",
-      "phone": "2543-1098"
+      "id": "0e2f",
+      "name": "Pedro Garcia",
+      "email": "pedro@test.com",
+      "phone": "58635241"
     }
   ],
   "rentals": [
@@ -174,6 +174,34 @@
       "clientId": "1",
       "rental_date": "2025-09-20",
       "return_date": "2025-09-28"
+    },
+    {
+      "id": "bf35",
+      "movieId": "2",
+      "clientId": "1",
+      "rental_date": "2025-09-12",
+      "return_date": "2025-10-04"
+    },
+    {
+      "id": "86d7",
+      "movieId": "1",
+      "clientId": "0e2f",
+      "rental_date": "2025-09-23",
+      "return_date": "2025-10-11"
+    },
+    {
+      "id": "718c",
+      "movieId": "2",
+      "clientId": "2",
+      "rental_date": "2025-09-23",
+      "return_date": "2025-10-04"
+    },
+    {
+      "id": "6198",
+      "movieId": "2",
+      "clientId": "1",
+      "rental_date": "2025-09-23",
+      "return_date": "2025-09-27"
     }
   ]
 }

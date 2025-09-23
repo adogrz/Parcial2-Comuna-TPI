@@ -1,15 +1,31 @@
-/* 
-  Rent Section - Estilos específicos para alquiler
-*/
+/* Fix for fixed header overlap */
+.rent-page main.section {
+    padding-top: 150px;
+}
+
+/* Rent Section Styles */
+
+.rent-header {
+    text-align: center;
+    margin-bottom: var(--space-xl);
+}
+
+.rent-header h1 {
+    font-size: var(--font-size-3xl);
+    margin-bottom: var(--space-xs);
+}
+
+.rent-header p {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+}
 
 .rent-container {
     width: 100%;
-    max-width: 800px;
+    max-width: 600px;
     margin: 0 auto;
-    padding: var(--space-md);
-}
-
-.rent-form {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: var(--radius-lg);
@@ -17,205 +33,90 @@
     backdrop-filter: blur(10px);
 }
 
-.rent-steps {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: var(--space-2xl);
-    position: relative;
-}
-
-.rent-steps::before {
-    content: '';
-    position: absolute;
-    top: 20px;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: rgba(255, 255, 255, 0.1);
-    z-index: 1;
-}
-
-.rent-step {
+#rent-form {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    position: relative;
-    z-index: 2;
-    flex: 1;
+    gap: var(--space-lg);
 }
 
-.rent-step__number {
-    width: 40px;
-    height: 40px;
-    border-radius: var(--radius-full);
-    background: rgba(255, 255, 255, 0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: var(--space-xs);
-    font-weight: var(--font-weight-semibold);
-    transition: all var(--transition-fast);
-}
-
-.rent-step.active .rent-step__number {
-    background: var(--color-accent-primary);
-}
-
-.rent-step.completed .rent-step__number {
-    background: #22c55e;
-}
-
-.rent-step__title {
-    font-size: var(--font-size-sm);
-    text-align: center;
-    color: var(--color-text-secondary);
-}
-
-.rent-step.active .rent-step__title {
-    color: var(--color-text-primary);
-}
-
-.rent-section {
-    display: none;
-}
-
-.rent-section.active {
+.form-group label {
     display: block;
-}
-
-.movie-selection {
-    margin-bottom: var(--space-lg);
-}
-
-.selected-movie {
-    display: flex;
-    gap: var(--space-md);
-    padding: var(--space-md);
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: var(--radius-md);
-    margin-bottom: var(--space-lg);
-}
-
-.selected-movie__poster {
-    width: 80px;
-    height: 120px;
-    background: var(--color-accent-primary);
-    border-radius: var(--radius-sm);
-    flex-shrink: 0;
-}
-
-.selected-movie__info {
-    flex: 1;
-}
-
-.selected-movie__title {
-    font-size: var(--font-size-lg);
-    margin-bottom: var(--space-xs);
-}
-
-.selected-movie__details {
-    font-size: var(--font-size-sm);
+    margin-bottom: var(--space-sm);
+    font-weight: var(--font-weight-medium);
     color: var(--color-text-secondary);
 }
 
-.rental-options {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: var(--space-md);
-    margin-bottom: var(--space-lg);
-}
-
-.rental-option {
-    padding: var(--space-md);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+.form-group select,
+.form-group input {
+    width: 100%;
+    padding: var(--space-sm) var(--space-md);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: var(--radius-md);
-    text-align: center;
-    cursor: pointer;
+    background: rgba(0, 0, 0, 0.2);
+    color: var(--color-text-primary);
+    font-size: var(--font-size-base);
     transition: all var(--transition-fast);
 }
 
-.rental-option:hover,
-.rental-option.selected {
-    border-color: var(--color-accent-primary);
-    background: rgba(198, 119, 194, 0.1);
+.form-group select:focus,
+.form-group input:focus {
+    outline: none;
+    border-color: var(--color-accent-secondary);
+    background: rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 0 3px rgba(198, 119, 194, 0.1);
 }
 
-.rental-option__period {
-    font-size: var(--font-size-lg);
-    font-weight: var(--font-weight-semibold);
-    margin-bottom: var(--space-xs);
-}
-
-.rental-option__price {
-    font-size: var(--font-size-2xl);
-    font-weight: var(--font-weight-bold);
-    color: var(--color-accent-primary);
-    margin-bottom: var(--space-xs);
-}
-
-.rental-option__description {
-    font-size: var(--font-size-sm);
-    color: var(--color-text-secondary);
-}
-
-.form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-md);
-}
-
-.payment-methods {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: var(--space-sm);
-    margin-bottom: var(--space-lg);
-}
-
-.payment-method {
-    aspect-ratio: 2/1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid rgba(255, 255, 255, 0.1);
-    border-radius: var(--radius-md);
-    cursor: pointer;
-    transition: all var(--transition-fast);
-    background: rgba(255, 255, 255, 0.02);
-}
-
-.payment-method:hover,
-.payment-method.selected {
-    border-color: var(--color-accent-primary);
+/* --- FIX FOR SELECT OPTIONS --- */
+.form-group select option {
+    background: var(--color-bg-primary);
+    color: var(--color-text-primary);
 }
 
 .form-actions {
     display: flex;
-    gap: var(--space-md);
     justify-content: flex-end;
-    margin-top: var(--space-xl);
+    margin-top: var(--space-md);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .rent-steps {
-        flex-direction: column;
-        gap: var(--space-md);
-    }
+/* Use the global button style and override if needed */
+.btn-primary {
+    background-color: var(--color-accent-primary);
+    color: var(--color-text-primary);
+    padding: var(--space-sm) var(--space-lg);
+    border-radius: var(--radius-md);
+    border: none;
+    font-weight: var(--font-weight-semibold);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+}
 
-    .rent-steps::before {
-        display: none;
-    }
+.btn-primary:hover:not(:disabled) {
+    background-color: var(--color-accent-secondary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
 
-    .form-row {
-        grid-template-columns: 1fr;
-    }
+.btn-primary:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
 
-    .selected-movie {
-        flex-direction: column;
-        text-align: center;
-    }
+.form-result {
+    margin-top: var(--space-lg);
+    padding: var(--space-md);
+    border-radius: var(--radius-md);
+    text-align: center;
+    font-weight: var(--font-weight-medium);
+}
 
-    .selected-movie__poster {
-        align-self: center;
-    }
+.form-result.success {
+    background-color: rgba(34, 197, 94, 0.15);
+    border: 1px solid rgba(34, 197, 94, 0.4);
+    color: #22c55e;
+}
+
+.form-result.error {
+    background-color: rgba(239, 68, 68, 0.15);
+    border: 1px solid rgba(239, 68, 68, 0.4);
+    color: #ef4444;
 }

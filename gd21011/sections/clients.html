@@ -9,23 +9,124 @@
     <link rel="stylesheet" href="../css/sections/clients.css">
 </head>
 
-<body>
+<body class="clients-page">
     <header>
         <!-- La navegación se cargará aquí dinámicamente -->
     </header>
 
     <main class="section">
-        <h1>Clientes</h1>
-        <p>Gestión de clientes registrados en nuestro sistema.</p>
+        <div class="clients-header">
+            <h1>Gestión de Clientes</h1>
+            <p>Administra los clientes registrados en el sistema de alquiler de películas.</p>
+        </div>
 
-        <!-- Aquí puedes agregar la gestión de clientes -->
         <div class="clients-container">
-            <p>Próximamente: Sistema de gestión de clientes</p>
+            <!-- Formulario de Cliente -->
+            <div class="client-form-section">
+                <form id="client-form" class="client-form">
+                    <div class="form-header">
+                        <h2 id="form-title">Agregar Nuevo Cliente</h2>
+                        <button type="button" id="cancel-edit-btn" class="btn-cancel" style="display: none;">
+                            ✕ Cancelar
+                        </button>
+                    </div>
+
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="name">Nombre Completo *</label>
+                            <input type="text" id="name" name="name" required placeholder="Ej: Juan Pérez">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required placeholder="Ej: juan@email.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Teléfono *</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="Ej: 7777-8888">
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" id="submit-btn" class="btn-primary">
+                            <span class="btn-text">
+                                <span id="submit-text">➕ Agregar Cliente</span>
+                            </span>
+                            <span class="btn-loading" style="display: none;">
+                                ⏳ Procesando...
+                            </span>
+                        </button>
+                    </div>
+
+                    <!-- Hidden field para el ID cuando se está editando -->
+                    <input type="hidden" id="client-id" name="id">
+                </form>
+
+                <!-- Resultado del formulario -->
+                <div id="form-result" class="form-result" style="display: none;">
+                    <div id="result-success" class="result-success" style="display: none;">
+                        <h3>¡Éxito!</h3>
+                        <p id="success-message">Cliente procesado correctamente.</p>
+                    </div>
+                    <div id="result-error" class="result-error" style="display: none;">
+                        <h3>Error</h3>
+                        <p id="error-message">Hubo un problema al procesar el cliente.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lista de Clientes -->
+            <div class="clients-list-section">
+                <div class="list-header">
+                    <h2>Clientes Registrados</h2>
+                    <div class="list-actions">
+                        <button id="edit-btn" class="btn-secondary" disabled>
+                            ✏️ Editar
+                        </button>
+                        <button id="delete-btn" class="btn-delete" disabled>
+                            🗑️ Eliminar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Loading state -->
+                <div id="loading-state" class="loading-state">
+                    <p>Cargando clientes...</p>
+                </div>
+
+                <!-- Lista de clientes -->
+                <div id="clients-table" class="clients-table" style="display: none;">
+                    <div class="table-header">
+                        <div class="header-cell">Nombre Completo</div>
+                        <div class="header-cell">Email</div>
+                        <div class="header-cell">Teléfono</div>
+                    </div>
+                    <div id="clients-list" class="table-body">
+                        <!-- Los clientes se cargarán aquí dinámicamente -->
+                    </div>
+                </div>
+
+                <!-- Estado sin clientes -->
+                <div id="no-clients" class="no-clients" style="display: none;">
+                    <p>No hay clientes registrados.</p>
+                </div>
+
+                <!-- Estado de error -->
+                <div id="error-state" class="error-state" style="display: none;">
+                    <p>Error al cargar los clientes.</p>
+                    <button class="btn-secondary" onclick="location.reload()">
+                        🔄 Reintentar
+                    </button>
+                </div>
+            </div>
         </div>
     </main>
 
     <footer></footer>
     <script src="../js/nav-loader.js"></script>
+    <script src="../js/app.js"></script>
+    <script src="../js/clients.js"></script>
 </body>
 
 </html>

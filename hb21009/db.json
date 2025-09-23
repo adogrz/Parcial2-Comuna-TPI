@@ -1,13 +1,88 @@
 {
-  "productos": [
-    { "id": 1, "nombre": "Detergente líquido", "precio": 3.50, "categoria": "Limpieza general" },
-    { "id": 2, "nombre": "Jabón en polvo", "precio": 4.20, "categoria": "Ropa" },
-    { "id": 3, "nombre": "Cloro", "precio": 2.00, "categoria": "Desinfectante" }
-  ],
   "categorias": [
-    { "id": 1, "nombre": "Limpieza general" },
-    { "id": 2, "nombre": "Ropa" },
-    { "id": 3, "nombre": "Desinfectante" }
+    {
+      "id": "1",
+      "nombre": "Limpieza general"
+    },
+    {
+      "id": "2",
+      "nombre": "Ropa y lavandería"
+    },
+    {
+      "id": "3",
+      "nombre": "Desinfección"
+    },
+    {
+      "id": "4",
+      "nombre": "Accesorios"
+    }
   ],
-  "carrito": []
+  "productos": [
+    {
+      "id": "1",
+      "nombre": "Detergente líquido Premium",
+      "precio": 4.3,
+      "categoriaId": "2",
+      "imagen": "assets/img/producto1.jpg",
+      "descripcion": "Para ropa de color y delicada"
+    },
+    {
+      "id": "2",
+      "nombre": "Jabón en polvo Ultra",
+      "precio": 3.9,
+      "descripcion": "Poder quitamanchas",
+      "imagen": "assets/img/producto2.jpg",
+      "categoriaId": 2
+    },
+    {
+      "id": "3",
+      "nombre": "Cloro concentrado",
+      "precio": 2.1,
+      "descripcion": "Desinfectante multiusos",
+      "imagen": "assets/img/producto3.jpg",
+      "categoriaId": 3
+    },
+    {
+      "id": "4",
+      "nombre": "Limpiavidrios con amoniaco",
+      "precio": 2.75,
+      "descripcion": "Brillo sin rayas",
+      "imagen": "assets/img/producto4.jpg",
+      "categoriaId": 1
+    },
+    {
+      "id": "5",
+      "nombre": "Desengrasante de cocina",
+      "precio": 3.5,
+      "descripcion": "Remueve grasa difícil",
+      "imagen": "assets/img/producto5.jpg",
+      "categoriaId": 1
+    },
+    {
+      "id": "6",
+      "nombre": "Desinfectante en spray",
+      "precio": 3.2,
+      "descripcion": "Elimina el 99.9% de bacterias",
+      "imagen": "assets/img/producto6.jpg",
+      "categoriaId": 3
+    },
+    {
+      "id": "7",
+      "nombre": "Fibra multiuso",
+      "precio": 0.9,
+      "descripcion": "No raya, alto rendimiento",
+      "imagen": "assets/img/producto7.jpg",
+      "categoriaId": 4
+    }
+  ],
+  "carrito": [
+    {
+      "id": "1",
+      "nombre": "Detergente líquido Premium",
+      "precio": 4.25,
+      "descripcion": "Para ropa de color y delicada",
+      "imagen": "assets/img/producto1.jpg",
+      "categoriaId": 2
+    }
+  ]
 }

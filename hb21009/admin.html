@@ -2,8 +2,9 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Administracion - The Clean Castle</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <title>Admin - The Clean Castle</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/partials.js"></script>
   <script src="js/include.js" defer></script>
   <script src="js/admin.js" defer></script>
 </head>
@@ -11,9 +12,34 @@
   <div data-include="header.html"></div>
 
   <main>
-    <h1>Panel de administración</h1>
-    <p>Aquí puedes gestionar productos y categorías.</p>
-    <div id="admin-panel"></div>
+    <h1>Panel de Administración</h1>
+
+    <section class="admin-grid">
+      <div class="card">
+        <h2>Categorías</h2>
+        <form id="form-categoria" class="form-grid">
+          <input type="hidden" id="cat-id">
+          <input type="text" id="cat-nombre" placeholder="Nombre de categoría" required>
+          <button type="submit" class="btn">Guardar</button>
+        </form>
+        <div id="lista-categorias" class="list"></div>
+      </div>
+
+      <div class="card">
+        <h2>Productos</h2>
+        <form id="form-producto" class="form-grid">
+          <input type="hidden" id="prod-id">
+          <input type="text" id="prod-nombre" placeholder="Nombre del producto" required>
+          <input type="number" id="prod-precio" placeholder="Precio" step="0.01" required>
+          <select id="prod-categoria" required></select>
+          <input type="text" id="prod-imagen" placeholder="URL o ruta de imagen (assets/img/...)">
+          <textarea id="prod-desc" placeholder="Descripción"></textarea>
+          <button type="submit" class="btn">Guardar</button>
+          <button type="button" id="prod-cancel" class="btn outline">Cancelar</button>
+        </form>
+        <div id="lista-productos" class="list"></div>
+      </div>
+    </section>
   </main>
 
   <div data-include="footer.html"></div>

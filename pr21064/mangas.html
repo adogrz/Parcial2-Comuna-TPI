@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administrar Mangas</title>
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="icon" type="image/x-icon" href="/img/logo.ico">
+  <style>
+  
+  </style>
+</head>
+<body>
+
+  <!-- Menú -->
+<nav>
+  <ul class="menu">
+    <li><a  href="index.html"><img src="img/inicio.png" alt=""> Inicio</a></li>
+    <li><a class="active" href="mangas.html"><img src="img/administrar.png" alt="">Administrar mangas</a></li>
+    <li><a href="catalogo.html"><img src="img/catalogar.png" alt="">Ver Catalogo</a></li>
+    <li><a href="pedidos.html"><img src="img/pedidos.png" alt=""> Mis Pedidos</a></li>
+    <li><a href="contacto.html"><img src="img/contacto.png" alt=""> Contacto</a></li>
+  </ul>
+</nav>
+
+  <header>
+    <h1>Administrar Catálogo de Mangas</h1>
+    <p>Agrega, modifica o elimina mangas de tu catálogo.</p>
+  </header>
+  <main>
+    <button id="btnAgregar">Agregar Nuevo Manga</button>
+    <table border="1" id="tablaMangas">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Título</th>
+          <th>Autor</th>
+          <th>Año</th>
+          <th>Imagen</th>
+          <th>Precio</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </main>
+
+  <!-- Modal formulario -->
+  <div id="modalForm">
+    <div class="modal-content">
+      <h2 id="formTitle">Agregar Manga</h2>
+      <form id="formManga">
+        <label>Título: <input type="text" name="titulo" required></label>
+        <label>Autor: <input type="text" name="autor"></label>
+        <label>Año: <input type="number" name="anio"></label>
+        <label>URL Imagen: <input type="url" name="imagen"></label>
+        <label>Precio: <input type="number" step="0.01" name="precio"></label>
+        <div style="text-align: right;">
+          <button type="submit">Guardar</button>
+          <button type="button" id="btnCerrar">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+<script src="js/admin.js"></script>
+</body>
+</html>

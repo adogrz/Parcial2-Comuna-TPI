@@ -1,0 +1,246 @@
+{
+  "mangas": [
+    {
+      "id": "1",
+      "titulo": "JoJo's Bizarre Adventure: Phantom Blood",
+      "autor": "Hirohiko Araki",
+      "anio": 1987,
+      "imagen": "https://upload.wikimedia.org/wikipedia/en/a/aa/JoJo_Part_1_Phantom_Blood.jpg",
+      "precio": 11.36
+    },
+    {
+      "id": "3",
+      "titulo": "JoJo's Bizarre Adventure: Stardust Crusaders",
+      "autor": "Hirohiko Araki",
+      "anio": 1989,
+      "imagen": "https://upload.wikimedia.org/wikipedia/en/f/f6/Jojo13.jpg",
+      "precio": 12.99
+    },
+    {
+      "id": "4",
+      "titulo": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
+      "autor": "Hirohiko Araki",
+      "anio": 1992,
+      "imagen": "https://upload.wikimedia.org/wikipedia/en/b/b6/Jojo36.jpg",
+      "precio": 12.99
+    },
+    {
+      "id": "5",
+      "titulo": "JoJo's Bizarre Adventure: Golden Wind",
+      "autor": "Hirohiko Araki",
+      "anio": 1995,
+      "imagen": "https://upload.wikimedia.org/wikipedia/en/e/e3/Jojo49.jpg",
+      "precio": 13.99
+    },
+    {
+      "id": "6",
+      "titulo": "JoJo's Bizarre Adventure: Stone Ocean",
+      "autor": "Hirohiko Araki",
+      "anio": 2000,
+      "imagen": "https://upload.wikimedia.org/wikipedia/en/8/89/Stone_Ocean.jpg",
+      "precio": 13.99
+    },
+    {
+      "id": "7",
+      "titulo": "JoJo's Bizarre Adventure: Steel Ball Run",
+      "autor": "Hirohiko Araki",
+      "anio": 2004,
+      "imagen": "https://upload.wikimedia.org/wikipedia/en/8/87/Steel_Ball_Run_1.jpg",
+      "precio": 14.99
+    },
+    {
+      "id": "8",
+      "titulo": "JoJo's Bizarre Adventure: JoJolion",
+      "autor": "Hirohiko Araki",
+      "anio": 2011,
+      "imagen": "https://static.jojowiki.com/images/thumb/9/97/latest/20240411231953/Volume_131.jpg/600px-Volume_131.jpg",
+      "precio": 14.99
+    },
+    {
+      "id": "9",
+      "titulo": "Berserk (Volumen 1)",
+      "autor": "Kentaro Miura",
+      "anio": 1990,
+      "imagen": "https://m.media-amazon.com/images/I/515Q8MEzmTL._SY445_SX342_FMwebp_.jpg",
+      "precio": 11.99
+    },
+    {
+      "id": "10",
+      "titulo": "Berserk (Volumen 2)",
+      "autor": "Kentaro Miura",
+      "anio": 1990,
+      "imagen": "https://m.media-amazon.com/images/I/51HZv1jjnIL._SY445_SX342_FMwebp_.jpg",
+      "precio": 11.99
+    },
+    {
+      "id": "11",
+      "titulo": "Berserk (Volumen 3)",
+      "autor": "Kentaro Miura",
+      "anio": 1991,
+      "imagen": "https://m.media-amazon.com/images/I/51kM0FjdqSL._SY445_SX342_FMwebp_.jpg",
+      "precio": 11.99
+    },
+    {
+      "id": "12",
+      "titulo": "Monster (Volumen 1)",
+      "autor": "Naoki Urasawa",
+      "anio": 1994,
+      "imagen": "https://m.media-amazon.com/images/I/5176EiZ3eyL._SY445_SX342_FMwebp_.jpg",
+      "precio": 10.99
+    },
+    {
+      "id": "13",
+      "titulo": "Monster (Volumen 2)",
+      "autor": "Naoki Urasawa",
+      "anio": 1994,
+      "imagen": "https://m.media-amazon.com/images/I/51+F2+IIRtL._SY445_SX342_FMwebp_.jpg",
+      "precio": 10.99
+    },
+    {
+      "id": "14",
+      "titulo": "Cowboy Bebop (Volumen 1)",
+      "autor": "Hajime Yatate / Cain Kuga",
+      "anio": 1998,
+      "imagen": "https://m.media-amazon.com/images/I/511T-cXiRxL._SY445_SX342_FMwebp_.jpg",
+      "precio": 9.49
+    },
+    {
+      "id": "15",
+      "titulo": "Cowboy Bebop (Volumen 2)",
+      "autor": "Hajime Yatate / Cain Kuga",
+      "anio": 1998,
+      "imagen": "https://m.media-amazon.com/images/I/51z0VobsviL._AC_UY327_FMwebp_QL65_.jpg",
+      "precio": 9.49
+    },
+    {
+      "id": "16",
+      "titulo": "Hajime no Ippo (Volumen 1)",
+      "autor": "George Morikawa",
+      "anio": 1989,
+      "imagen": "https://m.media-amazon.com/images/I/A1jabEOoe6L._AC_UY327_FMwebp_QL65_.jpg",
+      "precio": 8.99
+    },
+    {
+      "id": "17",
+      "titulo": "Hajime no Ippo (Volumen 2)",
+      "autor": "George Morikawa",
+      "anio": 1989,
+      "imagen": "https://m.media-amazon.com/images/I/510uTcuSXAL._SY445_SX342_FMwebp_.jpg",
+      "precio": 8.99
+    },
+    {
+      "id": "18",
+      "titulo": "Hajime no Ippo (Volumen 3)",
+      "autor": "George Morikawa",
+      "anio": 1990,
+      "imagen": "https://m.media-amazon.com/images/I/A1GXG1GUhlL._SY425_.jpg",
+      "precio": 8.99
+    },
+    {
+      "id": "19",
+      "titulo": "Neon Genesis Evangelion (Volumen 1)",
+      "autor": "Yoshiyuki Sadamoto",
+      "anio": 1994,
+      "imagen": "https://m.media-amazon.com/images/I/8107CDBxwRL._AC_UY327_FMwebp_QL65_.jpg",
+      "precio": 12.49
+    },
+    {
+      "id": "20",
+      "titulo": "Neon Genesis Evangelion (Volumen 2)",
+      "autor": "Yoshiyuki Sadamoto",
+      "anio": 1995,
+      "imagen": "https://m.media-amazon.com/images/I/51jlbmEtHlL._SY445_SX342_FMwebp_.jpg",
+      "precio": 12.49
+    },
+    {
+      "id": "21",
+      "titulo": "Vinland Saga (Volumen 1)",
+      "autor": "Makoto Yukimura",
+      "anio": 2005,
+      "imagen": "https://m.media-amazon.com/images/I/51stD1wi6AL._SY445_SX342_FMwebp_.jpg",
+      "precio": 13.49
+    },
+    {
+      "id": "22",
+      "titulo": "Vinland Saga (Volumen 2)",
+      "autor": "Makoto Yukimura",
+      "anio": 2005,
+      "imagen": "https://m.media-amazon.com/images/I/71Q9p9ycD0L._SY425_.jpg",
+      "precio": 13.49
+    },
+    {
+      "id": "23",
+      "titulo": "Vagabond (Volumen 1)",
+      "autor": "Takehiko Inoue",
+      "anio": 1998,
+      "imagen": "https://m.media-amazon.com/images/I/81jPkEYif0L._SY425_.jpg",
+      "precio": 14.49
+    },
+    {
+      "id": "24",
+      "titulo": "Vagabond (Volumen 2)",
+      "autor": "Takehiko Inoue",
+      "anio": 1998,
+      "imagen": "https://m.media-amazon.com/images/I/419MBjA1qyL._SY445_SX342_FMwebp_.jpg",
+      "precio": 14.49
+    },
+    {
+      "id": "25",
+      "titulo": "Prueba",
+      "autor": "Frank kafka",
+      "anio": 20255,
+      "imagen": "https://upload.wikimedia.org/wikipedia/en/a/aa/JoJo_Part_1_Phantom_Blood.jpg",
+      "precio": 20.5
+    },
+    {
+      "id": "26",
+      "titulo": "Dragon Ball",
+      "autor": "Akira Toriyama",
+      "anio": 1980,
+      "imagen": "https://upload.wikimedia.org/wikipedia/en/c/c9/DB_Tank%C5%8Dbon.png",
+      "precio": 200.2
+    }
+  ],
+  "pedidos": [
+    {
+      "id": "1",
+      "mangaId": "9",
+      "cantidad": 2,
+      "comentario": "Tapa dura",
+      "fecha": "22/9/2025",
+      "total": 23.98
+    },
+    {
+      "id": "2",
+      "mangaId": "19",
+      "cantidad": 1,
+      "comentario": "",
+      "fecha": "22/9/2025",
+      "total": 12.49
+    },
+    {
+      "id": "3",
+      "mangaId": "1",
+      "cantidad": 2,
+      "comentario": "",
+      "fecha": "22/9/2025",
+      "total": 21.98
+    },
+    {
+      "id": "4",
+      "mangaId": 3,
+      "cantidad": 1,
+      "comentario": "",
+      "fecha": "22/9/2025",
+      "total": 12.99
+    },
+    {
+      "id": "5",
+      "mangaId": "17",
+      "cantidad": 3,
+      "comentario": "Tratarlos adecuadamente",
+      "fecha": "22/9/2025",
+      "total": 26.97
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Error 403 - Acceso prohibido</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Comic Sans MS", cursive, sans-serif;
+      background: #FFF;
+      color: #222831;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 6rem;
+      margin: 0;
+      color: #222831;
+    }
+
+    h2 {
+      margin: 10px 0;
+    }
+
+    p {
+      max-width: 400px;
+      margin: 10px auto 20px;
+    }
+
+    .lock {
+      font-size: 10rem;
+      animation: shake 1s infinite;
+    }
+
+    @keyframes shake {
+      0% { transform: rotate(0deg); }
+      25% { transform: rotate(5deg); }
+      50% { transform: rotate(0deg); }
+      75% { transform: rotate(-5deg); }
+      100% { transform: rotate(0deg); }
+    }
+
+    a {
+      text-decoration: none;
+      background: #DFD0B8;
+      color: #222831;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    a:hover {
+      background: #222831;
+      color: #DFD0B8;
+    }
+  </style>
+</head>
+<body>
+  <div class="lock">🔒</div>
+  <h1>403</h1>
+  <h2>Acceso Prohibido</h2>
+  <p>Ups... parece que intentaste entrar a una zona secreta sin la contraseña mágica 🧙‍♂️</p>
+  <a href="index.html">Volver al inicio</a>
+</body>
+</html>

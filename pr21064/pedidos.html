@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>🛒 Mis Pedidos</title>
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="icon" type="image/x-icon" href="/img/logo.ico">
+</head>
+<body>
+ <nav>
+  <ul class="menu">
+    <li><a  href="index.html"><img src="img/inicio.png" alt=""> Inicio</a></li>
+    <li><a href="mangas.html"><img src="img/administrar.png" alt="">Administrar mangas</a></li>
+    <li><a href="catalogo.html"><img src="img/catalogar.png" alt="">Ver Catalogo</a></li>
+    <li><a class="active" href="pedidos.html"><img src="img/pedidos.png" alt=""> Mis Pedidos</a></li>
+    <li><a href="contacto.html"><img src="img/contacto.png" alt=""> Contacto</a></li>
+  </ul>
+</nav>
+
+  <header>
+    <h1>Administrar Pedidos</h1>
+    <p>Agrega, modifica o elimina tus pedidos.</p>
+  </header>
+
+  <main>
+    <button id="btnAgregar">Agregar Nuevo Pedido</button>
+    <table border="1" id="pedidosTable">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Manga</th>
+          <th>Cantidad</th>
+          <th>Comentario</th>
+          <th>Fecha</th>
+          <th>Total</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </main>
+
+  <!-- Modal formulario -->
+  <div id="modalForm">
+    <div class="modal-content">
+      <h2 id="formTitle">Agregar Pedido</h2>
+      <form id="pedidoForm">
+        <label>Manga:
+          <select id="mangaSelect" name="mangaId" required></select>
+        </label>
+        <label>Cantidad:
+          <input type="number" name="cantidad" min="1" value="1" required>
+        </label>
+        <label>Comentario:
+          <input type="text" name="comentario" placeholder="Opcional">
+        </label>
+        <div style="text-align: right;">
+          <button type="submit">Guardar</button>
+          <button type="button" id="btnCerrar">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/pedidos.js"></script>
+</body>
+</html>

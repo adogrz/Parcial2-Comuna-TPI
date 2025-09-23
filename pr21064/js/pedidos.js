@@ -11,7 +11,7 @@ let pedidos = [];
 let editPedidoId = null;
 
 // Cargar mangas para el select
-fetch("http://localhost:3000/mangas")
+fetch("http://172.27.102.202:3000/mangas")
   .then(res => res.json())
   .then(data => {
     mangas = data;
@@ -25,7 +25,7 @@ fetch("http://localhost:3000/mangas")
 
 // Cargar pedidos
 function cargarPedidos() {
-  fetch("http://localhost:3000/pedidos")
+  fetch("http://172.27.102.202:3000/pedidos")
     .then(res => res.json())
     .then(data => {
       pedidos = data;
@@ -56,7 +56,7 @@ function renderPedidos() {
     // Botón eliminar
     tr.querySelector(".eliminar").addEventListener("click", () => {
       if (confirm(`¿Deseas eliminar este pedido?`)) {
-        fetch(`http://localhost:3000/pedidos/${p.id}`, { method: "DELETE" })
+        fetch(`http://172.27.102.202:3000/pedidos/${p.id}`, { method: "DELETE" })
           .then(() => cargarPedidos());
       }
     });
@@ -89,12 +89,12 @@ pedidoForm.addEventListener("submit", async e => {
   e.preventDefault();
 
   // Calcular próximo ID
-  const res = await fetch("http://localhost:3000/pedidos");
+  const res = await fetch("http://172.27.102.202:3000/pedidos");
   const pedidosActuales = await res.json();
   const maxId = pedidosActuales.length ? Math.max(...pedidosActuales.map(p => parseInt(p.id))) : 0;
 
   //traer el manga y calcular el costo total
-  const resManga = await fetch(`http://localhost:3000/mangas/${pedidoForm.mangaId.value}`);
+  const resManga = await fetch(`http://172.27.102.202:3000/mangas/${pedidoForm.mangaId.value}`);
 const manga = await resManga.json();
 
 // Calcular precio total
@@ -110,8 +110,8 @@ const precioTotal = manga.precio * parseInt(pedidoForm.cantidad.value);
 
   const method = editPedidoId ? "PUT" : "POST";
   const url = editPedidoId 
-              ? `http://localhost:3000/pedidos/${editPedidoId}`
-              : "http://localhost:3000/pedidos";
+              ? `http://172.27.102.202:3000/pedidos/${editPedidoId}`
+              : "http://172.27.102.202:3000/pedidos";
 
   await fetch(url, {
     method,

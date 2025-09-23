@@ -8,7 +8,7 @@
     // Cargar mangas
     function cargarMangas() {
       tablaBody.innerHTML = "";
-      fetch("http://localhost:3000/mangas")
+      fetch("http://172.27.102.202:3000/mangas")
         .then(res => res.json())
         .then(mangas => {
           mangas.forEach(manga => {
@@ -30,7 +30,7 @@
             // Eliminar manga
             tr.querySelector(".eliminar").addEventListener("click", () => {
               if(confirm(`¿Desea eliminar "${manga.titulo}"?`)) {
-                fetch(`http://localhost:3000/mangas/${manga.id}`, { method: "DELETE" })
+                fetch(`http://172.27.102.202:3000/mangas/${manga.id}`, { method: "DELETE" })
                   .then(() => cargarMangas());
               }
             });
@@ -69,7 +69,7 @@ form.addEventListener("submit", async e => {
   e.preventDefault();
 
   // Obtener todos los mangas para calcular el próximo ID
-  const res = await fetch("http://localhost:3000/mangas");
+  const res = await fetch("http://172.27.102.202:3000/mangas");
   const mangas = await res.json();
   const maxId = mangas.length ? Math.max(...mangas.map(m => parseInt(m.id))) : 0;
 
@@ -84,8 +84,8 @@ form.addEventListener("submit", async e => {
 
   const method = editMangaId ? "PUT" : "POST";
   const url = editMangaId 
-              ? `http://localhost:3000/mangas/${editMangaId}` 
-              : "http://localhost:3000/mangas";
+              ? `http://172.27.102.202:3000/mangas/${editMangaId}` 
+              : "http://172.27.102.202:3000/mangas";
 
   await fetch(url, {
     method,

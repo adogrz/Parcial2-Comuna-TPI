@@ -2,7 +2,7 @@
     const catalogo = document.getElementById("catalogo");
 
     // Traer mangas desde JSON Server
-    fetch("http://localhost:3000/mangas")
+    fetch("http://172.27.102.202:3000/mangas")
       .then(res => res.json())
       .then(mangas => {
         mangas.forEach(manga => {
@@ -30,7 +30,7 @@ async function agregarPedido(mangaId, titulo, precio) {
 
   try {
     // 1. Obtener todos los pedidos existentes
-    const res = await fetch("http://localhost:3000/pedidos");
+    const res = await fetch("http://172.27.102.202:3000/pedidos");
     const pedidos = await res.json();
 
     // 2. Calcular el siguiente ID como string
@@ -39,7 +39,7 @@ async function agregarPedido(mangaId, titulo, precio) {
     //2.5 calculo de precio total
 
       //traer el manga y calcular el costo total
-  const resManga = await fetch(`http://localhost:3000/mangas/${mangaId}`);
+  const resManga = await fetch(`http://172.27.102.202:3000/mangas/${mangaId}`);
   const manga = await resManga.json();
 
 // Calcular precio total
@@ -55,7 +55,7 @@ const precioTotal = manga.precio * cantidad;
     };
 
     // 4. Guardar el pedido
-    const response = await fetch("http://localhost:3000/pedidos", {
+    const response = await fetch("http://172.27.102.202:3000/pedidos", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(pedido)

@@ -48,6 +48,11 @@ Cada integrante debe crear esta estructura en su máquina. Esta será la raíz d
 
 ````
 
+Nota: La págian 404.html ubicada en wwwn/404.html debe ser una página generica solo para tu servidor web.
+Ejemplo Práctico:
+- Cuando alguien visita https://www1.comuna.tpi/pagina-inventada, el servidor del Integrante 1 servirá el archivo /var/www/comuna.tpi/wwwn/404.html que el Integrante 1 diseñó.
+- Cuando alguien visita https://www2.comuna.tpi/otra-pagina-inventada, el servidor del Integrante 2 servirá el archivo /var/www/comuna.tpi/wwwn/404.html que el Integrante 2 diseñó.
+
 ### B. Flujo de Trabajo con Git
 Para mantener el código de todos actualizado:
 1.  **Antes de trabajar, siempre haz `git pull`** para descargar los últimos cambios.

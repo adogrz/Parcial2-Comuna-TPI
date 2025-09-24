@@ -37,8 +37,8 @@ Cada integrante debe crear esta estructura en su máquina. Esta será la raíz d
 ├── comuna.tpi/
 │   ├── wwwn/             \# Raíz para wwwn.comuna.tpi
 │   │   ├── 404.html
-│   │   ├── tu\_carnet/
-│   │   └── carnet\_compañeroX/
+│   │   ├── tu_carnet/
+│   │   └── carnet_compañero_n+1/
 │   ├── personal/           \# Raíz para tus sitios personales
 │   │   └── (código de tu sitio)
 │   └── certs/              \# Para guardar tu certificado SSL

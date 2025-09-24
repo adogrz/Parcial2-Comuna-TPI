@@ -23,12 +23,6 @@ Este paso es **crucial** para que puedas acceder a los sitios de tus compañeros
 ### 4. Verificar la Conexión
 Abre una terminal o CMD y ejecuta un `ping` al servidor del coordinador y a su dominio para confirmar que tienes conectividad y que el DNS funciona. Si ambos responden, ¡estás listo!
 
-¡Entendido\! Tienes razón, es bueno mantener esa estructura visual y la nota aclaratoria para que la guía sea lo más clara posible para tu equipo.
-
-He modificado la sección "Fase 2" de tu `README.md`, integrando el método de enlaces simbólicos y conservando la estructura de carpetas y tu nota sobre la página 404.
-
-Aquí tienes la porción de texto actualizada en formato raw markdown. Simplemente reemplaza la "Fase 2" completa de tu `README.md` con este bloque.
-
 -----
 
 ## Fase 2: Estructura y Sincronización (Método Profesional)

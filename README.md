@@ -23,42 +23,83 @@ Este paso es **crucial** para que puedas acceder a los sitios de tus compañeros
 ### 4. Verificar la Conexión
 Abre una terminal o CMD y ejecuta un `ping` al servidor del coordinador y a su dominio para confirmar que tienes conectividad y que el DNS funciona. Si ambos responden, ¡estás listo!
 
-## Fase 2: Estructura del Proyecto y Sincronización
+¡Entendido\! Tienes razón, es bueno mantener esa estructura visual y la nota aclaratoria para que la guía sea lo más clara posible para tu equipo.
 
-### A. Estructura de Carpetas en el Servidor
-Cada integrante debe crear esta estructura en su máquina. Esta será la raíz donde apuntará el servidor web.
+He modificado la sección "Fase 2" de tu `README.md`, integrando el método de enlaces simbólicos y conservando la estructura de carpetas y tu nota sobre la página 404.
 
-* **Linux:** `/var/www/`
-* **Windows:** `C:\www\`
+Aquí tienes la porción de texto actualizada en formato raw markdown. Simplemente reemplaza la "Fase 2" completa de tu `README.md` con este bloque.
 
-```
+-----
 
-/var/www/  (o C:\\www)
-├── comuna.tpi/
-│   ├── wwwn/             \# Raíz para wwwn.comuna.tpi
-│   │   ├── 404.html
-│   │   ├── tu_carnet/
-│   │   └── carnet_compañero_n+1/
-│   ├── personal/           \# Raíz para tus sitios personales
-│   │   └── (código de tu sitio)
-│   └── certs/              \# Para guardar tu certificado SSL
-│       ├── server.crt
-│       └── server.key
-└── Parcial2-Comuna-TPI/      \# El repositorio clonado de GitHub
+## Fase 2: Estructura y Sincronización (Método Profesional)
 
-````
+### A. Ubicación de Archivos y Estructura del Servidor
+Para una máxima flexibilidad, mantendremos el código fuente del proyecto separado del directorio que lee el servidor web.
 
-Nota: La págian 404.html ubicada en wwwn/404.html debe ser una página generica solo para tu servidor web.
-Ejemplo Práctico:
-- Cuando alguien visita https://www1.comuna.tpi/pagina-inventada, el servidor del Integrante 1 servirá el archivo /var/www/comuna.tpi/wwwn/404.html que el Integrante 1 diseñó.
-- Cuando alguien visita https://www2.comuna.tpi/otra-pagina-inventada, el servidor del Integrante 2 servirá el archivo /var/www/comuna.tpi/wwwn/404.html que el Integrante 2 diseñó.
+1.  **Repositorio Clonado (Tu área de trabajo):**
+    * Clona el repositorio en cualquier lugar que te sea cómodo para desarrollar.
+    * Ejemplo en Linux: `/home/tu_usuario/proyectos/Parcial2-Comuna-TPI/`
+    * Ejemplo en Windows: `C:\Users\TuUsuario\Documents\GitHub\Parcial2-Comuna-TPI\`
 
-### B. Flujo de Trabajo con Git
-Para mantener el código de todos actualizado:
-1.  **Antes de trabajar, siempre haz `git pull`** para descargar los últimos cambios.
-2.  **Trabaja únicamente en tu carpeta personal** dentro del repositorio.
-3.  **Al terminar, sube tus cambios** con `git add`, `git commit` y `git push`.
-4.  **Para actualizar los servidores,** puedes usar un script simple que haga `git pull` y copie los archivos a la estructura de `/var/www/`.
+2.  **Raíz del Servidor Web (Lo que ve el público):**
+    * Esta es la carpeta que tu servidor web (Apache/Nginx) utiliza. La estructura interna se creará con enlaces simbólicos.
+    * Linux: `/var/www/`
+    * Windows: `C:\www\`
+
+    **Estructura final que verá el servidor:**
+    ```
+    /var/www/comuna.tpi/
+    ├── wwwn/
+    │   ├── 404.html                <-- Archivo real
+    │   ├── tu_carnet/              <-- Enlace Simbólico
+    │   └── carnet_compañeroX/      <-- Enlace Simbólico
+    ├── personal/                   <-- Enlace Simbólico
+    └── certs/                      <-- Archivo real
+    ```
+
+**Nota sobre la página 404:** El archivo `404.html` ubicado en `/wwwn/` debe ser una página genérica creada por el administrador de cada servidor.
+*Ejemplo Práctico:*
+-   Cuando alguien visita `https://www1.comuna.tpi/pagina-inventada`, el servidor del **Integrante 1** servirá el archivo `/var/www/comuna.tpi/wwwn/404.html` que el **Integrante 1** diseñó.
+-   Cuando alguien visita `https://www2.comuna.tpi/otra-pagina-inventada`, el servidor del **Integrante 2** servirá el archivo `/var/www/comuna.tpi/wwwn/404.html` que el **Integrante 2** diseñó.
+
+### B. Flujo de Trabajo con Enlaces Simbólicos (La Conexión Mágica)
+Ahora conectaremos ambas ubicaciones. Los enlaces simbólicos harán que el servidor web lea los archivos directamente desde tu repositorio.
+
+**1. Preparación (Solo se hace una vez):**
+* Asegúrate de que tu servidor web tiene permisos para seguir enlaces simbólicos.
+    * **Apache:** La directiva `<Directory>` debe incluir `Options +FollowSymLinks`.
+    * **Nginx:** Funciona por defecto.
+
+**2. Creación de Enlaces Simbólicos:**
+Ejecuta los siguientes comandos en tu servidor. **Recuerda usar la ruta completa a tu repositorio clonado.**
+
+* **En Linux (usa `ln -s`):**
+    ```bash
+    # Enlace para tus sitios personales (carnet.comuna.tpi y tema.comuna.tpi)
+    sudo ln -s /ruta/completa/a/tu/repo/Parcial2-Comuna-TPI/tu_carnet /var/www/comuna.tpi/personal
+
+    # Enlaces para las copias de los sitios de compañeros en wwwn
+    # (Repetir para cada integrante, incluyéndote a ti)
+    sudo ln -s /ruta/completa/a/tu/repo/Parcial2-Comuna-TPI/carnet_compañero1 /var/www/comuna.tpi/wwwn/carnet_compañero1
+    ```
+
+* **En Windows (usa `mklink /D` en un CMD como Administrador):**
+    ```batch
+    :: Enlace para tus sitios personales
+    mklink /D "C:\www\comuna.tpi\personal" "C:\ruta\completa\a\tu\repo\Parcial2-Comuna-TPI\tu_carnet"
+
+    :: Enlaces para las copias de los sitios de compañeros en wwwn
+    :: (Repetir para cada integrante, incluyéndote a ti)
+    mklink /D "C:\www\comuna.tpi\wwwn\carnet_compañero1" "C:\ruta\completa\a\tu\repo\Parcial2-Comuna-TPI\carnet_compañero1"
+    ```
+
+### C. El Nuevo Flujo de Trabajo (¡Más Fácil!)
+1.  **Haz tus cambios** en tu carpeta del repositorio y súbelos a GitHub (`git push`).
+2.  Para actualizar el contenido en el servidor, simplemente navega a la carpeta de tu repositorio y ejecuta:
+    ```bash
+    git pull
+    ```
+**¡Eso es todo!** El sitio web se actualizará automáticamente. No necesitas copiar ningún archivo.
 
 ## Fase 3: Desarrollo y API con `json-server`
 

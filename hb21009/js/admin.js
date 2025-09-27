@@ -1,4 +1,5 @@
-const API = "http://localhost:3000";
+// js/admin.js
+import { API_URL } from './app.js';
 
 // ========= DOM =========
 const catList = document.getElementById("lista-categorias");
@@ -27,8 +28,6 @@ function resetProductoForm(){
   prodId.value = ""; prodNombre.value = ""; prodPrecio.value = "";
   prodCategoria.value = ""; prodImagen.value = ""; prodDesc.value = "";
 }
-
-// id confiable desde el click (botón o fila)
 function getRowIdFromEvent(e) {
   const btnId = e.target?.dataset?.id;
   if (btnId !== undefined) return String(btnId);
@@ -39,8 +38,8 @@ function getRowIdFromEvent(e) {
 // ========= LOAD =========
 async function loadData(){
   const [rc, rp] = await Promise.all([
-    fetch(`${API}/categorias`),
-    fetch(`${API}/productos`)
+    fetch(`${API_URL}/categorias`),
+    fetch(`${API_URL}/productos`)
   ]);
   if (!rc.ok || !rp.ok) throw new Error("HTTP error al cargar datos");
   categorias = await rc.json();
@@ -70,7 +69,6 @@ function renderCategorias(){
 }
 
 function renderProductos(){
-  // mapear por string para soportar ids numéricos y alfanuméricos
   const mapCat = Object.fromEntries(categorias.map(c => [String(c.id), c.nombre]));
   prodList.innerHTML = productos.map(p => `
     <div class="row" data-id="${String(p.id)}">
@@ -94,7 +92,6 @@ catList.addEventListener("click", async (e) => {
   const id = getRowIdFromEvent(e);
   if (!id) return;
 
-  // Editar
   if (e.target.classList.contains("js-cat-edit")) {
     const c = categorias.find(x => String(x.id) === id);
     if (!c) return;
@@ -102,17 +99,16 @@ catList.addEventListener("click", async (e) => {
     catNombre.value = c.nombre || "";
   }
 
-  // Eliminar
   if (e.target.classList.contains("js-cat-del")) {
     const usados = productos.some(p => String(p.categoriaId) === id);
     if (usados) { alert("No se puede eliminar: hay productos usando esta categoría."); return; }
     if (!confirm("¿Eliminar esta categoría?")) return;
-    await fetch(`${API}/categorias/${encodeURIComponent(id)}`, { method: "DELETE" });
+    await fetch(`${API_URL}/categorias/${encodeURIComponent(id)}`, { method: "DELETE" });
     await loadData();
   }
 });
 
-// Guardar categoría (crear/editar)
+// Guardar categoría
 catForm.addEventListener("submit", async (e) => {
   e.preventDefault();
   const nombre = (catNombre.value || "").trim();
@@ -120,13 +116,13 @@ catForm.addEventListener("submit", async (e) => {
 
   if (catId.value) {
     const payload = { id: String(catId.value), nombre };
-    await fetch(`${API}/categorias/${encodeURIComponent(payload.id)}`, {
+    await fetch(`${API_URL}/categorias/${encodeURIComponent(payload.id)}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload)
     });
   } else {
-    await fetch(`${API}/categorias`, {
+    await fetch(`${API_URL}/categorias`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ nombre })
@@ -141,7 +137,6 @@ prodList.addEventListener("click", async (e) => {
   const id = getRowIdFromEvent(e);
   if (!id) return;
 
-  // Editar
   if (e.target.classList.contains("js-prod-edit")) {
     const p = productos.find(x => String(x.id) === id);
     if (!p) return;
@@ -153,31 +148,27 @@ prodList.addEventListener("click", async (e) => {
     prodDesc.value = p.descripcion || "";
   }
 
-  // Eliminar
   if (e.target.classList.contains("js-prod-del")) {
     if (!confirm("¿Eliminar este producto?")) return;
-
     // limpiar del carrito si existiera
     try {
-      const rc = await fetch(`${API}/carrito`);
+      const rc = await fetch(`${API_URL}/carrito`);
       if (rc.ok) {
         const carrito = await rc.json();
         for (const it of carrito.filter(c => String(c.id) === id)) {
-          await fetch(`${API}/carrito/${encodeURIComponent(String(it.id))}`, { method: "DELETE" });
+          await fetch(`${API_URL}/carrito/${encodeURIComponent(String(it.id))}`, { method: "DELETE" });
         }
       }
     } catch (_) {}
-
-    await fetch(`${API}/productos/${encodeURIComponent(id)}`, { method: "DELETE" });
+    await fetch(`${API_URL}/productos/${encodeURIComponent(id)}`, { method: "DELETE" });
     await loadData();
   }
 });
 
-// Guardar producto (crear/editar) + normalización de imagen
+// Guardar producto
 prodForm.addEventListener("submit", async (e) => {
   e.preventDefault();
 
-  // Normalizar ruta de imagen:
   let img = (prodImagen.value || "").trim();
   if (img && !/^https?:\/\//i.test(img) && !/^assets\//i.test(img)) {
     img = `assets/img/${img}`;
@@ -186,7 +177,6 @@ prodForm.addEventListener("submit", async (e) => {
   const payload = {
     nombre: (prodNombre.value || "").trim(),
     precio: parseFloat(prodPrecio.value),
-    // guardar categoriaId como string para que coincida con las categorías
     categoriaId: String(prodCategoria.value),
     imagen: img,
     descripcion: (prodDesc.value || "").trim()
@@ -199,13 +189,13 @@ prodForm.addEventListener("submit", async (e) => {
 
   if (prodId.value) {
     const id = String(prodId.value);
-    await fetch(`${API}/productos/${encodeURIComponent(id)}`, {
+    await fetch(`${API_URL}/productos/${encodeURIComponent(id)}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ id, ...payload })
     });
   } else {
-    await fetch(`${API}/productos`, {
+    await fetch(`${API_URL}/productos`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload)
@@ -216,7 +206,6 @@ prodForm.addEventListener("submit", async (e) => {
   await loadData();
 });
 
-// Cancelar edición de producto
 prodCancel?.addEventListener("click", (e) => {
   e.preventDefault();
   resetProductoForm();

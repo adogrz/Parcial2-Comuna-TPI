@@ -6,22 +6,34 @@
   <link rel="stylesheet" href="css/style.css">
   <script src="js/partials.js"></script>
   <script src="js/include.js" defer></script>
+  <script type="module" src="js/app.js" defer></script>
 </head>
-<body>
+<body data-page="contacto">
   <div data-include="header.html"></div>
 
   <main>
     <h1>Contacto</h1>
     <p>¿Tienes dudas? Escríbenos.</p>
-    <form>
-      <label>Nombre:</label><br>
-      <input type="text" name="nombre"><br><br>
-      <label>Email:</label><br>
-      <input type="email" name="email"><br><br>
-      <label>Mensaje:</label><br>
-      <textarea name="mensaje"></textarea><br><br>
-      <button type="submit">Enviar</button>
+
+    <form id="formContacto" class="card" style="max-width:600px">
+      <label for="cNombre">Nombre</label>
+      <input id="cNombre" type="text" required>
+
+      <label for="cEmail">Email</label>
+      <input id="cEmail" type="email" required>
+
+      <label for="cAsunto">Asunto</label>
+      <input id="cAsunto" type="text" required>
+
+      <label for="cMensaje">Mensaje</label>
+      <textarea id="cMensaje" required></textarea>
+
+      <button class="btn" type="submit">Enviar</button>
+      <p id="msgContacto" class="muted" style="margin-top:8px"></p>
     </form>
+
+    <h2>Últimos mensajes</h2>
+    <ul id="listaContactos"></ul>
   </main>
 
   <div data-include="footer.html"></div>

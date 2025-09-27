@@ -62,9 +62,9 @@
       "id": "6",
       "nombre": "Desinfectante en spray",
       "precio": 3.2,
-      "descripcion": "Elimina el 99.9% de bacterias",
+      "categoriaId": "3",
       "imagen": "assets/img/producto6.jpg",
-      "categoriaId": 3
+      "descripcion": "Elimina el 99.9% de bacterias"
     },
     {
       "id": "7",
@@ -79,10 +79,10 @@
     {
       "id": "1",
       "nombre": "Detergente líquido Premium",
-      "precio": 4.25,
-      "descripcion": "Para ropa de color y delicada",
+      "precio": 4.3,
+      "categoriaId": "2",
       "imagen": "assets/img/producto1.jpg",
-      "categoriaId": 2
+      "descripcion": "Para ropa de color y delicada"
     }
   ]
 }

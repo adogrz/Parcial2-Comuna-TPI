@@ -1,12 +1,15 @@
-const API_URL = "http://localhost:3000";
+// js/carrito.js
+import { API_URL } from './app.js';
 
 async function cargarCarrito() {
+  const contenedor = document.getElementById("carrito");
+  if (!contenedor) return;
+
   try {
     const resp = await fetch(`${API_URL}/carrito`);
     if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
     const carrito = await resp.json();
 
-    const contenedor = document.getElementById("carrito");
     contenedor.innerHTML = "";
 
     if (!Array.isArray(carrito) || carrito.length === 0) {
@@ -20,22 +23,22 @@ async function cargarCarrito() {
       item.innerHTML = `
         <h3>${prod.nombre}</h3>
         <p>Precio: $${Number(prod.precio).toFixed(2)}</p>
-        <button onclick="eliminarDelCarrito(${prod.id})">Eliminar</button>
+        <button data-id="${String(prod.id)}" class="btn outline">Eliminar</button>
       `;
+      item.querySelector("button").addEventListener("click", () => eliminarDelCarrito(String(prod.id)));
       contenedor.appendChild(item);
     });
   } catch (err) {
     console.error("Error cargando carrito:", err);
-    const contenedor = document.getElementById("carrito");
-    contenedor.innerHTML = `<div style="padding:1rem;background:#fee;border:1px solid #f99;color:#900">
-      No se pudo cargar el carrito. ¿json-server está activo?
+    contenedor.innerHTML = `<div class="alert">
+      No se pudo cargar el carrito. ¿json-server está activo en <code>${API_URL}</code>?
     </div>`;
   }
 }
 
 async function eliminarDelCarrito(idProducto) {
   try {
-    const res = await fetch(`${API_URL}/carrito/${idProducto}`, { method: "DELETE" });
+    const res = await fetch(`${API_URL}/carrito/${encodeURIComponent(idProducto)}`, { method: "DELETE" });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     await cargarCarrito();
   } catch (err) {

@@ -1,4 +1,5 @@
 // Add Movie Page JavaScript
+// NOTA: Requiere api-config.js incluido antes de este archivo
 // Manejar la funcionalidad del formulario de agregar película
 
 // Función para agregar una nueva película a la API

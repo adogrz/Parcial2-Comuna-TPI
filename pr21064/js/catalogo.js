@@ -1,8 +1,27 @@
+// --- INICIO DE LA CONFIGURACIÓN DE API ---
+// Pega este bloque al inicio de tu archivo JS principal
+
+// Reemplaza 'gd21011' con TU PROPIO CARNET
+const MI_CARNET = 'pr21064'; 
+
+// Detecta si estamos en un entorno de desarrollo local
+const esDesarrolloLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+
+// Elige la URL de la API según el entorno
+const API_URL = esDesarrolloLocal 
+    ? 'http://localhost:3000'                      // URL para desarrollo en tu PC
+    : `https://${MI_CARNET}.comuna.tpi/api`;     // URL para el servidor final en la VPN
+
+// --- FIN DE LA CONFIGURACIÓN ---
+
+
+// Ahora, todas tus llamadas fetch usarán la variable API_URL, por ejemplo:
+// fetch(`${API_URL}/movies`).then(...);
 
     const catalogo = document.getElementById("catalogo");
 
     // Traer mangas desde JSON Server
-    fetch("http://172.27.102.202:3000/mangas")
+    fetch(`${API_URL}/mangas`)
       .then(res => res.json())
       .then(mangas => {
         mangas.forEach(manga => {
@@ -30,7 +49,7 @@ async function agregarPedido(mangaId, titulo, precio) {
 
   try {
     // 1. Obtener todos los pedidos existentes
-    const res = await fetch("http://172.27.102.202:3000/pedidos");
+    const res = await fetch(`${API_URL}/pedidos`);
     const pedidos = await res.json();
 
     // 2. Calcular el siguiente ID como string
@@ -39,7 +58,7 @@ async function agregarPedido(mangaId, titulo, precio) {
     //2.5 calculo de precio total
 
       //traer el manga y calcular el costo total
-  const resManga = await fetch(`http://172.27.102.202:3000/mangas/${mangaId}`);
+  const resManga = await fetch(`${API_URL}/mangas/${mangaId}`);
   const manga = await resManga.json();
 
 // Calcular precio total
@@ -55,7 +74,7 @@ const precioTotal = manga.precio * cantidad;
     };
 
     // 4. Guardar el pedido
-    const response = await fetch("http://172.27.102.202:3000/pedidos", {
+    const response = await fetch(`${API_URL}/pedidos`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(pedido)

@@ -1,5 +1,5 @@
 // js/catalogo.js
-const API_PROD = 'http://172.27.28.148:3000/productos';
+const API_PROD = '/productos';
 const tbody = document.getElementById('tbody');
 
 // Placeholder fijo si no hay imagen o falla la carga

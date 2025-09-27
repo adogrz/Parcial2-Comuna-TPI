@@ -1,4 +1,14 @@
-  const tablaBody = document.querySelector("#tablaMangas tbody");
+
+const MI_CARNET = 'pr21064'; 
+// Detecta si estamos en un entorno de desarrollo local
+const esDesarrolloLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+// Elige la URL de la API según el entorno
+const API_URL = esDesarrolloLocal 
+    ? 'http://localhost:3000'                      // URL para desarrollo en tu PC
+    : `https://${MI_CARNET}.comuna.tpi/api`;     // URL para el servidor final en la VPN
+
+
+const tablaBody = document.querySelector("#tablaMangas tbody");
     const modal = document.getElementById("modalForm");
     const form = document.getElementById("formManga");
     const formTitle = document.getElementById("formTitle");
@@ -8,7 +18,7 @@
     // Cargar mangas
     function cargarMangas() {
       tablaBody.innerHTML = "";
-      fetch("http://172.27.102.202:3000/mangas")
+      fetch(`${API_URL}/mangas`)
         .then(res => res.json())
         .then(mangas => {
           mangas.forEach(manga => {
@@ -30,7 +40,7 @@
             // Eliminar manga
             tr.querySelector(".eliminar").addEventListener("click", () => {
               if(confirm(`¿Desea eliminar "${manga.titulo}"?`)) {
-                fetch(`http://172.27.102.202:3000/mangas/${manga.id}`, { method: "DELETE" })
+                fetch(`${API_URL}/mangas/${manga.id}`, { method: "DELETE" })
                   .then(() => cargarMangas());
               }
             });
@@ -69,7 +79,7 @@ form.addEventListener("submit", async e => {
   e.preventDefault();
 
   // Obtener todos los mangas para calcular el próximo ID
-  const res = await fetch("http://172.27.102.202:3000/mangas");
+  const res = await fetch(`${API_URL}/mangas`);
   const mangas = await res.json();
   const maxId = mangas.length ? Math.max(...mangas.map(m => parseInt(m.id))) : 0;
 
@@ -84,8 +94,8 @@ form.addEventListener("submit", async e => {
 
   const method = editMangaId ? "PUT" : "POST";
   const url = editMangaId 
-              ? `http://172.27.102.202:3000/mangas/${editMangaId}` 
-              : "http://172.27.102.202:3000/mangas";
+              ? `${API_URL}/mangas/${editMangaId}` 
+              : `${API_URL}/mangas`;
 
   await fetch(url, {
     method,

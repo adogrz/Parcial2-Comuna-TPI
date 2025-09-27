@@ -1,5 +1,5 @@
-const APIc = 'http://172.27.28.148:3000/categorias';
-const APIp = 'http://172.27.28.148:3000/productos';
+const APIc = 'categorias';
+const APIp = '/productos';
 
 const fCat      = document.getElementById('fCat');
 const listCats  = document.getElementById('listCats');

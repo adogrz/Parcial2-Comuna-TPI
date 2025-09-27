@@ -1,3 +1,22 @@
+
+// --- INICIO DE LA CONFIGURACIÓN DE API ---
+// Pega este bloque al inicio de tu archivo JS principal
+const MI_CARNET = 'pr21064'; 
+
+// Detecta si estamos en un entorno de desarrollo local
+const esDesarrolloLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+
+// Elige la URL de la API según el entorno
+const API_URL = esDesarrolloLocal 
+    ? 'http://localhost:3000'                      // URL para desarrollo en tu PC
+    : `https://${MI_CARNET}.comuna.tpi/api`;     // URL para el servidor final en la VPN
+
+// --- FIN DE LA CONFIGURACIÓN ---
+
+
+// Ahora, todas tus llamadas fetch usarán la variable API_URL, por ejemplo:
+// fetch(`${API_URL}/movies`).then(...);
+
 const pedidosTable = document.getElementById("pedidosTable").querySelector("tbody");
 const modal = document.getElementById("modalForm");
 const pedidoForm = document.getElementById("pedidoForm");
@@ -11,7 +30,7 @@ let pedidos = [];
 let editPedidoId = null;
 
 // Cargar mangas para el select
-fetch("http://172.27.102.202:3000/mangas")
+fetch(`${API_URL}/mangas`)
   .then(res => res.json())
   .then(data => {
     mangas = data;
@@ -25,7 +44,7 @@ fetch("http://172.27.102.202:3000/mangas")
 
 // Cargar pedidos
 function cargarPedidos() {
-  fetch("http://172.27.102.202:3000/pedidos")
+  fetch(`${API_URL}/pedidos`)
     .then(res => res.json())
     .then(data => {
       pedidos = data;
@@ -56,7 +75,7 @@ function renderPedidos() {
     // Botón eliminar
     tr.querySelector(".eliminar").addEventListener("click", () => {
       if (confirm(`¿Deseas eliminar este pedido?`)) {
-        fetch(`http://172.27.102.202:3000/pedidos/${p.id}`, { method: "DELETE" })
+        fetch(`${API_URL}/pedidos/${p.id}`, { method: "DELETE" })
           .then(() => cargarPedidos());
       }
     });
@@ -89,12 +108,12 @@ pedidoForm.addEventListener("submit", async e => {
   e.preventDefault();
 
   // Calcular próximo ID
-  const res = await fetch("http://172.27.102.202:3000/pedidos");
+  const res = await fetch(`${API_URL}/pedidos`);
   const pedidosActuales = await res.json();
   const maxId = pedidosActuales.length ? Math.max(...pedidosActuales.map(p => parseInt(p.id))) : 0;
 
   //traer el manga y calcular el costo total
-  const resManga = await fetch(`http://172.27.102.202:3000/mangas/${pedidoForm.mangaId.value}`);
+  const resManga = await fetch(`${API_URL}/mangas/${pedidoForm.mangaId.value}`);
 const manga = await resManga.json();
 
 // Calcular precio total
@@ -110,8 +129,8 @@ const precioTotal = manga.precio * parseInt(pedidoForm.cantidad.value);
 
   const method = editPedidoId ? "PUT" : "POST";
   const url = editPedidoId 
-              ? `http://172.27.102.202:3000/pedidos/${editPedidoId}`
-              : "http://172.27.102.202:3000/pedidos";
+              ? `${API_URL}/pedidos/${editPedidoId}`
+              : `${API_URL}/pedidos`;
 
   await fetch(url, {
     method,

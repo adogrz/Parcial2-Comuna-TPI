@@ -30,19 +30,19 @@
       "rental_price": 3.99
     },
     {
-      "id": "2",
       "title": "El Viaje de Chihiro",
       "director": "Hayao Miyazaki",
+      "release_year": 2001,
       "genres": [
         "Animación",
         "Fantasía",
         "Aventura"
       ],
-      "release_year": 2001,
       "synopsis": "Una joven llamada Chihiro se encuentra en un mundo mágico y debe encontrar la manera de salvar a sus padres y regresar a casa.",
+      "rental_price": 3.99,
+      "stock": 12,
       "poster_url": "https://m.media-amazon.com/images/M/MV5BM2E2YzcwMTQtNWRlMC00ZGZlLWJhZTEtMDU4ZGIzMWI0NzJmXkEyXkFqcGc@._V1_.jpg",
-      "stock": 0,
-      "rental_price": 3.99
+      "id": "2"
     },
     {
       "id": "3",

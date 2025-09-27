@@ -1,4 +1,5 @@
 // Edit Movie Page JavaScript
+// NOTA: Requiere api-config.js incluido antes de este archivo
 // Manejar la funcionalidad del formulario de editar película
 
 let currentMovieId = null;

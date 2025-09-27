@@ -1,4 +1,5 @@
 // Clients Management JavaScript
+// NOTA: Requiere api-config.js incluido antes de este archivo
 // Manejar la funcionalidad CRUD de clientes
 
 let selectedClientId = null;

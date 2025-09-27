@@ -1,5 +1,5 @@
-// API Configuration
-const API_BASE_URL = 'http://localhost:3000'; // Cambiar por la URL de tu json-server
+// Catálogo de películas - Funcionalidad principal
+// NOTA: Requiere api-config.js incluido antes de este archivo
 
 // Función para obtener todas las películas
 async function getAllMovies() {

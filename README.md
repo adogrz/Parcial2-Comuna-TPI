@@ -23,7 +23,7 @@ Este paso es **crucial** para que puedas acceder a los sitios de tus compañeros
 ### 4. Verificar la Conexión
 Abre una terminal o CMD y ejecuta un `ping` al servidor del coordinador y a su dominio para confirmar que tienes conectividad y que el DNS funciona. Si ambos responden, ¡estás listo!
 
------
+---
 
 ## Fase 2: Estructura y Sincronización (Método Profesional)
 
@@ -31,7 +31,7 @@ Abre una terminal o CMD y ejecuta un `ping` al servidor del coordinador y a su d
 Para una máxima flexibilidad, mantendremos el código fuente del proyecto separado del directorio que lee el servidor web.
 
 1.  **Repositorio Clonado (Tu área de trabajo):**
-    * Clona el repositorio en cualquier lugar que te sea cómodo para desarrollar.
+    * Clona este repositorio en cualquier lugar que te sea cómodo para desarrollar.
     * Ejemplo en Linux: `/home/tu_usuario/proyectos/Parcial2-Comuna-TPI/`
     * Ejemplo en Windows: `C:\Users\TuUsuario\Documents\GitHub\Parcial2-Comuna-TPI\`
 
@@ -95,53 +95,82 @@ Ejecuta los siguientes comandos en tu servidor. **Recuerda usar la ruta completa
     ```
 **¡Eso es todo!** El sitio web se actualizará automáticamente. No necesitas copiar ningún archivo.
 
-## Fase 3: Desarrollo y API con `json-server`
+---
 
-### A. Frontend (HTML, CSS, JS)
+## Fase 3: Desarrollo y Configuración de la API
+
+### A. Frontend y CRUD
 * Tu sitio debe tener una **página principal y al menos 4 secciones** más.
-* Debe implementar todas las operaciones **CRUD** (Crear, Leer, Actualizar, Borrar).
+* Debe implementar todas las operaciones **CRUD** (Crear, Leer, Actualizar, Borrar) usando `fetch` en JavaScript.
 
-### B. Backend con `json-server`
-Cada integrante corre su propia API, que será consumida por las copias de su sitio en los servidores de los demás.
+### B. Configuración de la API para Desarrollo y Despliegue
+Para que tu código funcione tanto en tu PC de desarrollo como en los servidores de tus compañeros, es **fundamental** configurar correctamente la URL de la API en tu JavaScript.
 
-1.  **Configura tu `js/app.js`:** Las peticiones `fetch` deben apuntar a tu propio dominio a través de un proxy inverso. **Esta es la URL que debe estar en el código que subes a GitHub.**
-    ```javascript
-    // Ejemplo para el integrante gd21011
-    const API_URL = '[https://gd21011.comuna.tpi/api](https://gd21011.comuna.tpi/api)';
+**1. Código para `js/app.js` (¡Todos deben usar esta lógica!):**
+Este código detecta automáticamente el entorno y elige la URL correcta.
 
-    fetch(`${API_URL}/movies`).then(...);
-    ```
+**Nota**: Esta configuracion depende que como tengan organizado su sitio, lo importante es que en todos los lugares que llamen a la API la sustituyan por la que se describe a continuación:
 
-2.  **Inicia `json-server` en la VPN:** En una terminal, navega a la carpeta de tu sitio (donde está tu `db.json`) y ejecuta:
-    ```bash
-    # El --host 0.0.0.0 es VITAL para que sea visible en la VPN
-    json-server --host 0.0.0.0 --watch db.json
-    ```
+```javascript
+// --- INICIO DE LA CONFIGURACIÓN DE API ---
+// Pega este bloque al inicio de tu archivo JS principal
 
-## Fase 4: Guía Definitiva de Despliegue en Servidor Web
+// Reemplaza 'gd21011' con TU PROPIO CARNET
+const MI_CARNET = 'gd21011'; 
 
-Esta sección contiene las plantillas para Nginx y Apache. **La sintaxis es la misma en Windows y Linux, solo cambia la ubicación de los archivos.**
+// Detecta si estamos en un entorno de desarrollo local
+const esDesarrolloLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
 
-### A. Generación del Certificado SSL (HTTPS)
-Haz esto una vez. En una terminal (o Git Bash en Windows), ejecuta:
-```bash
-openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout server.key -out server.crt
+// Elige la URL de la API según el entorno
+const API_URL = esDesarrolloLocal 
+    ? 'http://localhost:3000'                      // URL para desarrollo en tu PC
+    : `https://${MI_CARNET}.comuna.tpi/api`;     // URL para el servidor final en la VPN
+
+// --- FIN DE LA CONFIGURACIÓN ---
+
+
+// Ahora, todas tus llamadas fetch usarán la variable API_URL, por ejemplo:
+// fetch(`${API_URL}/movies`).then(...);
 ````
 
-Mueve `server.key` y `server.crt` a tu carpeta de certificados (ej: `/var/www/comuna.tpi/certs/`).
+**Importante:** Cada integrante debe poner su propio carnet en la variable `MI_CARNET`. Este código asegura que, cuando el sitio de un compañero se cargue desde tu servidor, las llamadas a la API se dirijan correctamente al servidor original de ese compañero.
 
-### B. Plantilla de Configuración para NGINX
+**2. Inicia `json-server` en la VPN:**
+En la terminal de tu servidor, navega a la carpeta de tu sitio (donde está tu `db.json`) y ejecuta:
+
+```bash
+# El --host 0.0.0.0 es VITAL para que tu API sea visible en la VPN
+json-server --host 0.0.0.0 --watch api/database.json
+```
+
+-----
+
+## Fase 4: Guía de Despliegue en Servidor Web
+
+### A. Certificado SSL (HTTPS) y la Advertencia "No es seguro"
+
+1.  **Genera tu certificado autofirmado** una vez. En una terminal (o Git Bash en Windows), ejecuta:
+    ```bash
+    openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout server.key -out server.crt
+    ```
+    Cuando te pregunte por el "Common Name", escribe tu dominio principal (ej: `www1.comuna.tpi`).
+2.  Mueve `server.key` y `server.crt` a tu carpeta de certificados (ej: `/var/www/comuna.tpi/certs/`).
+3.  **Advertencia del Navegador:** Es **normal y esperado** que el navegador muestre una advertencia de "La conexión no es privada". Esto ocurre porque el certificado no fue emitido por una autoridad de confianza pública.
+4.  **Solución:** Haz clic en **"Configuración Avanzada"** y luego en **"Proceder a [sitio] (sitio no seguro)"**. La conexión estará cifrada y podrás continuar. Debes estar preparado para explicar esto en la defensa.
+
+### B. Plantillas de Configuración (Nginx y Apache)
+
+A continuación se encuentran las plantillas completas. **La sintaxis es la misma para Windows y Linux**, solo cambia la ubicación de los archivos de configuración. Utiliza la plantilla que corresponda a tu servidor web asignado y **reemplaza los valores en MAYÚSCULAS**.
+
+#### Plantilla NGINX
 
   * **Ubicación:**
       * **Linux:** Crea `/etc/nginx/sites-available/comuna.tpi` y actívalo con `sudo ln -s /etc/nginx/sites-available/comuna.tpi /etc/nginx/sites-enabled/`.
       * **Windows:** Agrega los bloques `server` dentro del bloque `http` en `C:\nginx\conf\nginx.conf`.
 
-<!-- end list -->
-
 ```nginx
 # =============================================================
 # PLANTILLA NGINX PARA EL PARCIAL 2 - TPI
-# Reemplaza los valores en MAYÚSCULAS
 # =============================================================
 
 # --- SERVIDOR PRINCIPAL: wwwn.comuna.tpi ---
@@ -161,10 +190,12 @@ server {
     location / {
         allow 172.27.0.0/16; # Rango de la VPN
         deny all;
+        # Redirección de la raíz a tu sitio personal
+        rewrite ^/$ /TU_CARNET/ permanent;
         try_files $uri $uri/ =404;
     }
 
-    rewrite ^/parcial/([a-zA-Z0-9]+)/?$ /$1/ last;
+    rewrite ^/parcial/([a-zA-Z0-9]+)(/.*)?$ /$1$2 last;
 }
 
 # --- SERVIDORES PERSONALES: carnet.comuna.tpi y tema.comuna.tpi (agrupados) ---
@@ -202,7 +233,7 @@ server {
 # --- REDIRECCIÓN ESPECÍFICA (n -> n+1) ---
 server {
     listen TU_IP_VPN:443 ssl;
-    server_name CARNET_COMPAÑERO.wwwN.comuna.tpi; # ej: gd21011.www1.comuna.tpi
+    server_name CARNET_COMPAÑERO.wwwN.comuna.tpi; # ej: gr19079.www1.comuna.tpi
     
     ssl_certificate /var/www/comuna.tpi/certs/server.crt;
     ssl_certificate_key /var/www/comuna.tpi/certs/server.key;
@@ -211,18 +242,16 @@ server {
 }
 ```
 
-### C. Plantilla de Configuración para APACHE
+#### Plantilla APACHE
 
-  * **Ubicación:**
-      * **Linux:** Habilita `ssl`, `rewrite`, `proxy`, `proxy_http`. Crea y activa `/etc/apache2/sites-available/comuna.tpi.conf`.
-      * **Windows:** En `httpd.conf`, descomenta los módulos y la línea `Include conf/extra/httpd-vhosts.conf`. Edita `conf/extra/httpd-vhosts.conf`.
+  * **Ubicación Linux:** Habilita `ssl`, `rewrite`, `proxy`, `proxy_http`. Crea y activa `/etc/apache2/sites-available/comuna.tpi.conf`.
+  * **Ubicación Windows:** En `httpd.conf`, descomenta los módulos y `Include conf/extra/httpd-vhosts.conf`. Edita `conf/extra/httpd-vhosts.conf`.
 
 <!-- end list -->
 
 ```apache
 # =============================================================
 # PLANTILLA APACHE PARA EL PARCIAL 2 - TPI
-# Reemplaza los valores en MAYÚSCULAS
 # =============================================================
 
 # --- REDIRECCIÓN DE HTTP a HTTPS ---
@@ -242,7 +271,9 @@ server {
     SSLCertificateKeyFile "/var/www/comuna.tpi/certs/server.key"
 
     RewriteEngine On
-    RewriteRule ^/parcial/([a-zA-Z0-9]+)/?$ /$1/ [L]
+    # Redirección de la raíz a tu sitio personal
+    RewriteRule ^/$ /TU_CARNET/ [R=301,L]
+    RewriteRule ^/parcial/([a-zA-Z0-9]+)(/.*)?$ /$1$2 [L]
     ErrorDocument 404 /404.html
 
     <Directory "/var/www/comuna.tpi/wwwn">
@@ -286,11 +317,13 @@ server {
 </VirtualHost>
 ```
 
-### D. Puesta en Marcha y Verificación
+### C. Puesta en Marcha y Verificación
 
 1.  Inicia tu `json-server`.
-2.  Aplica la configuración y reinicia tu servidor web (Nginx o Apache).
+2.  Aplica la configuración y reinicia tu servidor web.
 3.  Pide a un compañero que pruebe todas las URLs desde su máquina en la VPN para verificar que todo funcione.
+
+-----
 
 ## Fase 5: Recordatorio - Sitio Familiar
 

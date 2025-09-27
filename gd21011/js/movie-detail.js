@@ -1,4 +1,5 @@
 // Movie Detail Page JavaScript
+// NOTA: Requiere api-config.js incluido antes de este archivo
 // Manejar la funcionalidad de la página de detalle de película
 
 // Función para obtener parámetros de la URL

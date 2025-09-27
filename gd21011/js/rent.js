@@ -1,6 +1,5 @@
-const API_BASE_URL = 'http://localhost:3000';
-
 // Rent a Movie JavaScript
+// NOTA: Requiere api-config.js incluido antes de este archivo
 
 // Función para obtener todas las películas
 async function getAllMovies() {

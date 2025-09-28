@@ -15,6 +15,10 @@
     {
       "id": "4",
       "nombre": "Accesorios"
+    },
+    {
+      "id": "51aa",
+      "nombre": "Desengrasante"
     }
   ],
   "productos": [
@@ -73,6 +77,14 @@
       "descripcion": "No raya, alto rendimiento",
       "imagen": "assets/img/producto7.jpg",
       "categoriaId": 4
+    },
+    {
+      "id": "c6cd",
+      "nombre": "Desengrasante premium",
+      "precio": 7.99,
+      "categoriaId": "51aa",
+      "imagen": "",
+      "descripcion": ""
     }
   ],
   "carrito": [
@@ -83,6 +95,14 @@
       "categoriaId": "2",
       "imagen": "assets/img/producto1.jpg",
       "descripcion": "Para ropa de color y delicada"
+    },
+    {
+      "id": "5",
+      "nombre": "Desengrasante de cocina",
+      "precio": 3.5,
+      "descripcion": "Remueve grasa difícil",
+      "imagen": "assets/img/producto5.jpg",
+      "categoriaId": 1
     }
   ]
 }

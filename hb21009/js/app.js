@@ -67,26 +67,7 @@ async function renderReporteProductosPorCategoria(productos, categorias){
     </table>`;
 }
 
-// ================= CONTACTO =================
-async function loadContactos(){
-  const ul = $('#listaContactos');
-  if(!ul) return;
-  try{
-    const data = await fetch(`${API_URL}/contactos?_sort=id&_order=desc&_limit=10`).then(j);
-    ul.innerHTML = data.length
-      ? data.map(c => `
-          <li>
-            <strong>${esc(c.nombre)}</strong> — ${esc(c.asunto)}<br>
-            <small>${esc(c.email)}</small><br>
-            ${esc(c.mensaje)}
-          </li>`).join('')
-      : '<li>No hay mensajes todavía.</li>';
-  }catch(err){
-    console.error(err);
-    ul.innerHTML = '<li>Error cargando mensajes.</li>';
-  }
-}
-
+// ================= CONTACTO (solo envío) =================
 function initContacto(){
   const form = $('#formContacto');
   const msg  = $('#msgContacto');
@@ -102,23 +83,22 @@ function initContacto(){
       fecha:   new Date().toISOString()
     };
     if(!body.nombre || !body.email || !body.asunto || !body.mensaje){
-      msg.textContent = 'Completa todos los campos.'; return;
+      msg.textContent = 'Completa todos los campos.'; 
+      return;
     }
     try{
       await fetch(`${API_URL}/contactos`,{
-        method:'POST', headers:{'Content-Type':'application/json'},
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
         body: JSON.stringify(body)
       });
       msg.textContent = 'Mensaje enviado ✅';
       form.reset();
-      await loadContactos();
     }catch(err){
       console.error(err);
       msg.textContent = 'No se pudo enviar el mensaje.';
     }
   });
-
-  loadContactos();
 }
 
 // ================= Router por data-page =================

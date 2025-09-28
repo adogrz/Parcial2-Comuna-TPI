@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Lista de Deseos</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/forms.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>🎮 Juegos - GameLog Personal</h1>
+            <nav>
+                <a href="index.html">Inicio</a>
+                <a href="biblioteca.html">Mi Biblioteca</a>
+                <a href="deseos.html">Lista de Deseos</a>
+                <a href="sobre.html">Sobre este Sitio</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <h2>Mi Lista de Deseos</h2>
+        <div id="deseos-container" class="grid-container">
+            </div>
+
+        <form id="deseo-form">
+            <h3 id="form-deseo-title">Añadir a la lista de deseos</h3>
+            <input type="hidden" id="deseo-id">
+            <input type="text" id="deseo-titulo" placeholder="Título del juego" required>
+            <input type="text" id="deseo-plataforma" placeholder="Plataforma" required>
+            <button type="submit" id="submit-deseo-btn" class="button">Agregar Deseo</button>
+        </form>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 - Michael Melendez</p>
+        </div>
+    </footer>
+
+    <script src="js/api-config.js" type="module"></script>
+    <script src="js/deseos.js" type="module"></script>
+</body>
+</html>
+
+

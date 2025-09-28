@@ -1,13 +1,94 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-   "http://www.w3.org/TR/html4/loose.dtd">
-
-<html>
+<!DOCTYPE html>
+<html lang="es">
 <head>
-<title>test - mr19082</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juegos - Mi GameLog Personal</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
+<body>
+    <header>
+        <div class="container">
+            <h1>🎮 Juegos - GameLog Personal</h1>
+            <nav>
+                <a href="index.html">Inicio</a>
+                <a href="biblioteca.html">Mi Biblioteca</a>
+                <a href="deseos.html">Lista de Deseos</a>
+                <a href="sobre.html">Sobre este Sitio</a>
+            </nav>
+        </div>
+    </header>
 
-<body bgcolor="black" text="white">
-<h1>SITIO WEB temporal de Pruebas, Michael</h1>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Tu universo de juegos, todo en un solo lugar.</h2>
+                <p>Organiza tu colección, sigue tu progreso y descubre tu próxima gran aventura.</p>
+                <div class="cta-buttons">
+                    <a href="biblioteca.html" class="button">Ir a Mi Biblioteca</a>
+                </div>
+            </div>
+        </section>
+        
+        <section class="catalogo-seccion">
+            <div class="container">
+                <h2>Explora y Descubre</h2>
+                <div id="catalogo-juegos" class="grid-container">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 - Michael Melendez</p>
+        </div>
+    </footer>
+    
+    <script>
+        const juegos = [
+            { titulo: "League of Legends", plataforma: "PC", portada: "https://www.freetogame.com/g/286/thumbnail.jpg" },
+            { titulo: "Valorant", plataforma: "PC", portada: "https://www.freetogame.com/g/466/thumbnail.jpg" },
+            { titulo: "Apex Legends", plataforma: "PC/Consola", portada: "https://www.freetogame.com/g/23/thumbnail.jpg" },
+            { titulo: "Fortnite", plataforma: "PC/Consola/Mobile", portada: "https://www.freetogame.com/g/57/thumbnail.jpg" },
+            { titulo: "Dota 2", plataforma: "PC", portada: "https://www.freetogame.com/g/229/thumbnail.jpg" },
+            { titulo: "Paladins", plataforma: "PC/Consola", portada: "https://www.freetogame.com/g/95/thumbnail.jpg" },
+            { titulo: "Warframe", plataforma: "PC/Consola/Switch", portada: "https://www.freetogame.com/g/3/thumbnail.jpg" },
+            { titulo: "World of Tanks", plataforma: "PC", portada: "https://www.freetogame.com/g/2/thumbnail2.jpg" },
+            { titulo: "Team Fortress 2", plataforma: "PC", portada: "https://www.freetogame.com/g/226/thumbnail.jpg" },
+            { titulo: "Path of Exile", plataforma: "PC/Consola", portada: "https://www.freetogame.com/g/134/thumbnail.jpg" },
+            { titulo: "Genshin Impact", plataforma: "PC/PS4/Mobile", portada: "https://www.freetogame.com/g/475/thumbnail.jpg" },
+            { titulo: "Overwatch 2", plataforma: "PC/Consola/Switch", portada: "https://www.freetogame.com/g/540/thumbnail.jpg" },
+            { titulo: "Neverwinter", plataforma: "PC/Consola", portada: "https://www.freetogame.com/g/11/thumbnail.jpg" },
+            { titulo: "Fall Guys", plataforma: "PC/PS4/Switch/Xbox One", portada: "https://www.freetogame.com/g/523/thumbnail.jpg" },
+            { titulo: "War Thunder", plataforma: "PC", portada: "https://www.freetogame.com/g/12/thumbnail.jpg" },
+            { titulo: "Splitgate", plataforma: "PC/Consola", portada: "https://www.freetogame.com/g/20/thumbnail.jpg" }
+        ];
+
+        function renderizarJuegos() {
+            const contenedor = document.getElementById("catalogo-juegos");
+            contenedor.innerHTML = "";
+            
+            juegos.forEach(juego => {
+                const urlParams = new URLSearchParams({
+                    titulo: juego.titulo,
+                    plataforma: juego.plataforma,
+                    portada: juego.portada
+                });
+                
+                const card = document.createElement("a");
+                card.href = `agregar-juego.html?${urlParams.toString()}`;
+                card.className = "card";
+                card.innerHTML = `
+                    <img src="${juego.portada}" alt="Portada de ${juego.titulo}">
+                    <h3>${juego.titulo}</h3>
+                    <p><strong>Plataforma:</strong> ${juego.plataforma}</p>
+                `;
+                contenedor.appendChild(card);
+            });
+        }
+
+        renderizarJuegos();
+    </script>
 </body>
 </html>

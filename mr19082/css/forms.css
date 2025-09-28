@@ -1,0 +1,25 @@
+/* Estilos para Formularios */
+form {
+    background-color: #2a2a2a;
+    padding: 25px;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+form input, form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #555;
+    background-color: #333;
+    color: #fff;
+    box-sizing: border-box; 
+}

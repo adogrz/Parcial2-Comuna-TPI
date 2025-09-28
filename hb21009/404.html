@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <title>404 • The Clean Castle</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" type="image/png" href="assets/img/favicon.png">
-  <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+  <link id="icoPng" rel="icon" type="image/png" href="assets/img/favicon.png">
+  <link id="icoIco" rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
   <style>
     :root{--brand:#0b3d91;}
     *{box-sizing:border-box}
@@ -31,17 +31,41 @@
 </head>
 <body>
   <main class="wrap">
-    <img class="logo" src="assets/img/logo.svg" alt="The Clean Castle">
+    <img id="logo404" class="logo" src="assets/img/logo.svg" alt="The Clean Castle">
     <div class="big">404</div>
     <h1>Página no encontrada</h1>
     <p>Lo sentimos, no pudimos encontrar la ruta que solicitaste.</p>
 
     <div class="actions">
-      <a class="btn" href="index.html">Ir al inicio</a>
-      <a class="btn secondary" href="catalogo.html">Ver catálogo</a>
+      <a id="toHome" class="btn" href="index.html">Ir al inicio</a>
+      <a id="toCatalog" class="btn secondary" href="catalogo.html">Ver catálogo</a>
     </div>
 
     <p class="hint">Si crees que esto es un error, verifica la URL o vuelve a intentarlo.</p>
   </main>
+
+  <script>
+    (function () {
+      // Base robusta:
+      // - Si el host comienza con "www", SIEMPRE usa tu subcarpeta /hb21009/
+      // - En hosts personales (hb21009.comuna.tpi, limpieza.comuna.tpi), la base es "/"
+      const CARNET = 'hb21009';
+      let base = '/';
+      if (location.hostname.startsWith('www')) {
+        base = `/${CARNET}/`;
+      }
+
+      // Reescribe rutas para que funcionen en todos los hosts
+      document.getElementById('logo404').src = base + 'assets/img/logo.svg';
+      document.getElementById('toHome').href = base + 'index.html';
+      document.getElementById('toCatalog').href = base + 'catalogo.html';
+
+      // Favicons (evitar 404 cuando la URL es profunda)
+      const icoPng = document.getElementById('icoPng');
+      const icoIco = document.getElementById('icoIco');
+      if (icoPng) icoPng.href = base + 'assets/img/favicon.png';
+      if (icoIco) icoIco.href = base + 'assets/img/favicon.ico';
+    })();
+  </script>
 </body>
 </html>

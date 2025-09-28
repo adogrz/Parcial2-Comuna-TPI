@@ -14,43 +14,45 @@
         <!-- La navegación se cargará aquí dinámicamente -->
     </header>
 
-    <main class="section">
-        <div class="rent-header">
-            <h1>Rentar una Película</h1>
-            <p>Selecciona una película, un cliente y las fechas para registrar un nuevo alquiler.</p>
-        </div>
+    <main>
+        <section class="section">
+            <div class="rent-header">
+                <h1>Rentar una Película</h1>
+                <p>Selecciona una película, un cliente y las fechas para registrar un nuevo alquiler.</p>
+            </div>
 
-        <div class="rent-container">
-            <div id="loading-message">Cargando datos del formulario...</div>
+            <div class="rent-container">
+                <div id="loading-message">Cargando datos del formulario...</div>
 
-            <form id="rent-form" style="display: none;">
-                <div class="form-group">
-                    <label for="movie-select">Película Disponible</label>
-                    <select id="movie-select" name="movie-select" required></select>
-                </div>
+                <form id="rent-form" style="display: none;">
+                    <div class="form-group">
+                        <label for="movie-select">Película Disponible</label>
+                        <select id="movie-select" name="movie-select" required></select>
+                    </div>
 
-                <div class="form-group">
-                    <label for="client-select">Cliente</label>
-                    <select id="client-select" name="client-select" required></select>
-                </div>
+                    <div class="form-group">
+                        <label for="client-select">Cliente</label>
+                        <select id="client-select" name="client-select" required></select>
+                    </div>
 
-                <div class="form-group">
-                    <label for="rental-date">Fecha de Alquiler</label>
-                    <input type="date" id="rental-date" name="rental-date" required>
-                </div>
+                    <div class="form-group">
+                        <label for="rental-date">Fecha de Alquiler</label>
+                        <input type="date" id="rental-date" name="rental-date" required>
+                    </div>
 
-                <div class="form-group">
-                    <label for="return-date">Fecha de Devolución</label>
-                    <input type="date" id="return-date" name="return-date" required>
-                </div>
+                    <div class="form-group">
+                        <label for="return-date">Fecha de Devolución</label>
+                        <input type="date" id="return-date" name="return-date" required>
+                    </div>
 
-                <div class="form-actions">
-                    <button type="submit" class="btn-primary">Rentar Película</button>
-                </div>
-            </form>
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary">Rentar Película</button>
+                    </div>
+                </form>
 
-            <div id="form-result" class="form-result" style="display: none;"></div>
-        </div>
+                <div id="form-result" class="form-result" style="display: none;"></div>
+            </div>
+        </section>
     </main>
 
     <footer></footer>

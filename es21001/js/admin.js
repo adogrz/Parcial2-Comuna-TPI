@@ -1,4 +1,4 @@
-const APIc = 'categorias';
+const APIc = '/categorias';
 const APIp = '/productos';
 
 const fCat      = document.getElementById('fCat');

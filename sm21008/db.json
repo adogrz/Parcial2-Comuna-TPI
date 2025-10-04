@@ -1,0 +1,51 @@
+{
+  "marcas": [
+    {
+      "id": "1",
+      "nombre": "Monster",
+      "pais": "EE. UU.",
+      "sitio": "https://www.monsterenergy.com"
+    },
+    {
+      "id": "2",
+      "nombre": "High Energy",
+      "pais": "México",
+      "sitio": "https://example.com/highenergy"
+    },
+    {
+      "id": "3",
+      "nombre": "Raptor",
+      "pais": "El Salvador",
+      "sitio": "https://example.com/raptor"
+    }
+  ],
+  "bebidas": [
+    {
+      "id": "1",
+      "nombre": "Monster Original",
+      "marcaId": 1,
+      "sabor": "Clásico",
+      "mililitros": 473,
+      "precio": 1.75,
+      "imagen": "https://images.unsplash.com/photo-1541976076758-347942db1971?q=80&w=1200&auto=format&fit=crop"
+    },
+    {
+      "id": "2",
+      "nombre": "High Energy Classic",
+      "marcaId": 2,
+      "sabor": "Cítrico",
+      "mililitros": 355,
+      "precio": 1.2,
+      "imagen": "https://images.unsplash.com/photo-1581291518835-05c5cae6f68d?q=80&w=1200&auto=format&fit=crop"
+    },
+    {
+      "id": "3",
+      "nombre": "Raptor Extreme",
+      "marcaId": 3,
+      "sabor": "Tropical",
+      "mililitros": 355,
+      "precio": 1.1,
+      "imagen": "https://images.unsplash.com/photo-1602002418765-61cf3d28c5f1?q=80&w=1200&auto=format&fit=crop"
+    }
+  ]
+}

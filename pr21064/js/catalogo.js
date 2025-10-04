@@ -3,7 +3,6 @@
 
 // Reemplaza 'gd21011' con TU PROPIO CARNET
 const MI_CARNET = 'pr21064'; 
-
 // Detecta si estamos en un entorno de desarrollo local
 const esDesarrolloLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
 

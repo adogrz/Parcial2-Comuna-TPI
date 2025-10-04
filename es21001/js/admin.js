@@ -1,5 +1,5 @@
-const APIc = 'http://172.27.28.148:3000/categorias';
-const APIp = 'http://172.27.28.148:3000/productos';
+const APIc = "https://www5.comuna.tpi/categorias";
+const APIp = "https://www5.comuna.tpi/productos";
 
 const fCat      = document.getElementById('fCat');
 const listCats  = document.getElementById('listCats');

@@ -1,0 +1,11 @@
+{
+  "name": "juegos",
+  "version": "1.0.0",
+  "description": "Un sitio personal de videojuegos con CRUD.",
+  "scripts": {
+    "api": "json-server --watch api/db.json --port 3000"
+  },
+  "dependencies": {
+    "json-server": "^0.17.0"
+  }
+}

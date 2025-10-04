@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestionar Juego</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/forms.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>🎮 Juegos - GameLog Personal</h1>
+            <nav>
+                <a href="index.html">Inicio</a>
+                <a href="biblioteca.html">Mi Biblioteca</a>
+                <a href="deseos.html">Lista de Deseos</a>
+                <a href="sobre.html">Sobre este Sitio</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <h2 id="form-title">Añadir un Nuevo Juego</h2>
+        <form id="juego-form">
+            <input type="hidden" id="juego-id">
+            
+            <label for="titulo">Título del Juego:</label>
+            <input type="text" id="titulo" required>
+
+            <label for="plataforma">Plataforma:</label>
+            <input type="text" id="plataforma" required>
+
+            <label for="estado">Estado:</label>
+            <select id="estado" required>
+                <option value="Jugando">Jugando</option>
+                <option value="Completado">Completado</option>
+                <option value="Pendiente">Pendiente</option>
+                <option value="Abandonado">Abandonado</option>
+            </select>
+            
+            <label for="portada">URL de la Portada:</label>
+            <input type="url" id="portada" required>
+
+            <button type="submit" class="button">Guardar Juego</button>
+        </form>
+    </main>
+    
+    <footer>
+        </footer>
+    <script src="js/api-config.js" type="module"></script>
+    <script src="js/biblioteca-form.js" type="module"></script>
+</html>

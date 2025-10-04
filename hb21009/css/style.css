@@ -163,6 +163,13 @@ button.danger {
   color: #900;
   border-radius: 8px;
 }
+.kpi { font-size: 2.2rem; font-weight: 800; margin: .25rem 0 0; color: #0b3d91; }
+.table { width: 100%; border-collapse: collapse; margin-top: .5rem; }
+.table th, .table td { border-bottom: 1px solid #eee; padding: .6rem .4rem; }
+.table th { text-align: left; }
+.table .right { text-align: right; }
+.hero { text-align: center; padding: 24px 12px; background: #f6f9ff; border: 1px solid #e6edff; border-radius: 10px; }
+.carrito-item { border:1px solid #eee; border-radius:8px; padding:10px; margin:8px 0; }
 
 /* --- Responsive --- */
 @media (max-width: 992px) {

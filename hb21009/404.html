@@ -1,21 +1,71 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Error 404 - No encontrado</title>
-  <link rel="stylesheet" href="css/style.css">
-  <script src="js/partials.js"></script>
-  <script src="js/include.js" defer></script>
+  <meta charset="UTF-8" />
+  <title>404 • The Clean Castle</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link id="icoPng" rel="icon" type="image/png" href="assets/img/favicon.png">
+  <link id="icoIco" rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+  <style>
+    :root{--brand:#0b3d91;}
+    *{box-sizing:border-box}
+    body{
+      margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial;
+      color:#1f2937;background:#f5f7fb;display:flex;min-height:100vh;align-items:center;justify-content:center;
+    }
+    .wrap{
+      max-width:820px;width:92%;background:#fff;border:1px solid #e5e7eb;border-radius:16px;
+      box-shadow:0 10px 25px rgba(0,0,0,.07);padding:32px 28px;text-align:center;
+    }
+    .logo{height:64px;margin-bottom:8px}
+    h1{font-size:2.2rem;margin:.2rem 0;color:#111827}
+    p{color:#4b5563;margin:.5rem 0 1rem}
+    .big{font-size:5rem;line-height:1.1;margin:0;color:var(--brand)}
+    .actions{margin-top:18px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+    a.btn{
+      background:var(--brand);color:#fff;text-decoration:none;padding:10px 16px;border-radius:10px;font-weight:600
+    }
+    a.btn.secondary{background:#fff;color:var(--brand);border:1px solid var(--brand)}
+    .hint{margin-top:10px;color:#6b7280;font-size:.9rem}
+  </style>
 </head>
 <body>
-  <div data-include="header.html"></div>
+  <main class="wrap">
+    <img id="logo404" class="logo" src="assets/img/logo.svg" alt="The Clean Castle">
+    <div class="big">404</div>
+    <h1>Página no encontrada</h1>
+    <p>Lo sentimos, no pudimos encontrar la ruta que solicitaste.</p>
 
-  <main>
-    <h1>Error 404</h1>
-    <p>Oops, la página que buscas no existe 😢.</p>
-    <a href="index.html">Volver al inicio</a>
+    <div class="actions">
+      <a id="toHome" class="btn" href="index.html">Ir al inicio</a>
+      <a id="toCatalog" class="btn secondary" href="catalogo.html">Ver catálogo</a>
+    </div>
+
+    <p class="hint">Si crees que esto es un error, verifica la URL o vuelve a intentarlo.</p>
   </main>
 
-  <div data-include="footer.html"></div>
+  <script>
+    (function () {
+      // Base robusta:
+      // - Si el host comienza con "www", SIEMPRE usa tu subcarpeta /hb21009/
+      // - En hosts personales (hb21009.comuna.tpi, limpieza.comuna.tpi), la base es "/"
+      const CARNET = 'hb21009';
+      let base = '/';
+      if (location.hostname.startsWith('www')) {
+        base = `/${CARNET}/`;
+      }
+
+      // Reescribe rutas para que funcionen en todos los hosts
+      document.getElementById('logo404').src = base + 'assets/img/logo.svg';
+      document.getElementById('toHome').href = base + 'index.html';
+      document.getElementById('toCatalog').href = base + 'catalogo.html';
+
+      // Favicons (evitar 404 cuando la URL es profunda)
+      const icoPng = document.getElementById('icoPng');
+      const icoIco = document.getElementById('icoIco');
+      if (icoPng) icoPng.href = base + 'assets/img/favicon.png';
+      if (icoIco) icoIco.href = base + 'assets/img/favicon.ico';
+    })();
+  </script>
 </body>
 </html>

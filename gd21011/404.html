@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Página No Encontrada | Peliculas a 2 coras</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <style>
+        .error-container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .error-content {
+            max-width: 600px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .error-code {
+            font-size: clamp(6rem, 12vw, 8rem);
+            font-weight: 900;
+            color: var(--color-accent-secondary);
+            margin: 0 0 1rem 0;
+            line-height: 1;
+        }
+
+        .error-title {
+            font-size: var(--font-size-xl);
+            color: var(--color-text-primary);
+            margin: 0 0 1rem 0;
+            font-weight: 600;
+        }
+
+        .error-subtitle {
+            font-size: var(--font-size-base);
+            color: var(--color-text-secondary);
+            margin: 0 0 2rem 0;
+            line-height: 1.4;
+        }
+
+        .error-gif {
+            max-width: 100%;
+            width: 300px;
+            height: auto;
+            border-radius: 12px;
+            margin: 2rem auto;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            display: block;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            background: var(--color-accent-secondary);
+            color: var(--color-text-primary);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+
+        .btn:hover {
+            background: var(--color-accent-primary);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .error-gif {
+                width: 250px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="error-container">
+        <div class="error-content">
+            <h1 class="error-code">404</h1>
+            <h2 class="error-title">¡Oops! Página no encontrada</h2>
+
+            <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMW50Z2c3cTF4d293M3FwaXI1N3NoMnYyODd0ZWhvbXMwcW5kbnFwYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/jWexOOlYe241y/giphy.gif"
+                alt="John Travolta confundido" class="error-gif"
+                onerror="this.style.display='none'; document.querySelector('.error-fallback').style.display='block';">
+
+            <div class="error-fallback" style="display: none;">
+                <div style="padding: 2rem; background: rgba(255,255,255,0.1); border-radius: 12px; margin: 2rem 0;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">🤷‍♂️</div>
+                    <p>GIF no disponible</p>
+                </div>
+            </div>
+
+            <a href="/" class="btn">🏠 Volver al Inicio</a>
+        </div>
+    </div>
+</body>
+
+</html>

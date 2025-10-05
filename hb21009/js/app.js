@@ -1,17 +1,33 @@
 // js/app.js
-// ================= API dual =================
+// ====================================================
+// CONFIGURACIÓN DE API
+// ====================================================
 const MI_CARNET = 'hb21009';
 const esDev = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
-export const API_URL = esDev ? 'http://localhost:3000' : `https://${MI_CARNET}.comuna.tpi/api`;
 
-// Helpers
+// En desarrollo (localhost) usa JSON Server directo.
+// En producción (https://hb21009.comuna.tpi o www8.comuna.tpi) usa mismo origen /api
+const API_URL = esDev ? 'http://localhost:3000' : '/api';
+
+// Expón también en global para consola/scripts no-módulo:
+window.API_URL = API_URL;
+window.MI_CARNET = MI_CARNET;
+
+// (opcional) export para otros módulos
+export { API_URL, MI_CARNET };
+
+// ====================================================
+// HELPERS
+// ====================================================
 const $  = (sel) => document.querySelector(sel);
 const $$ = (sel) => document.querySelectorAll(sel);
 const j  = async (res) => { if(!res.ok) throw new Error('HTTP '+res.status); return res.json(); };
 const esc = (s) => String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
                                   .replace(/'/g,'&#39;').replace(/"/g,'&quot;');
 
-// ================= HOME: KPIs =================
+// ====================================================
+// HOME: KPIs
+// ====================================================
 async function initHome(){
   try{
     const [rcat, rprod, rcart] = await Promise.all([
@@ -34,12 +50,13 @@ async function initHome(){
   }
 }
 
-// ================= HOME: Reporte Productos por Categoría =================
+// ====================================================
+// HOME: Reporte Productos por Categoría
+// ====================================================
 async function renderReporteProductosPorCategoria(productos, categorias){
   const host = $('#rep-ppc');
   if(!host) return;
 
-  // Si no mandaron arrays, cargarlos
   if(!Array.isArray(productos) || !Array.isArray(categorias)){
     [productos, categorias] = await Promise.all([
       fetch(`${API_URL}/productos`).then(j),
@@ -67,7 +84,9 @@ async function renderReporteProductosPorCategoria(productos, categorias){
     </table>`;
 }
 
-// ================= CONTACTO (solo envío) =================
+// ====================================================
+// CONTACTO (envío simple)
+// ====================================================
 function initContacto(){
   const form = $('#formContacto');
   const msg  = $('#msgContacto');
@@ -87,11 +106,12 @@ function initContacto(){
       return;
     }
     try{
-      await fetch(`${API_URL}/contactos`,{
+      const r = await fetch(`${API_URL}/contactos`,{
         method:'POST',
         headers:{'Content-Type':'application/json'},
         body: JSON.stringify(body)
       });
+      if(!r.ok) throw new Error('POST /contactos');
       msg.textContent = 'Mensaje enviado ✅';
       form.reset();
     }catch(err){
@@ -101,10 +121,12 @@ function initContacto(){
   });
 }
 
-// ================= Router por data-page =================
+// ====================================================
+// ROUTER por data-page
+// ====================================================
 document.addEventListener('DOMContentLoaded', ()=>{
   const page = document.body.dataset.page;
   if(page === 'home')     initHome();
   if(page === 'contacto') initContacto();
-  // (admin/catalogo/carrito tienen sus propios JS y no necesitan aquí)
+  // (admin, catalogo y carrito tienen sus propios JS)
 });

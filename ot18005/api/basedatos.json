@@ -1,0 +1,131 @@
+{
+  "articulos": [
+    {
+      "id": "1",
+      "nombre": "Collar ajustable",
+      "categoria": "perros",
+      "precio": 12.99,
+      "stock": 20,
+      "descripcion": "Collar de nylon ajustable para perros medianos",
+      "imagen": "https://phsupply.com.mx/cdn/shop/products/tg-gbt03-cb-1-1_1.jpg?v=1704929454&width=800"
+    },
+    {
+      "id": "2",
+      "nombre": "Rascador para gatos",
+      "categoria": "gatos",
+      "precio": 25.5,
+      "stock": 15,
+      "descripcion": "Rascador de sisal para gatos pequeños y medianos",
+      "imagen": "https://lucasylola.es/7983-thickbox_default/rascador-para-gatos-modelo-poste-sisal-con-borlon.jpg"
+    },
+    {
+      "id": "3",
+      "nombre": "Cama acolchada para perro",
+      "categoria": "perros",
+      "precio": 45.99,
+      "stock": 10,
+      "descripcion": "Cama suave y lavable para perros medianos y grandes",
+      "imagen": "https://media.adeo.com/mkp/b614684461cfe95c2ef21b063a6e6a54/media.jpeg"
+    },
+    {
+      "id": "4",
+      "nombre": "Juguete mordedor de caucho",
+      "categoria": "perros",
+      "precio": 8.5,
+      "stock": 50,
+      "descripcion": "Mordedor resistente para fortalecer dientes y encías",
+      "imagen": "https://m.media-amazon.com/images/I/71SGtfSTiJL.jpg"
+    },
+    {
+      "id": "5",
+      "nombre": "Rascador torre deluxe",
+      "categoria": "gatos",
+      "precio": 65.0,
+      "stock": 7,
+      "descripcion": "Rascador con varias plataformas y cueva para gatos",
+      "imagen": "https://storage.googleapis.com/catalog-pictures-carrefour-es/catalog/pictures/hd_510x_/8718475522881_1.jpg"
+    },
+    {
+      "id": "6",
+      "nombre": "Comedero automático",
+      "categoria": "gatos",
+      "precio": 39.99,
+      "stock": 12,
+      "descripcion": "Dispensador automático de alimento con temporizador",
+      "imagen": "https://i.blogs.es/42397e/puppy-kitty-6l/650_1200.jpg"
+    },
+    {
+      "id": "7",
+      "nombre": "Jaula para canarios",
+      "categoria": "aves",
+      "precio": 55.0,
+      "stock": 8,
+      "descripcion": "Jaula espaciosa con accesorios para aves pequeñas",
+      "imagen": "https://m.media-amazon.com/images/I/71kHVLjEvBL._UF894,1000_QL80_.jpg"
+    },
+    {
+      "id": "8",
+      "nombre": "Pecera de vidrio 40L",
+      "categoria": "acuaticos",
+      "precio": 80.0,
+      "stock": 5,
+      "descripcion": "Acuario de 40 litros con filtro y tapa incluida",
+      "imagen": "https://glee.pet/wp-content/uploads/2022/11/pecera-vidrio-2.webp"
+    },
+    {
+      "id": "9",
+      "nombre": "Kit limpieza pecera",
+      "categoria": "acuaticos",
+      "precio": 15.75,
+      "stock": 20,
+      "descripcion": "Herramientas básicas para mantener tu acuario limpio",
+      "imagen": "https://m.media-amazon.com/images/I/51UbW10R3rL.jpg"
+    },
+    {
+      "id": "10",
+      "nombre": "Correa extensible",
+      "categoria": "perros",
+      "precio": 18.0,
+      "stock": 25,
+      "descripcion": "Correa retráctil de 5 metros con freno de seguridad",
+      "imagen": "https://storage.googleapis.com/catalog-pictures-carrefour-es/catalog/pictures/hd_510x_/8440000127918_1.jpg"
+    }
+  ],
+  "categorias": [
+    {
+      "id": "1",
+      "nombre": "perros"
+    },
+    {
+      "id": "2",
+      "nombre": "gatos"
+    },
+    {
+      "id": "3",
+      "nombre": "aves"
+    }
+  ],
+  "usuarios": [
+    {
+      "id": "1",
+      "nombre": "David",
+      "email": "david@example.com"
+    }
+  ],
+  "reservaciones": [
+    {
+      "id": "r1",
+      "nombre": "Ana López",
+      "mascota": "Firulais",
+      "descripcion": "Collar de cuero",
+      "fecha": "2025-09-27"
+    },
+    {
+      "id": "r2",
+      "nombre": "Carlos Ruiz",
+      "mascota": "Mishi",
+      "descripcion": "juguete de pluma",
+      "fecha": "2025-10-02"
+    }
+  ]
+}

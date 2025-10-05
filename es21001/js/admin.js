@@ -1,5 +1,5 @@
-const APIc = '/categorias';
-const APIp = '/productos';
+const APIc = "https://www5.comuna.tpi/categorias";
+const APIp = "https://www5.comuna.tpi/productos";
 
 const fCat      = document.getElementById('fCat');
 const listCats  = document.getElementById('listCats');

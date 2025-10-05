@@ -1,0 +1,5 @@
+html, body{scroll-behavior:smooth}
+#gridBebidas .card-img-top{height:180px;object-fit:cover}
+.table td,.table th{vertical-align:middle}
+#catalogo .card-img-top { height: 180px; object-fit: cover; }
+.table td, .table th { vertical-align: middle; }

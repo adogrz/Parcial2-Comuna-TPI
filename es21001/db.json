@@ -13,7 +13,7 @@
       "nombre": "Almacenamiento"
     },
     {
-      "id": "da97",
+      "id": "7e0a",
       "nombre": "Monitores"
     }
   ],
@@ -59,13 +59,13 @@
       "categoriaId": "04bf"
     },
     {
-      "id": "3972",
-      "nombre": "teclado mecanico",
-      "marca": "logitech",
-      "precio": 60,
-      "stock": 2,
-      "categoriaId": "091e",
-      "imagenUrl": "https://apizd.zonadigitalsv.com/storage/productos/DDzdhbYcmMHPNBaoQjcrVY27XeTEXZpBtULiytcb.png"
+      "id": "612f",
+      "nombre": "Control inalambrico de nintendo switch pro black hac-a-fsska (jpn)",
+      "marca": "Nintendo",
+      "precio": 76,
+      "stock": 4,
+      "categoriaId": "2a7c",
+      "imagenUrl": "https://apizd.zonadigitalsv.com/storage/productos/svm6pGnXuUISff0fSZTeJ63vrj3Vel696l2vsu5q.png"
     }
   ]
 }

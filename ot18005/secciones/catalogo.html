@@ -13,7 +13,7 @@
         <h1>Catálogo de Productos</h1>
         <nav>
             <a href="../index.html">Inicio</a>
-            <a href="catalogo.html">Productos</a>
+            <a href="catalogo.html">Catálogo</a>
             <a href="reservaciones.html">Reservaciones</a>
             <a href="nosotros.html">Quiénes Somos</a>
             <a href="contacto.html">Contacto</a>
@@ -29,11 +29,21 @@
 
         <section>
             <h2 class="section-title" style="text-align: center;">Productos</h2>
+
+            <div style="text-align: center; margin-bottom: 20px;">
+                <button onclick="location.href='formulario.html'" class="btn primary">
+                    Agregar producto
+                </button>
+            </div>
+
             <div id="lista-articulos" class="grid-cards"></div>
         </section>
     </main>
 
     <script src="../js/app.js"></script>
 </body>
+<footer>
+    <p>&copy; 2025 Mascotas.comuna.tpi — Artículos para mascotas.</p>
+</footer>
 
 </html>

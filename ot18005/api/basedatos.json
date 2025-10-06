@@ -40,7 +40,7 @@
       "id": "5",
       "nombre": "Rascador torre deluxe",
       "categoria": "gatos",
-      "precio": 65.0,
+      "precio": 65,
       "stock": 7,
       "descripcion": "Rascador con varias plataformas y cueva para gatos",
       "imagen": "https://storage.googleapis.com/catalog-pictures-carrefour-es/catalog/pictures/hd_510x_/8718475522881_1.jpg"
@@ -58,7 +58,7 @@
       "id": "7",
       "nombre": "Jaula para canarios",
       "categoria": "aves",
-      "precio": 55.0,
+      "precio": 55,
       "stock": 8,
       "descripcion": "Jaula espaciosa con accesorios para aves pequeñas",
       "imagen": "https://m.media-amazon.com/images/I/71kHVLjEvBL._UF894,1000_QL80_.jpg"
@@ -67,7 +67,7 @@
       "id": "8",
       "nombre": "Pecera de vidrio 40L",
       "categoria": "acuaticos",
-      "precio": 80.0,
+      "precio": 80,
       "stock": 5,
       "descripcion": "Acuario de 40 litros con filtro y tapa incluida",
       "imagen": "https://glee.pet/wp-content/uploads/2022/11/pecera-vidrio-2.webp"
@@ -85,10 +85,19 @@
       "id": "10",
       "nombre": "Correa extensible",
       "categoria": "perros",
-      "precio": 18.0,
+      "precio": 18,
       "stock": 25,
       "descripcion": "Correa retráctil de 5 metros con freno de seguridad",
       "imagen": "https://storage.googleapis.com/catalog-pictures-carrefour-es/catalog/pictures/hd_510x_/8440000127918_1.jpg"
+    },
+    {
+      "nombre": "Juguete de chinchin",
+      "descripcion": "Juguete para gatos tipo chinchin",
+      "categoria": "gatos",
+      "precio": 1.6,
+      "stock": 20,
+      "imagen": "https://www.buddypet.cl/wp-content/uploads/2021/08/cana-3.jpg",
+      "id": "09ec"
     }
   ],
   "categorias": [
@@ -103,6 +112,10 @@
     {
       "id": "3",
       "nombre": "aves"
+    },
+    {
+      "id": "4",
+      "nombre": "acuaticos"
     }
   ],
   "usuarios": [
@@ -126,6 +139,13 @@
       "mascota": "Mishi",
       "descripcion": "juguete de pluma",
       "fecha": "2025-10-02"
+    },
+    {
+      "id": "01de",
+      "nombre": "Roman Mauricio",
+      "mascota": "Aldawho",
+      "descripcion": "Quiero lavado y planchado",
+      "fecha": "2025-10-04"
     }
   ]
 }

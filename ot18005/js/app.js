@@ -41,10 +41,15 @@ function cardArticulo(art) {
       <p>Precio: $${Number(art.precio ?? 0).toFixed(2)}</p>
       <p>Stock: ${art.stock ?? 0}</p>
       <button onclick="eliminarArticulo('${String(art.id)}')">Borrar</button>
-      <button onclick="cargarParaEditar('${String(art.id)}')">Editar</button>
+      <button onclick="editarArticulo('${String(art.id)}')">Editar</button>
     </div>
   `;
 }
+
+function editarArticulo(id) {
+  window.location.href = `../secciones/formulario.html?id=${id}`;
+}
+
 
 function mostrarArticulos() {
   jfetch(`${API_URL}/articulos`).then(data => {
@@ -55,7 +60,6 @@ function mostrarArticulos() {
       ? data
       : data.filter(a => String(a.categoria).toLowerCase() === String(CATEGORIA_ACTIVA).toLowerCase());
 
-    // Aquí sí: pintar de una sola vez
     lista.innerHTML = items.map(cardArticulo).join('');
   }).catch(err => console.error('Error al mostrar artículos:', err));
 }
@@ -66,7 +70,8 @@ function agregarArticulo() {
     descripcion: document.getElementById('descripcion-art').value,
     categoria: document.getElementById('categoria-art').value,
     precio: parseFloat(document.getElementById('precio-art').value || '0'),
-    stock: parseInt(document.getElementById('stock-art').value || '0', 10)
+    stock: parseInt(document.getElementById('stock-art').value || '0', 10),
+    imagen: document.getElementById('imagen-art').value || ''
   };
   jfetch(API_ARTICULOS, {
     method: 'POST',
@@ -89,6 +94,7 @@ function cargarParaEditar(id) {
     document.getElementById('categoria-art').value = data.categoria ?? '';
     document.getElementById('precio-art').value = data.precio ?? '';
     document.getElementById('stock-art').value = data.stock ?? '';
+    document.getElementById('imagen-art').value = data.imagen ?? '';
   });
 }
 
@@ -99,7 +105,8 @@ function actualizarArticulo() {
     descripcion: document.getElementById('descripcion-art').value,
     categoria: document.getElementById('categoria-art').value,
     precio: parseFloat(document.getElementById('precio-art').value || '0'),
-    stock: parseInt(document.getElementById('stock-art').value || '0', 10)
+    stock: parseInt(document.getElementById('stock-art').value || '0', 10),
+    imagen: document.getElementById('imagen-art').value || ''
   };
   jfetch(idPath(API_ARTICULOS, id), {
     method: 'PUT',

@@ -1,26 +1,142 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Sitio de Mascotas</title>
-    <link rel="stylesheet" href="css/estilos.css">
+  <meta charset="UTF-8" />
+  <title>Inicio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Tienda de artículos para mascotas: juguetes, camas, accesorios y más." />
+  <link rel="icon" href="img/favicon.ico" />
+  <link rel="stylesheet" href="css/estilos.css" />
 </head>
-<body>
-    <header>
-        <img src="img/logo.avif" alt="Logo del Sitio" width="100">
-        <h1>Sitio de Mascotas</h1>
+<body class="home">
+
+  <!-- Encabezado -->
+  <header>
+        <img src="img/logo.avif" alt="Logo del Sitio" width="80">
+        <h1>Inicio</h1>
         <nav>
             <a href="index.html">Inicio</a>
-            <a href="secciones/catalogo.html">Productos</a>
+            <a href="secciones/catalogo.html">Catálogo</a>
             <a href="secciones/reservaciones.html">Reservaciones</a>
             <a href="secciones/nosotros.html">Quiénes Somos</a>
             <a href="secciones/contacto.html">Contacto</a>
         </nav>
     </header>
 
-    <main>
-        <h2>Bienvenido al sitio de mascotas</h2>
-        <p>Explora nuestros productos, reservaciones y conoce más sobre nosotros.</p>
-    </main>
+  <main>
+    <!-- HERO nuevo: layout dividido -->
+    <section class="hero-split">
+      <div class="hero-split__content">
+        <h1>Artículos que hacen feliz a tu mascota 🐾</h1>
+        <p>Encuentra juguetes, camas, correas, comederos y accesorios pensados para su comodidad.</p>
+        <div class="actions">
+          <a class="btn btn--primary" href="secciones/catalogo.html">Ver catálogo</a>
+          <a class="btn btn--ghost" href="secciones/contacto.html">Hablar con nosotros</a>
+        </div>
+      </div>
+      <div class="hero-split__media" aria-hidden="true">
+        <img src="https://www.purina.com.ar/sites/default/files/2024-02/mejores-juguetes-para-gatos-ar.jpg" alt="">
+      </div>
+    </section>
+
+    <!-- Mosaico de categorías (nuevo diseño) -->
+    <section class="section categories">
+      <div class="wrap">
+        <header class="section__head">
+          <h2 class="h2white">Artículos principales</h2>
+        </header>
+
+        <div class="mosaic">
+          <a class="mosaic__item mosaic__item--xl" href="secciones/catalogo.html" aria-label="Ver juguetes">
+            <img src="https://img.freepik.com/fotos-premium/juguete-cuerda-perros-nudos-atados-pelota-juguete-sobre-fondo-madera-vista-superior_508659-4542.jpg" />
+            <span class="mosaic__label">Juguetes</span>
+          </a>
+          <a class="mosaic__item" href="secciones/catalogo.html">
+            <img src="https://media.falabella.com/sodimacCO/898821_03/w=1500,h=1500" alt="Camas para mascotas" />
+            <span class="mosaic__label">Camas</span>
+          </a>
+          <a class="mosaic__item" href="secciones/catalogo.html">
+            <img src="https://m.media-amazon.com/images/I/714phUX8LwL.jpg" alt="Correas y collares" />
+            <span class="mosaic__label">Correas y Collares</span>
+          </a>
+          <a class="mosaic__item" href="secciones/catalogo.html">
+            <img src="https://image.made-in-china.com/202f0j00NdYVZiARMgum/Pet-Automatic-Feeder-Cat-Water-Drinker-Cat-Bowl-Dog-Bowl-Slow-Food-Bowl-Pet-Supplies.webp" alt="Comederos y bebederos" />
+            <span class="mosaic__label">Comederos</span>
+          </a>
+          <a class="mosaic__item" href="secciones/catalogo.html">
+            <img src="https://m.media-amazon.com/images/I/81OwBGtmjtL.jpg" alt="Limpieza y cuidado" />
+            <span class="mosaic__label">Limpieza</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Productos destacados (tarjetas nuevas) -->
+    <section class="section featured">
+      <div class="wrap">
+        <header class="section__head">
+          <h2 class="h2white">Destacados</h2>
+        </header>
+
+        <div class="cards">
+          <article class="card">
+            <div class="card__media">
+              <img src="https://m.media-amazon.com/images/I/71SGtfSTiJL.jpg" alt="Mordedor de caucho" loading="lazy" />
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Mordedor de caucho</h3>
+              <p class="card__text">Resistente y seguro para juego intenso.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__media">
+              <img src="https://media.adeo.com/mkp/b614684461cfe95c2ef21b063a6e6a54/media.jpeg" alt="Cama acolchada" loading="lazy" />
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Cama acolchada</h3>
+              <p class="card__text">Suave, lavable y muy cómoda.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__media">
+              <img src="https://phsupply.com.mx/cdn/shop/products/tg-gbt03-cb-1-1_1.jpg?v=1704929454&width=800" alt="Collar ajustable" loading="lazy" />
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Collar ajustable</h3>
+              <p class="card__text">Nylon reforzado con herraje metálico.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__media">
+              <img src="https://storage.googleapis.com/catalog-pictures-carrefour-es/catalog/pictures/hd_510x_/8440000127918_1.jpg" alt="Comedero automático" loading="lazy" />
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Correa extensible</h3>
+              <p class="card__text">Ajustable y cómoda para paseos.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="section__actions" style="margin-top: 3rem;">
+          <a class="btn btn--primary" href="secciones/catalogo.html">Ver todo el catálogo</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta-bar">
+      <div class="wrap cta-bar__wrap">
+        <p>¿Buscas algo específico? Escríbenos y te ayudamos.</p>
+        <a class="btn btn--ghost" href="secciones/contacto.html">Contacto</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Mascotas.comuna.tpi — Artículos para mascotas.</p>
+  </footer>
+
 </body>
 </html>

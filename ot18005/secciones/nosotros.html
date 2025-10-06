@@ -1,26 +1,141 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title>Quiénes Somos</title>
     <link rel="stylesheet" href="../css/estilos.css">
 </head>
+
 <body>
     <header>
         <img src="../img/logo.avif" alt="Logo del Sitio" width="80">
         <h1>Quiénes Somos</h1>
         <nav>
             <a href="../index.html">Inicio</a>
-            <a href="catalogo.html">Productos</a>
+            <a href="catalogo.html">Catálogo</a>
             <a href="reservaciones.html">Reservaciones</a>
-            <a href="nosotros.html">Quiénes Somos</a>
+            <a href="nosotros.html" class="active">Quiénes Somos</a>
             <a href="contacto.html">Contacto</a>
         </nav>
     </header>
 
     <main>
-        <h2>Sobre Nosotros</h2>
-        <p>Somos un sitio dedicado a ofrecer productos y servicios para el bienestar de tus mascotas.</p>
+
+        <section>
+            <h2>Sobre Nosotros</h2>
+            <p>
+                Somos una tienda enfocada en artículos para mascotas. Seleccionamos cuidadosamente juguetes, camas,
+                comederos,
+                collares, snacks y accesorios para que tu compañero peludo viva feliz y cómodo. Amamos a las mascotas y
+                por eso priorizamos calidad.
+            </p>
+        </section>
+
+        <section>
+            <h2>Nuestra Misión</h2>
+            <p>
+                Inspirar momentos de juego, confort y bienestar en cada hogar, ofreciendo un catálogo variado de
+                productos
+                para perros, gatos y otras mascotas. Nos esforzamos por brindar una experiencia de compra sencilla,
+                segura y
+                satisfactoria, apoyada en un servicio cercano y confiable.
+            </p>
+        </section>
+
+        <section>
+            <h2>¿Qué Ofrecemos?</h2>
+            <div class="cat-bar" aria-label="Categorías de productos">
+                <span class="cat-chip">Juguetes</span>
+                <span class="cat-chip">Camas y Rascadores</span>
+                <span class="cat-chip">Collares y Arneses</span>
+                <span class="cat-chip">Comederos y Bebederos</span>
+                <span class="cat-chip">Higiene</span>
+                <span class="cat-chip">Snacks</span>
+            </div>
+        </section>
+
+        <section>
+            <h2>Destacados del Catálogo</h2>
+            <div id="lista-articulos">
+                <article class="articulo">
+                    <div class="img-wrap">
+                        <img src="https://phsupply.com.mx/cdn/shop/products/tg-gbt03-cb-1-1_1.jpg?v=1704929454&width=800"
+                            alt="Collar ajustable">
+                    </div>
+                    <h3>Collar ajustable</h3>
+                    <p>Collar de nylon ajustable para perros medianos</p>
+                </article>
+
+                <article class="articulo">
+                    <div class="img-wrap">
+                        <img src="https://media.adeo.com/mkp/b614684461cfe95c2ef21b063a6e6a54/media.jpeg"
+                            alt="Cama acolchada para perro">
+                    </div>
+                    <h3>Cama acolchada para perro</h3>
+                    <p>Cama suave y lavable para perros medianos y grandes</p>
+                </article>
+
+                <article class="articulo">
+                    <div class="img-wrap">
+                        <img src="https://i.blogs.es/42397e/puppy-kitty-6l/650_1200.jpg" alt="Comedero automático">
+                    </div>
+                    <h3>Comedero automático</h3>
+                    <p>Dispensador automático de alimento con temporizador</p>
+                </article>
+
+                <article class="articulo">
+                    <div class="img-wrap">
+                        <img src="https://m.media-amazon.com/images/I/71SGtfSTiJL.jpg" alt="mordedor de caucho">
+                    </div>
+                    <h3>Juguete mordedor de caucho</h3>
+                    <p>Mordedor resistente para fortalecer dientes y encías</p>
+                </article>
+            </div>
+        </section>
+
+        <section style="margin-top: 24px; margin-bottom: 24px;">
+            <div>
+                <h2>¿Por qué elegirnos?</h2>
+                <ul>
+                    <li>✅ Productos seleccionados por calidad y durabilidad.</li>
+                    <li>💬 Soporte al cliente.</li>
+                    <li>🔄 Cambios y devoluciones simples.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Nuestras Marcas Aliadas</h2>
+            <div id="lista-reservaciones">
+                <div class="reserva">
+                    <img src="https://dummyimage.com/240x120/4cafc9/ffffff&text=Pet+Play+" alt="Marca Pet Play"
+                        style="width:100%; border-radius:8px;">
+                </div>
+                <div class="reserva">
+                    <img src="https://dummyimage.com/240x120/3c9ca8/ffffff&text=Paws+&+Co" alt="Marca Paws & Co"
+                        style="width:100%; border-radius:8px;">
+                </div>
+                <div class="reserva">
+                    <img src="https://dummyimage.com/240x120/64748b/ffffff&text=Happy+Pets" alt="Marca Happy Pets"
+                        style="width:100%; border-radius:8px;">
+                </div>
+                <div class="reserva">
+                    <img src="https://dummyimage.com/240x120/64748b/ffffff&text=All+Pets" alt="Marca All Pets"
+                        style="width:100%; border-radius:8px;">
+                </div>
+            </div>
+        </section>
+
+        <section style="text-align:center; margin-top: 24px;">
+            <p>¿Listo para ver todo el catálogo?</p>
+            <a href="catalogo.html" class="cat-chip active" style="display:inline-block;">Explorar productos</a>
+        </section>
     </main>
+
+    <footer>
+        <p>&copy; 2025 Mascotas.comuna.tpi — Artículos para mascotas.</p>
+    </footer>
 </body>
+
 </html>

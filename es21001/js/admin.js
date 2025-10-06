@@ -1,5 +1,10 @@
-const APIc = "https://www5.comuna.tpi/categorias";
-const APIp = "https://www5.comuna.tpi/productos";
+// Detectar protocolo automáticamente
+const baseURL = window.location.protocol === 'https:'
+  ? 'https://www5.comuna.tpi'
+  : 'http://www5.comuna.tpi';
+
+const APIp = `${baseURL}/productos`;
+const APIc  = `${baseURL}/categorias`;
 
 const fCat      = document.getElementById('fCat');
 const listCats  = document.getElementById('listCats');
@@ -11,8 +16,8 @@ const selCat    = document.getElementById('selCat');
 const imgUrlInput = document.getElementById('imagenUrl');
 const imgPrev     = document.getElementById('imgPreview');
 
-function bust(url){ 
-  return `${url}${url.includes('?') ? '&' : '?'}_=${Date.now()}`; 
+function bust(url){
+  return `${url}${url.includes('?') ? '&' : '?'}_=${Date.now()}`;
 }
 
  // Cateogira

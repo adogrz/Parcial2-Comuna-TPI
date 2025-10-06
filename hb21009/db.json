@@ -81,10 +81,18 @@
     {
       "id": "c6cd",
       "nombre": "Desengrasante premium",
-      "precio": 7.99,
+      "precio": 8,
       "categoriaId": "51aa",
       "imagen": "",
       "descripcion": ""
+    },
+    {
+      "id": "9cb6",
+      "nombre": "Desinfectante dr musculoso",
+      "precio": 14,
+      "categoriaId": "3",
+      "imagen": "assets/img/producto8.jpg",
+      "descripcion": "Para limpiezas profundas muy profundas"
     }
   ],
   "carrito": [

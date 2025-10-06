@@ -5,75 +5,75 @@
       "plataforma": "PC, Nintendo Switch, Xbox One, Xbox Series X/S, PlayStation 4 y PlayStation 5",
       "estado": "Completado",
       "portada": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1030300/7983574d464e6559ac7e24275727f73a8bcca1f3/header.jpg?t=1756994410",
-      "id": 1
+      "id": "1"
     },
     {
       "titulo": "Cyberpunk 2077",
-      "plataforma": "PC, PS5, PS4, Xbox One, Xbox Series X|S",
+      "plataforma": "PC, PS5, PS4, Xbox One, Xbox Series X|S ",
       "estado": "Completado",
       "portada": "https://upload.wikimedia.org/wikipedia/en/9/9f/Cyberpunk_2077_box_art.jpg",
-      "id": 2
+      "id": "2"
     },
     {
       "titulo": "Stardew Valley",
       "plataforma": "PlayStation 4, PS Vita, Xbox One, Nintendo Switch, PC y dispositivos móviles iOS y Android",
       "estado": "Pendiente",
       "portada": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkq0Tv1v3qgXAwovxTgsngoYQzu9ZvXvp9MQ&s",
-      "id": 3
+      "id": "3"
     },
     {
       "titulo": "Apex Legends",
       "plataforma": "PC/Consola",
       "estado": "Jugando",
       "portada": "https://www.freetogame.com/g/23/thumbnail.jpg",
-      "id": 4
+      "id": "4"
     }
   ],
   "deseos": [
     {
       "titulo": "Hollow Knight",
       "plataforma": "PC / Switch",
-      "id": 1
+      "id": "1"
     },
     {
       "titulo": "Factorio",
       "plataforma": "pc ",
-      "id": 2
+      "id": "2"
     }
   ],
   "descubrir": [
     {
-      "id": 1,
+      "id": "1",
       "titulo": "Baldur's Gate 3",
       "plataforma": "PC",
       "portada": "https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/45e0369a039b4b8f88bac9d97321e14a.png"
     },
     {
-      "id": 2,
+      "id": "2",
       "titulo": "Elden Ring",
       "plataforma": "PC / PlayStation",
       "portada": "https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/2b15e366a6292b67a0728c689d044941.png"
     },
     {
-      "id": 3,
+      "id": "3",
       "titulo": "Cyberpunk 2077",
       "plataforma": "PC",
       "portada": "https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/92558a2d10037f1f9e1b7473523f6311.png"
     },
     {
-      "id": 4,
+      "id": "4",
       "titulo": "Red Dead Redemption 2",
       "plataforma": "PC / Xbox",
       "portada": "https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/4f8f430252327d3b5853aa6736a439e6.png"
     },
     {
-      "id": 5,
+      "id": "5",
       "titulo": "The Witcher 3: Wild Hunt",
       "plataforma": "PC / PlayStation",
       "portada": "https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/e3d55152011b3b22b64b6e8203f192a6.png"
     },
     {
-      "id": 6,
+      "id": "6",
       "titulo": "Hollow Knight",
       "plataforma": "PC / Switch",
       "portada": "https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/c2c8f6164a0f44b025b9b282d8c397b9.png"
